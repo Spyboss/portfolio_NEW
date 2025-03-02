@@ -1,0 +1,10 @@
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="400" fill="#121a2f"/>
+  <rect x="50" y="50" width="700" height="300" rx="10" fill="#1e1a34"/>
+  <circle cx="400" cy="200" r="80" fill="#0a101e"/>
+  <circle cx="350" cy="180" r="15" fill="#00eeff"/>
+  <circle cx="400" cy="220" r="15" fill="#ff00ff"/>
+  <circle cx="450" cy="180" r="15" fill="#00ff9d"/>
+  <path d="M350 180 L400 220 L450 180" stroke="white" stroke-width="2" stroke-opacity="0.5" fill="none"/>
+  <text x="400" y="300" font-family="Arial" font-size="24" fill="#ffffff" text-anchor="middle">Social Media Dashboard</text>
+</svg> 

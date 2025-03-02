@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-gradient: linear-gradient(to bottom, #0a101e, #121a2f);
+  --card-glass: rgba(15, 23, 42, 0.6);
+  --neon-cyan: #00eeff;
+  --neon-magenta: #ff00ff;
+  --neon-green: #00ff9d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Poppins', system-ui, sans-serif;
+  background: var(--bg-gradient);
+  color: white;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/grid-pattern.svg');
+  background-size: cover;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-glass-bg backdrop-blur-md border border-neon-cyan/20 rounded-xl shadow-lg;
+  }
+  
+  .neon-border {
+    @apply border border-neon-cyan/50 hover:border-neon-cyan transition-all duration-300;
+  }
+  
+  .neon-glow {
+    @apply hover:shadow-[0_0_10px_rgba(0,238,255,0.7)] transition-shadow duration-300;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-6 text-white relative inline-block;
+  }
+  
+  .section-title::after {
+    @apply content-[''] absolute -bottom-2 left-0 h-1 w-16 bg-neon-cyan rounded-full;
+  }
+  
+  .custom-cursor {
+    @apply fixed w-8 h-8 rounded-full pointer-events-none z-50 mix-blend-screen;
+    background: radial-gradient(circle, var(--neon-cyan) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+  }
+} 

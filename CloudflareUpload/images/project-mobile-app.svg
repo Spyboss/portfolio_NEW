@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Dark Background -->
+  <rect width="200" height="200" fill="#0c1023" />
+  
+  <!-- Subtle Grid Pattern -->
+  <path d="M0 20 h200 M0 40 h200 M0 60 h200 M0 80 h200 M0 100 h200 M0 120 h200 M0 140 h200 M0 160 h200 M0 180 h200" stroke="#151f38" stroke-width="0.5" />
+  <path d="M20 0 v200 M40 0 v200 M60 0 v200 M80 0 v200 M100 0 v200 M120 0 v200 M140 0 v200 M160 0 v200 M180 0 v200" stroke="#151f38" stroke-width="0.5" />
+  
+  <!-- Central Phone Device -->
+  <linearGradient id="phoneGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#2a3757" />
+    <stop offset="100%" stop-color="#121a2f" />
+  </linearGradient>
+  
+  <!-- Phone Outer Case -->
+  <rect x="70" y="25" width="60" height="150" rx="12" fill="url(#phoneGradient)" />
+  
+  <!-- Phone Screen -->
+  <rect x="75" y="30" width="50" height="140" rx="8" fill="#000a12" />
+  <rect x="77" y="35" width="46" height="130" rx="6" fill="#151f38" />
+  
+  <!-- Phone Notch -->
+  <rect x="92" y="30" width="16" height="3" rx="1.5" fill="#121a2f" />
+  
+  <!-- App Header -->
+  <rect x="77" y="35" width="46" height="15" rx="6" fill="#9c27b0" />
+  <text x="100" y="45" font-family="Arial" font-size="6" fill="white" text-anchor="middle">Customer Manager</text>
+  <circle cx="85" cy="42.5" r="2" fill="white" opacity="0.7" />
+  <path d="M83 42.5 h4" stroke="white" stroke-width="1" stroke-linecap="round" />
+  <path d="M83 44.5 h4" stroke="white" stroke-width="1" stroke-linecap="round" />
+  <path d="M83 40.5 h4" stroke="white" stroke-width="1" stroke-linecap="round" />
+  
+  <!-- Search Bar -->
+  <rect x="82" y="55" width="36" height="8" rx="4" fill="#1e2a4a" />
+  <circle cx="87" cy="59" r="2" fill="#8887" />
+  <path d="M88.5 60.5 l2 2" stroke="#8887" stroke-width="0.8" />
+  <text x="97" y="60.5" font-family="Arial" font-size="3.5" fill="#8887">Search customers...</text>
+  
+  <!-- Customer List -->
+  <!-- Customer 1 -->
+  <rect x="82" y="68" width="36" height="16" rx="2" fill="#1e2a4a" />
+  <circle cx="90" cy="76" r="5" fill="#9c27b0" opacity="0.2" />
+  <path d="M88 76 a2 2 0 0 1 4 0 v0 a3 1 0 0 1 -4 0" fill="#9c27b0" />
+  <circle cx="90" cy="73" r="2" fill="#9c27b0" />
+  <text x="100" y="74" font-family="Arial" font-size="3.5" fill="white">John Smith</text>
+  <text x="100" y="79" font-family="Arial" font-size="2.5" fill="#8887">Last contact: Today</text>
+  
+  <!-- Customer 2 -->
+  <rect x="82" y="88" width="36" height="16" rx="2" fill="#1e2a4a" />
+  <circle cx="90" cy="96" r="5" fill="#00eeff" opacity="0.2" />
+  <path d="M88 96 a2 2 0 0 1 4 0 v0 a3 1 0 0 1 -4 0" fill="#00eeff" />
+  <circle cx="90" cy="93" r="2" fill="#00eeff" />
+  <text x="100" y="94" font-family="Arial" font-size="3.5" fill="white">Emma Johnson</text>
+  <text x="100" y="99" font-family="Arial" font-size="2.5" fill="#8887">Last contact: Yesterday</text>
+  
+  <!-- Customer 3 -->
+  <rect x="82" y="108" width="36" height="16" rx="2" fill="#1e2a4a" />
+  <circle cx="90" cy="116" r="5" fill="#ff00ee" opacity="0.2" />
+  <path d="M88 116 a2 2 0 0 1 4 0 v0 a3 1 0 0 1 -4 0" fill="#ff00ee" />
+  <circle cx="90" cy="113" r="2" fill="#ff00ee" />
+  <text x="100" y="114" font-family="Arial" font-size="3.5" fill="white">Michael Davis</text>
+  <text x="100" y="119" font-family="Arial" font-size="2.5" fill="#8887">Last contact: 3 days ago</text>
+  
+  <!-- Bottom Navigation -->
+  <rect x="77" y="145" width="46" height="20" rx="6" fill="#121a2f" />
+  
+  <!-- Nav Items -->
+  <circle cx="88" cy="155" r="2.5" fill="#9c27b0" />
+  <path d="M85.5 155 h5" stroke="#9c27b0" stroke-width="0.8" />
+  <path d="M88 152.5 v5" stroke="#9c27b0" stroke-width="0.8" />
+  
+  <circle cx="100" cy="155" r="2.5" fill="#8887" />
+  <path d="M98 153 l4 4" stroke="#8887" stroke-width="0.8" />
+  <path d="M98 157 l4 -4" stroke="#8887" stroke-width="0.8" />
+  
+  <circle cx="112" cy="155" r="2.5" fill="#8887" />
+  <path d="M112 153 v4" stroke="#8887" stroke-width="0.8" />
+  <path d="M110 153 v2 h4 v-2" stroke="#8887" stroke-width="0.8" />
+  
+  <!-- Floating UI Elements -->
+  <!-- Info Card -->
+  <rect x="130" y="60" width="40" height="45" rx="5" fill="#1e2a4a" />
+  <text x="150" y="70" font-family="Arial" font-size="5" fill="white" text-anchor="middle">Customer Details</text>
+  <line x1="135" y1="75" x2="165" y2="75" stroke="#333a57" stroke-width="1" />
+  
+  <!-- Info Lines -->
+  <text x="138" y="82" font-family="Arial" font-size="3.5" fill="#8887">Name:</text>
+  <text x="155" y="82" font-family="Arial" font-size="3.5" fill="white">John Smith</text>
+  
+  <text x="138" y="88" font-family="Arial" font-size="3.5" fill="#8887">Phone:</text>
+  <text x="155" y="88" font-family="Arial" font-size="3.5" fill="white">+1 555-1234</text>
+  
+  <text x="138" y="94" font-family="Arial" font-size="3.5" fill="#8887">Email:</text>
+  <text x="155" y="94" font-family="Arial" font-size="3.5" fill="white">john@example.com</text>
+  
+  <rect x="138" y="98" width="25" height="4" rx="2" fill="#9c27b0" />
+  <text x="150" y="101.5" font-family="Arial" font-size="3" fill="white" text-anchor="middle">View History</text>
+  
+  <!-- Analytics Card -->
+  <rect x="30" y="85" width="35" height="65" rx="5" fill="#1e2a4a" />
+  <text x="47.5" y="95" font-family="Arial" font-size="5" fill="white" text-anchor="middle">Analytics</text>
+  <line x1="35" y1="100" x2="60" y2="100" stroke="#333a57" stroke-width="1" />
+  
+  <!-- Chart -->
+  <rect x="35" y="105" width="25" height="15" rx="2" fill="#121a2f" />
+  <rect x="37" y="112" width="4" height="5" fill="#00eeff" />
+  <rect x="42" y="108" width="4" height="9" fill="#9c27b0" />
+  <rect x="47" y="110" width="4" height="7" fill="#ff00ee" />
+  <rect x="52" y="106" width="4" height="11" fill="#00eeff" />
+  
+  <!-- Stats -->
+  <text x="47.5" y="128" font-family="Arial" font-size="3.5" fill="white" text-anchor="middle">Total Customers</text>
+  <text x="47.5" y="135" font-family="Arial" font-size="8" fill="#9c27b0" font-weight="bold" text-anchor="middle">214</text>
+  
+  <!-- Floating Elements -->
+  <circle cx="145" cy="30" r="5" fill="#9c27b0" opacity="0.5" />
+  <circle cx="55" cy="60" r="4" fill="#00eeff" opacity="0.5" />
+  <circle cx="145" cy="160" r="6" fill="#ff00ee" opacity="0.3" />
+  
+  <!-- Connection Lines -->
+  <path d="M118 100 c12 -5 12 -25 12 -40" stroke="#00eeff" stroke-width="0.5" stroke-dasharray="2,2" fill="none" />
+  <path d="M65 118 c5 -2 5 10 12 10" stroke="#9c27b0" stroke-width="0.5" stroke-dasharray="2,2" fill="none" />
+  
+  <!-- Flutter Logo Subtle -->
+  <path d="M30 155 l10 -10 l10 10 l-10 10 Z" fill="#121a2f" stroke="#00eeff" stroke-width="0.5" />
+  <path d="M30 155 l10 -10 l0 10 Z" fill="#00eeff" opacity="0.2" />
+</svg> 

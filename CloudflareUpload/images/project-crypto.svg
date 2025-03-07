@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Dark Background -->
+  <rect width="200" height="200" fill="#0c1023" />
+  
+  <!-- Subtle Grid Pattern -->
+  <path d="M0 20 h200 M0 40 h200 M0 60 h200 M0 80 h200 M0 100 h200 M0 120 h200 M0 140 h200 M0 160 h200 M0 180 h200" stroke="#151f38" stroke-width="0.5" />
+  <path d="M20 0 v200 M40 0 v200 M60 0 v200 M80 0 v200 M100 0 v200 M120 0 v200 M140 0 v200 M160 0 v200 M180 0 v200" stroke="#151f38" stroke-width="0.5" />
+  
+  <!-- Dashboard Window -->
+  <linearGradient id="windowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#2a3757" />
+    <stop offset="100%" stop-color="#121a2f" />
+  </linearGradient>
+  <rect x="15" y="20" width="170" height="160" rx="8" fill="url(#windowGradient)" />
+  
+  <!-- Header Bar -->
+  <rect x="15" y="20" width="170" height="25" rx="8" fill="#151f38" />
+  <rect x="15" y="30" width="170" height="15" rx="0" fill="#151f38" />
+  
+  <!-- App Title -->
+  <text x="32" y="35" font-family="Arial" font-weight="bold" font-size="8" fill="#00eeff">PurposePortfolio</text>
+  
+  <!-- Header Controls -->
+  <circle cx="165" cy="32" r="3" fill="#34ef89" opacity="0.6" />
+  <circle cx="175" cy="32" r="3" fill="#ff6464" opacity="0.6" />
+  
+  <!-- Sidebar Navigation -->
+  <rect x="15" y="45" width="35" height="135" fill="#121a2f" />
+  
+  <!-- Nav Items -->
+  <rect x="20" y="55" width="25" height="5" rx="2.5" fill="#1e2a4a" />
+  <rect x="20" y="65" width="25" height="5" rx="2.5" fill="#1e2a4a" />
+  <rect x="20" y="75" width="25" height="5" rx="2.5" fill="#1e2a4a" />
+  <rect x="20" y="85" width="25" height="5" rx="2.5" fill="#00eeff" />
+  <rect x="20" y="95" width="25" height="5" rx="2.5" fill="#1e2a4a" />
+  <rect x="20" y="105" width="25" height="5" rx="2.5" fill="#1e2a4a" />
+  
+  <!-- Main Content Area -->
+  <rect x="50" y="45" width="135" height="135" fill="#0c1023" />
+  
+  <!-- Portfolio Value Display -->
+  <rect x="60" y="55" width="115" height="35" rx="5" fill="#151f38" />
+  <text x="70" y="70" font-family="Arial" font-size="6" fill="#8887">Portfolio Value</text>
+  <text x="70" y="82" font-family="Arial" font-weight="bold" font-size="12" fill="#00eeff">$145,548,032.25</text>
+  <rect x="150" y="65" width="15" height="15" rx="2" fill="#1e2a4a" />
+  <text x="157.5" y="76" font-family="Arial" font-size="6" fill="#34ef89" text-anchor="middle">+15.4%</text>
+  
+  <!-- Coin Row -->
+  <rect x="60" y="95" width="35" height="15" rx="3" fill="#151f38" />
+  <circle cx="70" cy="102.5" r="5" fill="#F7931A" /> <!-- Bitcoin -->
+  <text x="82" y="105" font-family="Arial" font-size="5" fill="#fff" text-anchor="middle">BTC</text>
+  
+  <rect x="100" y="95" width="35" height="15" rx="3" fill="#151f38" />
+  <circle cx="110" cy="102.5" r="5" fill="#627EEA" /> <!-- Ethereum -->
+  <text x="122" y="105" font-family="Arial" font-size="5" fill="#fff" text-anchor="middle">ETH</text>
+  
+  <rect x="140" y="95" width="35" height="15" rx="3" fill="#151f38" />
+  <circle cx="150" cy="102.5" r="5" fill="#11A1F2" /> <!-- Binance -->
+  <text x="162" y="105" font-family="Arial" font-size="5" fill="#fff" text-anchor="middle">BNB</text>
+  
+  <!-- Charts Section -->
+  <!-- Donut Chart -->
+  <rect x="60" y="115" width="55" height="55" rx="3" fill="#151f38" />
+  <text x="87.5" y="125" font-family="Arial" font-size="5" fill="#fff" text-anchor="middle">Asset Allocation</text>
+  
+  <path d="M87.5 133 l0 -2 a20 20 0 0 1 17.32 10 l-1.73 1 a18 18 0 0 0 -15.59 -9 Z" fill="#F7931A" /> <!-- Bitcoin 35% -->
+  <path d="M87.5 133 l0 2 a18 18 0 0 0 -15.59 9 l-1.73 -1 a20 20 0 0 1 17.32 -10 Z" fill="#627EEA" /> <!-- Ethereum 35% -->
+  <path d="M87.5 133 a18 18 0 0 0 -15.59 9 l-1.73 1 a20 20 0 0 1 0 -20 l1.73 1 a18 18 0 0 0 0 18 l-1.73 1 a20 20 0 0 1 -17.32 -10 l1.73 -1 a18 18 0 0 0 15.59 -9 Z" fill="#11A1F2" /> <!-- Binance 30% -->
+  
+  <circle cx="70" cy="148" r="2" fill="#F7931A" />
+  <text x="74" y="150" font-family="Arial" font-size="4" fill="#fff">Bitcoin</text>
+  <text x="95" y="150" font-family="Arial" font-size="4" fill="#8887">35%</text>
+  
+  <circle cx="70" cy="155" r="2" fill="#627EEA" />
+  <text x="74" y="157" font-family="Arial" font-size="4" fill="#fff">Ethereum</text>
+  <text x="95" y="157" font-family="Arial" font-size="4" fill="#8887">35%</text>
+  
+  <circle cx="70" cy="162" r="2" fill="#11A1F2" />
+  <text x="74" y="164" font-family="Arial" font-size="4" fill="#fff">Binance</text>
+  <text x="95" y="164" font-family="Arial" font-size="4" fill="#8887">30%</text>
+  
+  <!-- Line Chart -->
+  <rect x="120" y="115" width="55" height="55" rx="3" fill="#151f38" />
+  <text x="147.5" y="125" font-family="Arial" font-size="5" fill="#fff" text-anchor="middle">Market Trend</text>
+  
+  <!-- Chart Grid -->
+  <line x1="125" y1="145" x2="170" y2="145" stroke="#333a57" stroke-width="0.5" />
+  <line x1="125" y1="135" x2="170" y2="135" stroke="#333a57" stroke-width="0.5" />
+  <line x1="125" y1="155" x2="170" y2="155" stroke="#333a57" stroke-width="0.5" />
+  
+  <!-- Chart Line -->
+  <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#00eeff" />
+    <stop offset="100%" stop-color="#00eeff" stop-opacity="0" />
+  </linearGradient>
+  <path d="M125 150 L130 145 L135 152 L140 142 L145 147 L150 138 L155 152 L160 135 L165 143 L170 138" fill="none" stroke="#00eeff" stroke-width="1" />
+  <path d="M125 150 L130 145 L135 152 L140 142 L145 147 L150 138 L155 152 L160 135 L165 143 L170 138 L170 165 L125 165 Z" fill="url(#chartGradient)" opacity="0.2" />
+  
+  <!-- Price Points -->
+  <circle cx="130" cy="145" r="1" fill="#00eeff" />
+  <circle cx="140" cy="142" r="1" fill="#00eeff" />
+  <circle cx="150" cy="138" r="1" fill="#00eeff" />
+  <circle cx="160" cy="135" r="1" fill="#00eeff" />
+  <circle cx="170" cy="138" r="1" fill="#00eeff" />
+  
+  <!-- Coin Data Section -->
+  <path d="M55 180 l5 -10 h110 l5 10 Z" fill="#1e2a4a" />
+  
+  <!-- Small Tick Data -->
+  <text x="65" y="177" font-family="Arial" font-size="4" fill="#8887">BTC</text>
+  <text x="90" y="177" font-family="Arial" font-size="4" fill="#fff">$45,123.45</text>
+  
+  <text x="115" y="177" font-family="Arial" font-size="4" fill="#8887">ETH</text>
+  <text x="140" y="177" font-family="Arial" font-size="4" fill="#fff">$3,267.89</text>
+  
+  <!-- Floating Crypto Elements -->
+  <circle cx="25" cy="35" r="2" fill="#F7931A" opacity="0.7" /> <!-- Bitcoin -->
+  <circle cx="25" cy="35" r="1" fill="#F7931A" />
+  
+  <path d="M180 110 l5 10 l-10 0 Z" fill="#627EEA" opacity="0.5" /> <!-- Ethereum -->
+  <path d="M20 140 l5 -10 l5 10 h-10 Z" fill="#11A1F2" opacity="0.5" /> <!-- Binance -->
+  
+  <!-- Digital Elements -->
+  <path d="M185 50 v5 h2 v-2 h3 v-3 Z" fill="none" stroke="#00eeff" stroke-width="0.5" />
+  <path d="M15 160 v5 h5" fill="none" stroke="#ff00ee" stroke-width="0.5" />
+  <circle cx="190" cy="180" r="3" fill="none" stroke="#00eeff" stroke-width="0.5" opacity="0.7" />
+  <circle cx="10" cy="60" r="3" fill="none" stroke="#ff00ee" stroke-width="0.5" opacity="0.7" />
+</svg> 

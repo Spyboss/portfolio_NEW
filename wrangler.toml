@@ -10,4 +10,7 @@ NODE_VERSION = "18"
 
 # The directory with your static files
 [site]
-bucket = "out" 
+bucket = "out"
+
+# Required for Pages deployments
+pages_build_output_dir = "out" 

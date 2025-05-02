@@ -16,9 +16,7 @@ const Footer = () => {
   const footerLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -39,7 +37,7 @@ const Footer = () => {
               </h2>
             </motion.div>
             <p className="text-gray-400 mb-4">
-              Uminda Aberathne - Full-Stack Developer, Freelancer, and Tech Problem Solver passionate about creating digital experiences and business solutions that deliver real value.
+              Uminda Aberathne - Full-Stack Developer, Freelancer, and Web & Mobile App Builder passionate about creating digital experiences and business solutions that deliver real value.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (

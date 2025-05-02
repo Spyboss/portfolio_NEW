@@ -156,71 +156,87 @@ const Projects = () => {
     {
       id: 1,
       title: "Bill Gen – Secure Billing System",
-      shortDescription: "A secure billing system with field-level encryption and GDPR compliance for business clients.",
-      description: "Developed a comprehensive billing system with advanced security features including field-level encryption and GDPR compliance. The system allows businesses to create, manage, and track invoices while ensuring sensitive customer data remains protected.",
+      shortDescription: "A secure billing system with field-level encryption and GDPR compliance for EV sales.",
+      description: "Developed a comprehensive billing system for Gunawardhana Motors with advanced security features including field-level encryption and GDPR compliance. The system allows the business to create, manage, and track invoices for electric vehicle sales while ensuring sensitive customer data remains protected.",
       image: "/images/project-portfolio.svg",
       technologies: ["React", "Node.js", "MongoDB", "Redis", "JWT"],
       features: [
         "Field-level encryption for sensitive customer data",
         "GDPR compliance with data export and deletion features",
-        "Secure authentication and authorization system",
+        "Secure authentication with JWT and refresh tokens",
         "Real-time invoice tracking and management",
-        "Automated payment reminders and receipt generation"
+        "Support for different payment methods and vehicle types"
       ],
-      liveLink: "https://billgen.uhadev.com",
-      githubLink: "https://github.com/Spyboss/bill-gen"
+      liveDemo: "https://gunawardanamotors.pages.dev",
+      github: "https://github.com/Spyboss/bill-gen"
     },
     {
       id: 2,
-      title: "Quotation Generator – Gunawardana Motors",
-      shortDescription: "A custom quotation system with PDF generation and branding for a real automotive client.",
-      description: "Built a tailored quotation generation system for Gunawardana Motors that automates the creation of professional, branded PDF quotations. The system integrates with their inventory and pricing database to streamline the sales process.",
+      title: "P.U.L.S.E. – AI Agent Framework",
+      shortDescription: "An AI-powered personal workflow assistant with multi-model capabilities and GitHub integration.",
+      description: "Built a powerful AI assistant designed to enhance coding workflows, freelancing, and personal growth. P.U.L.S.E. (Prime Uminda's Learning System Engine) combines multiple AI models, a robust memory system, and a personality that adapts to user needs and preferences.",
       image: "/images/project-crypto.svg",
-      technologies: ["React", "Puppeteer", "Docker", "MongoDB", "Express"],
+      technologies: ["Python", "Google ADK", "Gemini", "GitHub API", "LanceDB"],
       features: [
-        "Custom branded PDF quotation generation",
-        "Integration with inventory and pricing database",
-        "User role management for sales team",
-        "Quotation tracking and analytics dashboard",
-        "Client communication and follow-up system"
+        "Multi-model AI system with specialized models for different tasks",
+        "Long-term memory with vector database for semantic search",
+        "GitHub integration for repository management and commit assistance",
+        "Adaptive neural router for query classification and model selection",
+        "Offline capabilities with local model support"
       ],
-      liveLink: "https://quotations.gunawardanamotors.com",
-      githubLink: "https://github.com/Spyboss/gm-quotation-system"
+      liveDemo: null,
+      github: "https://github.com/Spyboss/P.U.L.S.E."
     },
     {
       id: 3,
       title: "YT Contest Platform",
-      shortDescription: "A YouTube contest platform with voting, analytics, and participant management.",
-      description: "Created a comprehensive platform for managing YouTube-based contests, featuring participant registration, video submission, public voting, and analytics. The system integrates with YouTube's API to verify submissions and track engagement metrics.",
+      shortDescription: "A YouTube contest platform with automated metrics tracking and contestant management.",
+      description: "Created a streamlined platform for managing YouTube talent contests with automated metrics tracking and contestant management. The system integrates with YouTube's API to verify submissions, track engagement metrics, and manage the contest lifecycle.",
       image: "/images/project-mobile-app.svg",
-      technologies: ["Next.js", "Supabase", "Prisma", "YouTube API", "TypeScript"],
+      technologies: ["Next.js 14", "Tailwind CSS", "Supabase", "Prisma", "Clerk"],
       features: [
-        "YouTube API integration for video validation and metrics",
-        "Secure voting system with fraud prevention",
-        "Real-time contest dashboard and analytics",
-        "Participant management and communication tools",
-        "Automated winner selection and notification"
+        "YouTube API integration for video metrics and playlist management",
+        "Community video contests with admin dashboard",
+        "Voting system and contest lifecycle management",
+        "WhatsApp integration for contestant communication",
+        "Subscriber verification system"
       ],
-      liveLink: "https://ytcontest.uhadev.com",
-      githubLink: "https://github.com/Spyboss/yt-contest-platform"
+      liveDemo: null,
+      github: "https://github.com/Spyboss/yt-contest"
     },
     {
       id: 4,
-      title: "Sri Lanka Tourism App",
-      shortDescription: "A location-based tourism app with ML-powered recommendations for exploring Sri Lanka.",
-      description: "Developing a comprehensive tourism application focused on Sri Lanka, featuring location-based exploration, personalized recommendations powered by machine learning, and detailed information about attractions, accommodations, and local experiences.",
+      title: "Quotation Generator",
+      shortDescription: "A professional quotation system with PDF generation for Gunawardana Motors.",
+      description: "Developed a web application for generating professional quotations with PDF export functionality for Gunawardana Motors. The system allows the business to create, manage, and track quotations for potential customers, streamlining the sales process.",
       image: "/images/project-chat-bot.svg",
-      technologies: ["React", "FastAPI", "PostgreSQL", "ML", "GIS"],
+      technologies: ["React", "Puppeteer", "Node.js", "MongoDB", "Docker"],
       features: [
-        "Location-based discovery of attractions and experiences",
-        "Machine learning recommendation engine based on user preferences",
-        "Interactive maps with detailed points of interest",
-        "User-generated content including reviews and photos",
-        "Offline mode for areas with limited connectivity"
+        "Generate branded, professional PDF quotations",
+        "Dynamic pricing and history tracking",
+        "Automatic quotation number generation",
+        "Customer information management",
+        "Real-time total calculation"
       ],
-      liveLink: "https://sltourism.uhadev.com",
-      githubLink: "https://github.com/Spyboss/sl-tourism-app",
-      status: "Ongoing"
+      liveDemo: null,
+      github: "https://github.com/GME-dev/QUOTATION-GEN"
+    },
+    {
+      id: 5,
+      title: "Portfolio Website",
+      shortDescription: "My personal portfolio website built with Next.js, React, and Tailwind CSS.",
+      description: "This portfolio website showcases my skills, projects, and experience as a full-stack developer. Built with modern web technologies, it features a responsive design, dark mode, and animated components for an engaging user experience.",
+      image: "/images/project-portfolio.svg",
+      technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+      features: [
+        "Responsive design with dark mode",
+        "Animated hero and modular project cards",
+        "Optimized for performance and SEO",
+        "Interactive UI elements and smooth transitions",
+        "Hosted on Cloudflare Pages"
+      ],
+      liveDemo: "https://uminda-portfolio.pages.dev/",
+      github: "https://github.com/Spyboss/portfolio_NEW"
     }
   ];
 

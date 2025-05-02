@@ -11,8 +11,8 @@ const Hero = () => {
   const skills = [
     'Full-Stack Developer',
     'Freelancer',
-    'Tech Problem Solver',
-    'App & Web Developer'
+    'Web & Mobile App Builder',
+    'Tech Problem Solver'
   ];
 
   useEffect(() => {
@@ -142,7 +142,7 @@ const Hero = () => {
               href="#projects"
               className="px-6 py-3 bg-neon-cyan/10 hover:bg-neon-cyan/20 text-white border border-neon-cyan rounded-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,238,255,0.5)]"
             >
-              Explore My Work
+              View My Work
             </a>
             <a
               href="#contact"

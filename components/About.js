@@ -81,16 +81,16 @@ const About = () => {
             <h3 className="text-2xl font-bold text-white mb-4">Who I Am</h3>
             <div className="space-y-6 text-gray-300 leading-relaxed">
               <p>
-                Hi there! I'm Uminda Aberathne, a self-taught full-stack developer with over 4 years of experience building real-world solutions for businesses and clients. My journey in tech began with a passion for solving problems and turning ideas into functional applications.
+                I'm a self-taught full-stack developer with over 4 years of hands-on experience building real-world web and mobile applications. From secure billing systems to custom AI agents, I build solutions that solve actual business problems.
               </p>
               <p>
-                I specialize in developing full-stack web and mobile applications using React, Node.js, Firebase, Supabase, and TypeScript. I've delivered multiple secure, production-ready systems for clients across various industries, focusing on business value and user experience.
+                I specialize in developing full-stack web and mobile applications using React, Node.js, Next.js, Firebase, Supabase, and TypeScript. I've delivered multiple secure, production-ready systems for clients across various industries, focusing on business value and user experience.
               </p>
               <p>
-                My freelance experience has given me a unique perspective on sales-driven tech delivery - I understand not just how to code, but how to translate business requirements into technical solutions that drive real results for clients.
+                My freelance experience has given me a unique perspective on sales-driven tech delivery - I understand not just how to code, but how to translate business requirements into technical solutions that drive real results for clients. I also bring strong communication and sales skills from my freelance and work experience.
               </p>
               <p>
-                My goal is to create applications that not only look beautiful but also solve real business problems efficiently. I believe in continuous learning and constantly expanding my skill set to embrace new technologies that enhance productivity and delivery.
+                I'm currently open to freelance and remote opportunities worldwide, focusing on creating applications that not only look beautiful but also solve real business problems efficiently.
               </p>
             </div>
 

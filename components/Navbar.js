@@ -22,9 +22,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -51,7 +49,7 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
             >
-              <Link 
+              <Link
                 href={link.href}
                 className="text-gray-300 hover:text-neon-cyan transition-colors duration-300 relative group"
               >
@@ -106,7 +104,7 @@ const Navbar = () => {
             <ul className="flex flex-col space-y-4">
               {navLinks.map((link, index) => (
                 <li key={index}>
-                  <Link 
+                  <Link
                     href={link.href}
                     className="block text-gray-300 hover:text-neon-cyan transition-colors duration-300"
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -123,4 +121,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;

@@ -4,7 +4,7 @@ import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
 
 const ProjectCard = ({ project, openModal }) => {
   return (
-    <motion.div 
+    <motion.div
       className="glass-card overflow-hidden group cursor-pointer"
       whileHover={{ y: -10 }}
       transition={{ duration: 0.3 }}
@@ -12,9 +12,9 @@ const ProjectCard = ({ project, openModal }) => {
     >
       <div className="relative overflow-hidden h-48">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-darker-blue z-10"></div>
-        <img 
-          src={project.image} 
-          alt={project.title} 
+        <img
+          src={project.image}
+          alt={project.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
       </div>
@@ -23,8 +23,8 @@ const ProjectCard = ({ project, openModal }) => {
         <p className="text-gray-300 line-clamp-2 text-sm mb-4">{project.shortDescription}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.technologies && project.technologies.slice(0, 3).map((tech, idx) => (
-            <span 
-              key={idx} 
+            <span
+              key={idx}
               className="px-2 py-1 text-xs rounded-full bg-deep-blue text-neon-cyan border border-neon-cyan/30"
             >
               {tech}
@@ -37,7 +37,7 @@ const ProjectCard = ({ project, openModal }) => {
           )}
         </div>
         <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <motion.div 
+          <motion.div
             className="w-10 h-10 rounded-full bg-neon-cyan/20 flex items-center justify-center text-neon-cyan"
             whileHover={{ scale: 1.1 }}
           >
@@ -53,14 +53,14 @@ const ProjectModal = ({ project, closeModal }) => {
   if (!project) return null;
 
   return (
-    <motion.div 
+    <motion.div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       onClick={closeModal}
     >
-      <motion.div 
+      <motion.div
         className="bg-deep-blue border border-neon-cyan/30 rounded-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto overflow-x-hidden"
         initial={{ scale: 0.9, y: 20 }}
         animate={{ scale: 1, y: 0 }}
@@ -70,39 +70,46 @@ const ProjectModal = ({ project, closeModal }) => {
       >
         <div className="relative">
           <div className="h-64 md:h-80 overflow-hidden">
-            <img 
-              src={project.image} 
-              alt={project.title} 
+            <img
+              src={project.image}
+              alt={project.title}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-deep-blue"></div>
           </div>
-          <button 
+          <button
             onClick={closeModal}
             className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/70 transition-colors"
           >
             <FaTimes />
           </button>
         </div>
-        
+
         <div className="p-6 md:p-8">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">{project.title}</h2>
-          
+          <div className="flex flex-wrap items-center justify-between mb-3">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">{project.title}</h2>
+            {project.status && (
+              <span className="px-3 py-1 text-sm rounded-full bg-neon-cyan/20 text-neon-cyan border border-neon-cyan/30">
+                {project.status}
+              </span>
+            )}
+          </div>
+
           <div className="flex flex-wrap gap-2 mb-6">
             {project.technologies && project.technologies.map((tech, idx) => (
-              <span 
-                key={idx} 
+              <span
+                key={idx}
                 className="px-3 py-1 text-sm rounded-full bg-darker-blue text-neon-cyan border border-neon-cyan/30"
               >
                 {tech}
               </span>
             ))}
           </div>
-          
+
           <p className="text-gray-300 mb-6 leading-relaxed">
             {project.description}
           </p>
-          
+
           <div className="mb-6">
             <h3 className="text-lg font-bold text-white mb-3">Key Features</h3>
             <ul className="list-disc pl-5 text-gray-300 space-y-2">
@@ -111,12 +118,12 @@ const ProjectModal = ({ project, closeModal }) => {
               ))}
             </ul>
           </div>
-          
+
           <div className="flex gap-4">
             {project.github && (
-              <a 
-                href={project.github} 
-                target="_blank" 
+              <a
+                href={project.github}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-darker-blue text-white rounded-lg flex items-center gap-2 hover:bg-black/50 transition-colors"
               >
@@ -124,9 +131,9 @@ const ProjectModal = ({ project, closeModal }) => {
               </a>
             )}
             {project.liveDemo && (
-              <a 
-                href={project.liveDemo} 
-                target="_blank" 
+              <a
+                href={project.liveDemo}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-neon-cyan/20 text-white rounded-lg flex items-center gap-2 hover:bg-neon-cyan/30 transition-colors border border-neon-cyan/50"
               >
@@ -144,71 +151,76 @@ const Projects = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px 0px" });
   const [selectedProject, setSelectedProject] = useState(null);
-  
+
   const projects = [
     {
       id: 1,
-      title: "Personal Portfolio",
-      shortDescription: "A sleek, dark-themed portfolio website with neon accents to showcase my skills and projects.",
-      description: "Designed and developed a responsive portfolio website using Next.js and Tailwind CSS. The site features a dark theme with vibrant neon accents, smooth animations, and responsive design for all devices.",
+      title: "Bill Gen – Secure Billing System",
+      shortDescription: "A secure billing system with field-level encryption and GDPR compliance for business clients.",
+      description: "Developed a comprehensive billing system with advanced security features including field-level encryption and GDPR compliance. The system allows businesses to create, manage, and track invoices while ensuring sensitive customer data remains protected.",
       image: "/images/project-portfolio.svg",
-      technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+      technologies: ["React", "Node.js", "MongoDB", "Redis", "JWT"],
       features: [
-        "Responsive design that works on all devices",
-        "Dark theme with neon accent colors",
-        "Smooth page transitions and micro-interactions",
-        "Interactive components and project showcase"
+        "Field-level encryption for sensitive customer data",
+        "GDPR compliance with data export and deletion features",
+        "Secure authentication and authorization system",
+        "Real-time invoice tracking and management",
+        "Automated payment reminders and receipt generation"
       ],
-      liveLink: "https://portfolio.uhadev.com",
-      githubLink: "https://github.com/Spyboss/personal-portfolio"
+      liveLink: "https://billgen.uhadev.com",
+      githubLink: "https://github.com/Spyboss/bill-gen"
     },
     {
       id: 2,
-      title: "Crypto Portfolio Tracker",
-      shortDescription: "A cryptocurrency portfolio tracker with real-time market data and analytics.",
-      description: "Built a cryptocurrency portfolio tracking application that allows users to monitor their investments, track performance over time, and analyze market trends. The app integrates with multiple cryptocurrency APIs to provide real-time data.",
+      title: "Quotation Generator – Gunawardana Motors",
+      shortDescription: "A custom quotation system with PDF generation and branding for a real automotive client.",
+      description: "Built a tailored quotation generation system for Gunawardana Motors that automates the creation of professional, branded PDF quotations. The system integrates with their inventory and pricing database to streamline the sales process.",
       image: "/images/project-crypto.svg",
-      technologies: ["React", "Firebase", "CoinGecko API", "Chart.js"],
+      technologies: ["React", "Puppeteer", "Docker", "MongoDB", "Express"],
       features: [
-        "Real-time cryptocurrency price updates",
-        "Portfolio performance tracking and visualization",
-        "Market trend analysis and comparison tools",
-        "User authentication and profile management"
+        "Custom branded PDF quotation generation",
+        "Integration with inventory and pricing database",
+        "User role management for sales team",
+        "Quotation tracking and analytics dashboard",
+        "Client communication and follow-up system"
       ],
-      liveLink: "https://crypto-tracker.uhadev.com",
-      githubLink: "https://github.com/Spyboss/crypto-tracker"
+      liveLink: "https://quotations.gunawardanamotors.com",
+      githubLink: "https://github.com/Spyboss/gm-quotation-system"
     },
     {
       id: 3,
-      title: "Customer Management App",
-      shortDescription: "A Flutter-based mobile application for managing customer information and interactions.",
-      description: "Developed a mobile application for businesses to manage their customer relationships. The app allows for tracking customer information, interaction history, and setting follow-up reminders. It features both online and offline functionality.",
+      title: "YT Contest Platform",
+      shortDescription: "A YouTube contest platform with voting, analytics, and participant management.",
+      description: "Created a comprehensive platform for managing YouTube-based contests, featuring participant registration, video submission, public voting, and analytics. The system integrates with YouTube's API to verify submissions and track engagement metrics.",
       image: "/images/project-mobile-app.svg",
-      technologies: ["Flutter", "Dart", "Firebase", "RESTful APIs"],
+      technologies: ["Next.js", "Supabase", "Prisma", "YouTube API", "TypeScript"],
       features: [
-        "Customer information management with searchable database",
-        "Interaction and communication history tracking",
-        "Reminder and follow-up scheduling system",
-        "Offline mode with data synchronization"
+        "YouTube API integration for video validation and metrics",
+        "Secure voting system with fraud prevention",
+        "Real-time contest dashboard and analytics",
+        "Participant management and communication tools",
+        "Automated winner selection and notification"
       ],
-      liveLink: "https://play.google.com/store/apps/details?id=com.uhadev.customermanager",
-      githubLink: "https://github.com/Spyboss/customer-manager"
+      liveLink: "https://ytcontest.uhadev.com",
+      githubLink: "https://github.com/Spyboss/yt-contest-platform"
     },
     {
       id: 4,
-      title: "WhatsApp Business Bot",
-      shortDescription: "An automated WhatsApp Business Bot for handling customer inquiries and orders.",
-      description: "Created a WhatsApp Business Bot that automates customer service functions such as answering FAQs, processing orders, and providing product information. The bot uses natural language processing to understand customer queries.",
+      title: "Sri Lanka Tourism App",
+      shortDescription: "A location-based tourism app with ML-powered recommendations for exploring Sri Lanka.",
+      description: "Developing a comprehensive tourism application focused on Sri Lanka, featuring location-based exploration, personalized recommendations powered by machine learning, and detailed information about attractions, accommodations, and local experiences.",
       image: "/images/project-chat-bot.svg",
-      technologies: ["Node.js", "WhatsApp Business API", "NLP", "MongoDB"],
+      technologies: ["React", "FastAPI", "PostgreSQL", "ML", "GIS"],
       features: [
-        "Natural language processing for understanding customer queries",
-        "Automated order processing and confirmation",
-        "Product catalog integration and search functionality",
-        "Seamless handoff to human agents when needed"
+        "Location-based discovery of attractions and experiences",
+        "Machine learning recommendation engine based on user preferences",
+        "Interactive maps with detailed points of interest",
+        "User-generated content including reviews and photos",
+        "Offline mode for areas with limited connectivity"
       ],
-      liveLink: "https://whatsapp-bot.uhadev.com",
-      githubLink: "https://github.com/Spyboss/whatsapp-business-bot"
+      liveLink: "https://sltourism.uhadev.com",
+      githubLink: "https://github.com/Spyboss/sl-tourism-app",
+      status: "Ongoing"
     }
   ];
 
@@ -225,7 +237,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 bg-gradient-to-b from-dark-purple to-darker-blue" ref={sectionRef}>
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div 
+        <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : {}}
           transition={{ duration: 0.5 }}
@@ -248,7 +260,7 @@ const Projects = () => {
               <ProjectCard project={project} openModal={openModal} />
             </motion.div>
           ))}
-          
+
           {/* View All Projects Card */}
           <motion.div
             initial={{ y: 50, opacity: 0 }}
@@ -262,9 +274,9 @@ const Projects = () => {
               </div>
               <h3 className="text-xl font-bold text-white mb-2">More Projects</h3>
               <p className="text-gray-300 mb-4">Explore more of my work on GitHub</p>
-              <a 
-                href="https://github.com/" 
-                target="_blank" 
+              <a
+                href="https://github.com/Spyboss"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-neon-cyan/10 text-white rounded-lg inline-flex items-center gap-2 hover:bg-neon-cyan/20 transition-colors border border-neon-cyan/50"
               >
@@ -284,4 +296,4 @@ const Projects = () => {
   );
 };
 
-export default Projects; 
+export default Projects;

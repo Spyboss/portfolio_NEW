@@ -4,7 +4,7 @@ import { FaBriefcase, FaChartLine, FaMobileAlt, FaBitcoin, FaCode, FaUsers, FaCl
 
 const ExperienceCard = ({ icon, title, period, company, description, skills }) => {
   return (
-    <motion.div 
+    <motion.div
       className="glass-card p-6 h-full"
       whileHover={{ y: -5 }}
       transition={{ duration: 0.3 }}
@@ -20,11 +20,11 @@ const ExperienceCard = ({ icon, title, period, company, description, skills }) =
             <span className="text-gray-400 text-sm">• {period}</span>
           </div>
           <p className="text-gray-300 mb-4">{description}</p>
-          
+
           <div className="flex flex-wrap gap-2">
             {skills && skills.map((skill, idx) => (
-              <span 
-                key={idx} 
+              <span
+                key={idx}
                 className="px-2 py-1 text-xs rounded-full bg-deep-blue text-gray-300 border border-gray-700"
               >
                 {skill}
@@ -39,7 +39,7 @@ const ExperienceCard = ({ icon, title, period, company, description, skills }) =
 
 const StatCard = ({ icon, value, label, delay }) => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay }}
@@ -57,7 +57,7 @@ const StatCard = ({ icon, value, label, delay }) => {
 const Experience = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px 0px" });
-  
+
   const experiences = [
     {
       title: "Mobile App Developer",
@@ -91,7 +91,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-24 bg-gradient-to-b from-darker-blue to-deep-blue" ref={sectionRef}>
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div 
+        <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : {}}
           transition={{ duration: 0.5 }}
@@ -99,37 +99,37 @@ const Experience = () => {
         >
           <h2 className="section-title">My Experience</h2>
           <p className="max-w-2xl mx-auto text-gray-300">
-            My professional journey spans various domains, from sales and app development to cryptocurrency trading.
+            My professional journey as a self-taught developer has equipped me with a unique blend of technical skills and business acumen.
           </p>
         </motion.div>
 
         {/* Experience Cards */}
         <div className="space-y-8 mt-12">
-          <ExperienceCard 
+          <ExperienceCard
+            icon={<FaCode />}
+            title="Freelance Full-Stack Developer"
+            period="2020 - Present"
+            company="Self-employed"
+            description="Delivering complete web and mobile solutions for clients across various industries. Building secure, production-ready systems with a focus on business value and user experience. Managing the entire development lifecycle from requirements gathering to deployment and maintenance."
+            skills={['React', 'Node.js', 'TypeScript', 'Firebase', 'Supabase', 'MongoDB']}
+          />
+
+          <ExperienceCard
             icon={<FaLaptopCode />}
             title="Mobile App Developer"
-            period="2023 - Present"
-            company="Self-employed"
-            description="Specializing in developing mobile applications with Flutter. Creating intuitive and responsive UIs, implementing business logic, and ensuring smooth performance across devices."
-            skills={['Flutter', 'Dart', 'Firebase', 'UI/UX', 'REST APIs']}
-          />
-          
-          <ExperienceCard 
-            icon={<FaCode />}
-            title="Freelance Developer"
-            period="2022 - Present"
-            company="Self-employed"
-            description="Developing custom web and mobile solutions for clients. Managing projects from concept to delivery while ensuring client satisfaction and maintaining code quality."
-            skills={['React', 'Next.js', 'Flutter', 'Firebase', 'Client Management']}
-          />
-          
-          <ExperienceCard 
-            icon={<FaChartLine />}
-            title="Crypto Enthusiast"
             period="2021 - Present"
-            company="Independent"
-            description="Actively exploring the cryptocurrency space through trading, research, and community involvement. Analyzing market trends and implementing various investment strategies."
-            skills={['Market Analysis', 'Trading Strategies', 'Risk Management', 'Blockchain']}
+            company="Self-employed"
+            description="Developing cross-platform mobile applications with Flutter and React Native. Creating intuitive user interfaces, implementing complex business logic, and ensuring smooth performance across devices. Handling app store submissions and updates."
+            skills={['Flutter', 'React Native', 'Firebase', 'UI/UX', 'REST APIs']}
+          />
+
+          <ExperienceCard
+            icon={<FaBriefcase />}
+            title="Tech-Sales Experience"
+            period="2019 - Present"
+            company="Various"
+            description="Leveraging my technical knowledge to effectively communicate complex solutions to clients. Translating business requirements into technical specifications and ensuring client satisfaction throughout the project lifecycle."
+            skills={['Client Communication', 'Requirements Gathering', 'Project Scoping', 'Technical Consulting']}
           />
         </div>
 
@@ -144,25 +144,31 @@ const Experience = () => {
             Achievements & Stats
             <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-neon-cyan"></span>
           </h3>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            <StatCard 
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            <StatCard
               icon={<FaCode />}
-              value="10+"
+              value="15+"
               label="Projects Completed"
               delay={0.1}
             />
-            <StatCard 
+            <StatCard
               icon={<FaUsers />}
-              value="5+"
+              value="6+"
               label="Satisfied Clients"
               delay={0.2}
             />
-            <StatCard 
+            <StatCard
               icon={<FaClock />}
               value="100%"
               label="On-Time Delivery"
               delay={0.3}
+            />
+            <StatCard
+              icon={<FaBriefcase />}
+              value="4+"
+              label="Years Experience"
+              delay={0.4}
             />
           </div>
         </motion.div>
@@ -171,4 +177,4 @@ const Experience = () => {
   );
 };
 
-export default Experience; 
+export default Experience;

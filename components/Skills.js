@@ -12,9 +12,10 @@ const SkillCategory = ({ title, skills, delay }) => {
       <h3 className="text-xl font-bold text-white mb-4 flex items-center">
         <span className="w-8 h-8 rounded-full bg-neon-cyan/20 flex items-center justify-center mr-2">
           <span className="text-neon-cyan text-lg">
-            {title === "Mobile Development" ? "📱" : 
-             title === "Frontend" ? "🖥️" : 
-             title === "Design & Backend" ? "🎨" : "🔧"}
+            {title === "Web App Development" ? "🖥️" :
+             title === "Mobile Development" ? "📱" :
+             title === "Backend/API Development" ? "⚙️" :
+             title === "Productivity Tools" ? "🚀" : "🔧"}
           </span>
         </span>
         {title}
@@ -66,7 +67,7 @@ const SkillBubble = ({ skill, index }) => {
   return (
     <motion.div
       className={`px-4 py-2 rounded-full text-white text-sm font-medium
-                  bg-gradient-to-r ${getSkillColor()} opacity-90 
+                  bg-gradient-to-r ${getSkillColor()} opacity-90
                   transition-all duration-300 cursor-pointer`}
       whileHover="hover"
       variants={bubbleVariants}
@@ -80,7 +81,7 @@ const SkillBubble = ({ skill, index }) => {
 const SkillBar = ({ skill, percentage, delay }) => {
   const barRef = useRef(null);
   const isInView = useInView(barRef, { once: true, margin: "-50px 0px" });
-  
+
   return (
     <div className="mb-6" ref={barRef}>
       <div className="flex justify-between mb-1">
@@ -102,62 +103,62 @@ const SkillBar = ({ skill, percentage, delay }) => {
 const Skills = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px 0px" });
-  
+
   const categories = [
+    {
+      name: "Web App Development",
+      skills: [
+        { name: "React.js", proficiency: 85 },
+        { name: "Next.js", proficiency: 80 },
+        { name: "TypeScript", proficiency: 75 },
+        { name: "Tailwind CSS", proficiency: 90 },
+        { name: "HTML/CSS/JS", proficiency: 85 },
+      ],
+    },
     {
       name: "Mobile Development",
       skills: [
         { name: "Flutter", proficiency: 85 },
-        { name: "Dart", proficiency: 85 },
-        { name: "Swift", proficiency: 60 },
+        { name: "React Native", proficiency: 70 },
         { name: "Firebase", proficiency: 80 },
-        { name: "Mobile UI/UX", proficiency: 90 },
+        { name: "Mobile UI/UX", proficiency: 85 },
+        { name: "App Publishing", proficiency: 75 },
       ],
     },
     {
-      name: "Frontend",
+      name: "Backend/API Development",
       skills: [
-        { name: "React.js", proficiency: 75 },
-        { name: "Next.js", proficiency: 70 },
-        { name: "HTML/CSS", proficiency: 85 },
-        { name: "JavaScript", proficiency: 80 },
-        { name: "Tailwind CSS", proficiency: 85 },
+        { name: "Node.js", proficiency: 80 },
+        { name: "Prisma", proficiency: 75 },
+        { name: "Supabase", proficiency: 85 },
+        { name: "MongoDB", proficiency: 75 },
+        { name: "REST APIs", proficiency: 85 },
       ],
     },
     {
-      name: "Design & Backend",
+      name: "Productivity Tools",
       skills: [
-        { name: "UI/UX Design", proficiency: 90 },
-        { name: "Figma", proficiency: 85 },
-        { name: "Node.js", proficiency: 65 },
-        { name: "Supabase", proficiency: 75 },
-        { name: "MongoDB", proficiency: 60 },
-      ],
-    },
-    {
-      name: "Other",
-      skills: [
-        { name: "Technical Analysis", proficiency: 80 },
-        { name: "Crypto Trading", proficiency: 75 },
-        { name: "Sales & Marketing", proficiency: 85 },
-        { name: "Customer Relations", proficiency: 90 },
-        { name: "Problem Solving", proficiency: 85 },
+        { name: "AI Tools", proficiency: 90 },
+        { name: "Cursor AI", proficiency: 85 },
+        { name: "Claude/Grok", proficiency: 80 },
+        { name: "Git/GitHub", proficiency: 85 },
+        { name: "Docker", proficiency: 70 },
       ],
     },
   ];
 
   const technicalSkills = [
-    { skill: 'Web Development', percentage: 85 },
+    { skill: 'Full-Stack Development', percentage: 85 },
     { skill: 'UI/UX Design', percentage: 80 },
     { skill: 'App Development', percentage: 75 },
-    { skill: 'Sales & Business', percentage: 90 },
-    { skill: 'Crypto & Trading', percentage: 85 }
+    { skill: 'Problem Solving', percentage: 90 },
+    { skill: 'Business Communication', percentage: 85 }
   ];
 
   return (
     <section id="skills" className="py-24 bg-gradient-to-b from-deep-blue to-dark-purple" ref={sectionRef}>
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div 
+        <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : {}}
           transition={{ duration: 0.5 }}
@@ -172,17 +173,17 @@ const Skills = () => {
         {/* Skill Categories with Bubbles */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {categories.map((category, idx) => (
-            <SkillCategory 
-              key={idx} 
-              title={category.name} 
-              skills={category.skills} 
+            <SkillCategory
+              key={idx}
+              title={category.name}
+              skills={category.skills}
               delay={idx * 0.1}
             />
           ))}
         </div>
 
         {/* Skill Bars */}
-        <motion.div 
+        <motion.div
           initial={{ y: 30, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -192,12 +193,12 @@ const Skills = () => {
             Technical Proficiency
             <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-neon-cyan"></span>
           </h3>
-          
+
           {technicalSkills.map((skill, idx) => (
-            <SkillBar 
-              key={idx} 
-              skill={skill.skill} 
-              percentage={skill.percentage} 
+            <SkillBar
+              key={idx}
+              skill={skill.skill}
+              percentage={skill.percentage}
               delay={idx * 0.1}
             />
           ))}
@@ -207,4 +208,4 @@ const Skills = () => {
   );
 };
 
-export default Skills; 
+export default Skills;

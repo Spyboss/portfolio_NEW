@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin, FaFacebook, FaInstagram, FaWhatsapp, FaTelegram, 
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   const socialLinks = [
     { icon: <FaGithub />, href: 'https://github.com/Spyboss', label: 'GitHub' },
     { icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/uminda-hansana-a3b6021b3/', label: 'LinkedIn' },
@@ -12,7 +12,7 @@ const Footer = () => {
     { icon: <FaWhatsapp />, href: 'https://api.whatsapp.com/send/?phone=94713427470&text&type=phone_number&app_absent=0', label: 'WhatsApp' },
     { icon: <FaTelegram />, href: 'https://t.me/UHAAHM', label: 'Telegram' }
   ];
-  
+
   const footerLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Logo & Description */}
           <div className="md:col-span-1">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -39,7 +39,7 @@ const Footer = () => {
               </h2>
             </motion.div>
             <p className="text-gray-400 mb-4">
-              Uminda Aberathne - Web Developer, UI/UX Designer, App Developer, Crypto Trader, and Entrepreneur passionate about creating digital experiences and business solutions.
+              Uminda Aberathne - Full-Stack Developer, Freelancer, and Tech Problem Solver passionate about creating digital experiences and business solutions that deliver real value.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -59,7 +59,7 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          
+
           {/* Quick Links */}
           <div className="md:col-span-1">
             <h3 className="text-lg font-bold text-white mb-4 relative inline-block">
@@ -74,8 +74,8 @@ const Footer = () => {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.2 + index * 0.05 }}
                 >
-                  <a 
-                    href={link.href} 
+                  <a
+                    href={link.href}
                     className="text-gray-400 hover:text-neon-cyan transition-colors duration-300"
                   >
                     {link.name}
@@ -84,7 +84,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          
+
           {/* Newsletter */}
           <div className="md:col-span-1">
             <h3 className="text-lg font-bold text-white mb-4 relative inline-block">
@@ -100,10 +100,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Divider */}
         <div className="border-t border-gray-800 my-8"></div>
-        
+
         {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
@@ -118,4 +118,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;

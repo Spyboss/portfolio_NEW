@@ -28,39 +28,39 @@ const Contact = () => {
   const sectionRef = useRef(null);
   const formRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px 0px" });
-  
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
-      
+
       // Reset status after 5 seconds
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);
     }, 1500);
   };
-  
+
   const contactMethods = [
     {
       icon: <FaEnvelope />,
@@ -91,15 +91,15 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 bg-gradient-to-b from-deep-blue to-darker-blue" ref={sectionRef}>
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div 
+        <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : {}}
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="section-title">Get In Touch</h2>
+          <h2 className="section-title">Let's Build Something Together</h2>
           <p className="max-w-2xl mx-auto text-gray-300">
-            Have a project in mind or want to discuss potential opportunities? I'd love to hear from you. I'm open to web development projects, UI/UX design work, and business collaborations.
+            Have a project in mind or want to discuss potential opportunities? I'd love to hear from you. I'm available for freelance web & app development, collaboration on product ideas, and technical consultations.
           </p>
         </motion.div>
 
@@ -116,7 +116,7 @@ const Contact = () => {
               Send Me a Message
               <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-neon-cyan"></span>
             </h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -146,7 +146,7 @@ const Contact = () => {
                   />
                 </div>
               </div>
-              
+
               <div>
                 <label htmlFor="subject" className="block text-gray-300 mb-2">Subject</label>
                 <input
@@ -160,7 +160,7 @@ const Contact = () => {
                   placeholder="Project Inquiry"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="message" className="block text-gray-300 mb-2">Your Message</label>
                 <textarea
@@ -174,7 +174,7 @@ const Contact = () => {
                   placeholder="Hello, I'd like to discuss a project..."
                 ></textarea>
               </div>
-              
+
               <div>
                 <button
                   type="submit"
@@ -186,9 +186,9 @@ const Contact = () => {
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-neon-cyan to-neon-magenta opacity-0 group-hover:opacity-20 transition-opacity"></span>
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
-                
+
                 {submitStatus === 'success' && (
-                  <motion.p 
+                  <motion.p
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="mt-4 text-green-400"
@@ -199,7 +199,7 @@ const Contact = () => {
               </div>
             </form>
           </motion.div>
-          
+
           {/* Contact Methods */}
           <div className="space-y-6">
             <motion.h3
@@ -211,40 +211,40 @@ const Contact = () => {
               Contact Information
               <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-neon-cyan"></span>
             </motion.h3>
-            
+
             <div className="space-y-4">
               {contactMethods.map((method, idx) => (
-                <ContactMethod 
-                  key={idx} 
-                  {...method} 
-                  delay={0.3 + idx * 0.1} 
+                <ContactMethod
+                  key={idx}
+                  {...method}
+                  delay={0.3 + idx * 0.1}
                 />
               ))}
             </div>
-            
+
             <motion.div
               initial={{ x: 50, opacity: 0 }}
               animate={isInView ? { x: 0, opacity: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.7 }}
               className="glass-card p-6 mt-8"
             >
-              <h4 className="text-xl font-bold text-white mb-3">Open To</h4>
+              <h4 className="text-xl font-bold text-white mb-3">Available For</h4>
               <ul className="space-y-2 text-gray-300">
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-neon-cyan rounded-full"></span>
-                  <span>Web & App Development Projects</span>
+                  <span>Freelance Web & App Development</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-neon-cyan rounded-full"></span>
-                  <span>UI/UX Design Work</span>
+                  <span>Technical Consultations</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-neon-cyan rounded-full"></span>
-                  <span>Crypto Trading & Investment Partnerships</span>
+                  <span>Product Development Collaborations</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-neon-cyan rounded-full"></span>
-                  <span>Business Collaborations</span>
+                  <span>Long-term Business Partnerships</span>
                 </li>
               </ul>
             </motion.div>
@@ -255,4 +255,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;

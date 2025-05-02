@@ -15,22 +15,22 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Uminda Aberathne | Web Developer & UI/UX Designer</title>
-        <meta name="description" content="Uminda Aberathne's personal portfolio - Web Developer, UI/UX Designer, App Developer, Crypto Trader, and Entrepreneur" />
+        <title>Uminda Aberathne | Full-Stack Developer & Freelancer</title>
+        <meta name="description" content="Uminda Aberathne's personal portfolio - Full-Stack Developer, Freelancer, and Tech Problem Solver specializing in web and mobile applications" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" />
-        
+
         {/* Open Graph / Social Media Meta Tags */}
-        <meta property="og:title" content="Uminda Aberathne | Web Developer & UI/UX Designer" />
-        <meta property="og:description" content="Crafting Digital Experiences with Code & Design" />
+        <meta property="og:title" content="Uminda Aberathne | Full-Stack Developer & Freelancer" />
+        <meta property="og:description" content="Building Real-World Solutions with Code & Business Focus" />
         <meta property="og:image" content="/images/og-image.svg" />
-        <meta property="og:url" content="https://uminda-portfolio.vercel.app" />
+        <meta property="og:url" content="https://uminda-portfolio.pages.dev" />
         <meta property="og:type" content="website" />
-        
+
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Uminda Aberathne | Web Developer & UI/UX Designer" />
-        <meta name="twitter:description" content="Crafting Digital Experiences with Code & Design" />
+        <meta name="twitter:title" content="Uminda Aberathne | Full-Stack Developer & Freelancer" />
+        <meta name="twitter:description" content="Building Real-World Solutions with Code & Business Focus" />
         <meta name="twitter:image" content="/images/og-image.svg" />
       </Head>
       <CustomCursor />
@@ -39,4 +39,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp; 
+export default MyApp;

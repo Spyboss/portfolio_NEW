@@ -1,0 +1,89 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Bill Gen – Secure Billing System",
+      "shortDescription": "A secure billing system with field-level encryption and GDPR compliance for EV sales.",
+      "description": "Developed a comprehensive billing system for Gunawardhana Motors with advanced security features including field-level encryption and GDPR compliance. The system allows the business to create, manage, and track invoices for electric vehicle sales while ensuring sensitive customer data remains protected. Built with React for the frontend and Node.js for the backend, it features real-time invoice tracking and supports multiple payment methods.",
+      "image": "/images/projects/bill-gen-main.webp",
+      "technologies": ["React", "Node.js", "MongoDB", "Redis", "JWT"],
+      "features": [
+        "Field-level encryption for sensitive customer data",
+        "GDPR compliance with data export and deletion features",
+        "Secure authentication with JWT and refresh tokens",
+        "Real-time invoice tracking and management",
+        "Support for different payment methods and vehicle types"
+      ],
+      "liveDemo": "https://gunawardanamotors.pages.dev",
+      "github": "https://github.com/Spyboss/bill-gen"
+    },
+    {
+      "id": 2,
+      "title": "General Pulse – AI Agent Framework",
+      "shortDescription": "An AI-powered personal workflow assistant with multi-model capabilities and GitHub integration.",
+      "description": "General Pulse is a CLI-based AI orchestrator inspired by J.A.R.V.I.S., built to automate tasks like time queries and code debugging. Powered by Mistral-Small via OpenRouter, it uses MongoDB Atlas for chat persistence and pytz for accurate time zone handling (e.g., Sri Lanka's UTC+5:30). I overcame asynchronous API call failures by implementing SQLite caching, optimizing for my 8GB RAM setup. Key features include intent routing and a scalable multi-model system.",
+      "image": "/images/projects/general-pulse-main.webp",
+      "technologies": ["Python", "Mistral-Small", "MongoDB Atlas", "SQLite", "OpenRouter"],
+      "features": [
+        "Multi-model AI system with specialized models for different tasks",
+        "Long-term memory with vector database for semantic search",
+        "GitHub integration for repository management and commit assistance",
+        "Adaptive neural router for query classification and model selection",
+        "Offline capabilities with local model support"
+      ],
+      "liveDemo": null,
+      "github": "https://github.com/Spyboss/P.U.L.S.E."
+    },
+    {
+      "id": 3,
+      "title": "YT Contest Platform",
+      "shortDescription": "A YouTube contest platform with automated metrics tracking and contestant management.",
+      "description": "Created a streamlined platform for managing YouTube talent contests with automated metrics tracking and contestant management. The system integrates with YouTube's API to verify submissions, track engagement metrics, and manage the contest lifecycle. Built with Next.js 14 and Supabase, it provides a seamless experience for both contestants and administrators.",
+      "image": "/images/projects/yt-contest-main.webp",
+      "technologies": ["Next.js 14", "Tailwind CSS", "Supabase", "Prisma", "Clerk"],
+      "features": [
+        "YouTube API integration for video metrics and playlist management",
+        "Community video contests with admin dashboard",
+        "Voting system and contest lifecycle management",
+        "WhatsApp integration for contestant communication",
+        "Subscriber verification system"
+      ],
+      "liveDemo": null,
+      "github": "https://github.com/Spyboss/yt-contest"
+    },
+    {
+      "id": 4,
+      "title": "Quotation Generator",
+      "shortDescription": "A professional quotation system with PDF generation for Gunawardana Motors.",
+      "description": "Developed a web application for generating professional quotations with PDF export functionality for Gunawardana Motors. The system allows the business to create, manage, and track quotations for potential customers, streamlining the sales process. Built with React and Node.js, it features dynamic pricing calculations and branded PDF exports.",
+      "image": "/images/projects/quotation-gen-main.webp",
+      "technologies": ["React", "Puppeteer", "Node.js", "MongoDB", "Docker"],
+      "features": [
+        "Generate branded, professional PDF quotations",
+        "Dynamic pricing and history tracking",
+        "Automatic quotation number generation",
+        "Customer information management",
+        "Real-time total calculation"
+      ],
+      "liveDemo": null,
+      "github": "https://github.com/GME-dev/QUOTATION-GEN"
+    },
+    {
+      "id": 5,
+      "title": "Portfolio Website",
+      "shortDescription": "My personal portfolio website built with Next.js, React, and Tailwind CSS.",
+      "description": "This portfolio website showcases my skills, projects, and experience as a full-stack developer. Built with modern web technologies, it features a responsive design, dark mode, and animated components for an engaging user experience. The site is optimized for performance and SEO, ensuring fast loading times and good visibility in search engines.",
+      "image": "/images/projects/portfolio-main.webp",
+      "technologies": ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+      "features": [
+        "Responsive design with dark mode",
+        "Animated hero and modular project cards",
+        "Optimized for performance and SEO",
+        "Interactive UI elements and smooth transitions",
+        "Hosted on Cloudflare Pages"
+      ],
+      "liveDemo": "https://uminda-portfolio.pages.dev/",
+      "github": "https://github.com/Spyboss/portfolio_NEW"
+    }
+  ]
+}

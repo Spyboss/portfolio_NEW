@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <!-- Dark Background -->
+  <rect width="1200" height="800" fill="#0c1023" />
+  
+  <!-- Subtle Grid Pattern -->
+  <path d="M0 100 h1200 M0 200 h1200 M0 300 h1200 M0 400 h1200 M0 500 h1200 M0 600 h1200 M0 700 h1200" stroke="#151f38" stroke-width="1" />
+  <path d="M100 0 v800 M200 0 v800 M300 0 v800 M400 0 v800 M500 0 v800 M600 0 v800 M700 0 v800 M800 0 v800 M900 0 v800 M1000 0 v800 M1100 0 v800" stroke="#151f38" stroke-width="1" />
+  
+  <!-- Placeholder Icon -->
+  <rect x="450" y="250" width="300" height="200" rx="10" fill="#151f38" stroke="#00eeff" stroke-width="2" />
+  <path d="M500 300 L550 350 L600 280" stroke="#00eeff" stroke-width="4" fill="none" />
+  <circle cx="650" cy="320" r="30" fill="#151f38" stroke="#00eeff" stroke-width="2" />
+  
+  <!-- Text -->
+  <text x="600" y="500" font-family="Arial" font-size="24" fill="#00eeff" text-anchor="middle">Project Screenshot</text>
+  <text x="600" y="530" font-family="Arial" font-size="16" fill="#ffffff" text-anchor="middle">Coming Soon</text>
+</svg>

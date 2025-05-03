@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../styles/globals.css';
+import '../styles/gallery.css';
 import Head from 'next/head';
 import CustomCursor from '../components/CustomCursor';
 

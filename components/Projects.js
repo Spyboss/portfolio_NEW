@@ -1,8 +1,10 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaTimes } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaTimes, FaImages } from 'react-icons/fa';
+import ImageGallery from 'react-image-gallery';
+import "react-image-gallery/styles/css/image-gallery.css";
 
-const ProjectCard = ({ project, openModal }) => {
+const ProjectCard = ({ project, openModal, hasGallery }) => {
   return (
     <motion.div
       className="glass-card overflow-hidden group cursor-pointer"
@@ -16,7 +18,15 @@ const ProjectCard = ({ project, openModal }) => {
           src={project.image}
           alt={project.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          loading="lazy"
         />
+        {hasGallery && (
+          <div className="absolute top-3 right-3 z-20">
+            <div className="bg-black/50 rounded-full p-2 backdrop-blur-sm">
+              <FaImages className="text-neon-cyan text-sm" />
+            </div>
+          </div>
+        )}
       </div>
       <div className="p-5">
         <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
@@ -49,8 +59,11 @@ const ProjectCard = ({ project, openModal }) => {
   );
 };
 
-const ProjectModal = ({ project, closeModal }) => {
+const ProjectModal = ({ project, closeModal, projectGalleries }) => {
   if (!project) return null;
+
+  // Find the gallery for this project
+  const projectGallery = projectGalleries.find(gallery => gallery.projectId === project.id);
 
   return (
     <motion.div
@@ -69,20 +82,35 @@ const ProjectModal = ({ project, closeModal }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative">
-          <div className="h-64 md:h-80 overflow-hidden">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-deep-blue"></div>
-          </div>
           <button
             onClick={closeModal}
-            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/70 transition-colors"
+            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/70 transition-colors z-20"
           >
             <FaTimes />
           </button>
+
+          {/* Gallery or Single Image */}
+          {projectGallery && projectGallery.images.length > 0 ? (
+            <div className="gallery-container">
+              <ImageGallery
+                items={projectGallery.images}
+                showPlayButton={false}
+                showFullscreenButton={true}
+                showThumbnails={true}
+                lazyLoad={true}
+                thumbnailPosition="bottom"
+              />
+            </div>
+          ) : (
+            <div className="h-64 md:h-80 overflow-hidden">
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-deep-blue"></div>
+            </div>
+          )}
         </div>
 
         <div className="p-6 md:p-8">
@@ -151,94 +179,63 @@ const Projects = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px 0px" });
   const [selectedProject, setSelectedProject] = useState(null);
+  const [projects, setProjects] = useState([]);
+  const [projectGalleries, setProjectGalleries] = useState([]);
 
-  const projects = [
-    {
-      id: 1,
-      title: "Bill Gen – Secure Billing System",
-      shortDescription: "A secure billing system with field-level encryption and GDPR compliance for EV sales.",
-      description: "Developed a comprehensive billing system for Gunawardhana Motors with advanced security features including field-level encryption and GDPR compliance. The system allows the business to create, manage, and track invoices for electric vehicle sales while ensuring sensitive customer data remains protected.",
-      image: "/images/project-portfolio.svg",
-      technologies: ["React", "Node.js", "MongoDB", "Redis", "JWT"],
-      features: [
-        "Field-level encryption for sensitive customer data",
-        "GDPR compliance with data export and deletion features",
-        "Secure authentication with JWT and refresh tokens",
-        "Real-time invoice tracking and management",
-        "Support for different payment methods and vehicle types"
-      ],
-      liveDemo: "https://gunawardanamotors.pages.dev",
-      github: "https://github.com/Spyboss/bill-gen"
-    },
-    {
-      id: 2,
-      title: "P.U.L.S.E. – AI Agent Framework",
-      shortDescription: "An AI-powered personal workflow assistant with multi-model capabilities and GitHub integration.",
-      description: "Built a powerful AI assistant designed to enhance coding workflows, freelancing, and personal growth. P.U.L.S.E. (Prime Uminda's Learning System Engine) combines multiple AI models, a robust memory system, and a personality that adapts to user needs and preferences.",
-      image: "/images/project-crypto.svg",
-      technologies: ["Python", "Google ADK", "Gemini", "GitHub API", "LanceDB"],
-      features: [
-        "Multi-model AI system with specialized models for different tasks",
-        "Long-term memory with vector database for semantic search",
-        "GitHub integration for repository management and commit assistance",
-        "Adaptive neural router for query classification and model selection",
-        "Offline capabilities with local model support"
-      ],
-      liveDemo: null,
-      github: "https://github.com/Spyboss/P.U.L.S.E."
-    },
-    {
-      id: 3,
-      title: "YT Contest Platform",
-      shortDescription: "A YouTube contest platform with automated metrics tracking and contestant management.",
-      description: "Created a streamlined platform for managing YouTube talent contests with automated metrics tracking and contestant management. The system integrates with YouTube's API to verify submissions, track engagement metrics, and manage the contest lifecycle.",
-      image: "/images/project-mobile-app.svg",
-      technologies: ["Next.js 14", "Tailwind CSS", "Supabase", "Prisma", "Clerk"],
-      features: [
-        "YouTube API integration for video metrics and playlist management",
-        "Community video contests with admin dashboard",
-        "Voting system and contest lifecycle management",
-        "WhatsApp integration for contestant communication",
-        "Subscriber verification system"
-      ],
-      liveDemo: null,
-      github: "https://github.com/Spyboss/yt-contest"
-    },
-    {
-      id: 4,
-      title: "Quotation Generator",
-      shortDescription: "A professional quotation system with PDF generation for Gunawardana Motors.",
-      description: "Developed a web application for generating professional quotations with PDF export functionality for Gunawardana Motors. The system allows the business to create, manage, and track quotations for potential customers, streamlining the sales process.",
-      image: "/images/project-chat-bot.svg",
-      technologies: ["React", "Puppeteer", "Node.js", "MongoDB", "Docker"],
-      features: [
-        "Generate branded, professional PDF quotations",
-        "Dynamic pricing and history tracking",
-        "Automatic quotation number generation",
-        "Customer information management",
-        "Real-time total calculation"
-      ],
-      liveDemo: null,
-      github: "https://github.com/GME-dev/QUOTATION-GEN"
-    },
-    {
-      id: 5,
-      title: "Portfolio Website",
-      shortDescription: "My personal portfolio website built with Next.js, React, and Tailwind CSS.",
-      description: "This portfolio website showcases my skills, projects, and experience as a full-stack developer. Built with modern web technologies, it features a responsive design, dark mode, and animated components for an engaging user experience.",
-      image: "/images/project-portfolio.svg",
-      technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
-      features: [
-        "Responsive design with dark mode",
-        "Animated hero and modular project cards",
-        "Optimized for performance and SEO",
-        "Interactive UI elements and smooth transitions",
-        "Hosted on Cloudflare Pages"
-      ],
-      liveDemo: "https://uminda-portfolio.pages.dev/",
-      github: "https://github.com/Spyboss/portfolio_NEW"
-    }
-  ];
+  // Load project data from JSON files
+  useEffect(() => {
+    // Load projects data
+    fetch('/data/projects.json')
+      .then(response => response.json())
+      .then(data => {
+        if (data && data.projects) {
+          setProjects(data.projects);
+        }
+      })
+      .catch(error => {
+        console.error('Error loading projects data:', error);
+        // Fallback to placeholder images if data loading fails
+        setProjects([
+          {
+            id: 1,
+            title: "Bill Gen – Secure Billing System",
+            shortDescription: "A secure billing system with field-level encryption and GDPR compliance for EV sales.",
+            description: "Developed a comprehensive billing system for Gunawardhana Motors with advanced security features including field-level encryption and GDPR compliance.",
+            image: "/images/project-portfolio.svg",
+            technologies: ["React", "Node.js", "MongoDB", "Redis", "JWT"],
+            features: [
+              "Field-level encryption for sensitive customer data",
+              "GDPR compliance with data export and deletion features",
+              "Secure authentication with JWT and refresh tokens",
+              "Real-time invoice tracking and management",
+              "Support for different payment methods and vehicle types"
+            ],
+            liveDemo: "https://gunawardanamotors.pages.dev",
+            github: "https://github.com/Spyboss/bill-gen"
+          },
+          // Add more fallback projects if needed
+        ]);
+      });
+
+    // Load gallery data
+    fetch('/data/project-images.json')
+      .then(response => response.json())
+      .then(data => {
+        if (data && data.projectGalleries) {
+          setProjectGalleries(data.projectGalleries);
+        }
+      })
+      .catch(error => {
+        console.error('Error loading gallery data:', error);
+        setProjectGalleries([]);
+      });
+  }, []);
+
+  // Check if a project has a gallery
+  const hasGallery = (projectId) => {
+    const gallery = projectGalleries.find(gallery => gallery.projectId === projectId);
+    return gallery && gallery.images && gallery.images.length > 0;
+  };
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -273,7 +270,11 @@ const Projects = () => {
               animate={isInView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
-              <ProjectCard project={project} openModal={openModal} />
+              <ProjectCard
+                project={project}
+                openModal={openModal}
+                hasGallery={hasGallery(project.id)}
+              />
             </motion.div>
           ))}
 
@@ -305,7 +306,11 @@ const Projects = () => {
 
       <AnimatePresence>
         {selectedProject && (
-          <ProjectModal project={selectedProject} closeModal={closeModal} />
+          <ProjectModal
+            project={selectedProject}
+            closeModal={closeModal}
+            projectGalleries={projectGalleries}
+          />
         )}
       </AnimatePresence>
     </section>

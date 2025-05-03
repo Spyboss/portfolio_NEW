@@ -1,0 +1,68 @@
+/* Custom styles for the image gallery */
+
+.gallery-container {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* Override default gallery styles to match portfolio theme */
+.image-gallery-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 500px;
+}
+
+.image-gallery-thumbnail {
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.image-gallery-thumbnail.active,
+.image-gallery-thumbnail:hover {
+  border: 2px solid #00eeff;
+}
+
+.image-gallery-thumbnail-image {
+  object-fit: cover;
+  height: 60px;
+}
+
+.image-gallery-description {
+  background-color: rgba(0, 0, 0, 0.7);
+  bottom: 0;
+  color: white;
+  padding: 10px;
+  position: absolute;
+  white-space: normal;
+  width: 100%;
+  backdrop-filter: blur(4px);
+  font-size: 14px;
+}
+
+.image-gallery-icon {
+  color: #00eeff;
+  filter: drop-shadow(0 0 5px rgba(0, 238, 255, 0.5));
+}
+
+.image-gallery-fullscreen-button,
+.image-gallery-play-button {
+  bottom: auto;
+  top: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .image-gallery-slide img {
+    max-height: 300px;
+  }
+  
+  .image-gallery-thumbnail-image {
+    height: 40px;
+  }
+  
+  .image-gallery-description {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

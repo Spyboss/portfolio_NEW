@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <!-- Dark Background -->
+  <rect width="300" height="200" fill="#0c1023" />
+  
+  <!-- Subtle Grid Pattern -->
+  <path d="M0 25 h300 M0 50 h300 M0 75 h300 M0 100 h300 M0 125 h300 M0 150 h300 M0 175 h300" stroke="#151f38" stroke-width="0.5" />
+  <path d="M25 0 v200 M50 0 v200 M75 0 v200 M100 0 v200 M125 0 v200 M150 0 v200 M175 0 v200 M200 0 v200 M225 0 v200 M250 0 v200 M275 0 v200" stroke="#151f38" stroke-width="0.5" />
+  
+  <!-- Placeholder Icon -->
+  <rect x="112.5" y="62.5" width="75" height="50" rx="5" fill="#151f38" stroke="#00eeff" stroke-width="1" />
+  <path d="M125 75 L137.5 87.5 L150 70" stroke="#00eeff" stroke-width="2" fill="none" />
+  <circle cx="162.5" cy="80" r="7.5" fill="#151f38" stroke="#00eeff" stroke-width="1" />
+  
+  <!-- Text -->
+  <text x="150" y="140" font-family="Arial" font-size="10" fill="#00eeff" text-anchor="middle">Thumbnail</text>
+</svg>

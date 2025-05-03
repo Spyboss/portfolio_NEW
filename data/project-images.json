@@ -1,0 +1,109 @@
+{
+  "projectGalleries": [
+    {
+      "projectId": 1,
+      "images": [
+        {
+          "original": "/images/projects/bill-gen-main.webp",
+          "thumbnail": "/images/projects/bill-gen-thumb.webp",
+          "description": "Bill Gen dashboard showing invoice management"
+        },
+        {
+          "original": "/images/projects/bill-gen-invoice.webp",
+          "thumbnail": "/images/projects/bill-gen-invoice-thumb.webp",
+          "description": "Invoice creation interface with encryption indicators"
+        },
+        {
+          "original": "/images/projects/bill-gen-mobile.webp",
+          "thumbnail": "/images/projects/bill-gen-mobile-thumb.webp",
+          "description": "Mobile responsive view of the billing system"
+        },
+        {
+          "original": "/images/projects/bill-gen-settings.webp",
+          "thumbnail": "/images/projects/bill-gen-settings-thumb.webp",
+          "description": "GDPR compliance settings and data management"
+        }
+      ]
+    },
+    {
+      "projectId": 2,
+      "images": [
+        {
+          "original": "/images/projects/general-pulse-main.webp",
+          "thumbnail": "/images/projects/general-pulse-thumb.webp",
+          "description": "General Pulse CLI interface showing command execution"
+        },
+        {
+          "original": "/images/projects/general-pulse-code.webp",
+          "thumbnail": "/images/projects/general-pulse-code-thumb.webp",
+          "description": "Code structure showing the multi-model architecture"
+        },
+        {
+          "original": "/images/projects/general-pulse-terminal.webp",
+          "thumbnail": "/images/projects/general-pulse-terminal-thumb.webp",
+          "description": "Terminal view of General Pulse handling a complex query"
+        }
+      ]
+    },
+    {
+      "projectId": 3,
+      "images": [
+        {
+          "original": "/images/projects/yt-contest-main.webp",
+          "thumbnail": "/images/projects/yt-contest-thumb.webp",
+          "description": "YouTube Contest Platform dashboard"
+        },
+        {
+          "original": "/images/projects/yt-contest-metrics.webp",
+          "thumbnail": "/images/projects/yt-contest-metrics-thumb.webp",
+          "description": "Contestant metrics tracking and analytics"
+        },
+        {
+          "original": "/images/projects/yt-contest-mobile.webp",
+          "thumbnail": "/images/projects/yt-contest-mobile-thumb.webp",
+          "description": "Mobile view of the contest submission process"
+        }
+      ]
+    },
+    {
+      "projectId": 4,
+      "images": [
+        {
+          "original": "/images/projects/quotation-gen-main.webp",
+          "thumbnail": "/images/projects/quotation-gen-thumb.webp",
+          "description": "Quotation Generator interface"
+        },
+        {
+          "original": "/images/projects/quotation-gen-pdf.webp",
+          "thumbnail": "/images/projects/quotation-gen-pdf-thumb.webp",
+          "description": "Generated PDF quotation with branding"
+        },
+        {
+          "original": "/images/projects/quotation-gen-form.webp",
+          "thumbnail": "/images/projects/quotation-gen-form-thumb.webp",
+          "description": "Quotation form with dynamic pricing"
+        }
+      ]
+    },
+    {
+      "projectId": 5,
+      "images": [
+        {
+          "original": "/images/projects/portfolio-main.webp",
+          "thumbnail": "/images/projects/portfolio-thumb.webp",
+          "description": "Portfolio website hero section"
+        },
+        {
+          "original": "/images/projects/portfolio-projects.webp",
+          "thumbnail": "/images/projects/portfolio-projects-thumb.webp",
+          "description": "Projects showcase with interactive cards"
+        },
+        {
+          "original": "/images/projects/portfolio-mobile.webp",
+          "thumbnail": "/images/projects/portfolio-mobile-thumb.webp",
+          "description": "Mobile responsive view of the portfolio"
+        }
+      ]
+    }
+  ]
+}

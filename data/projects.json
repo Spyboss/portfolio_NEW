@@ -5,7 +5,7 @@
       "title": "Bill Gen – Secure Billing System",
       "shortDescription": "A secure billing system with field-level encryption and GDPR compliance for EV sales.",
       "description": "Developed a comprehensive billing system for Gunawardhana Motors with advanced security features including field-level encryption and GDPR compliance. The system allows the business to create, manage, and track invoices for electric vehicle sales while ensuring sensitive customer data remains protected. Built with React for the frontend and Node.js for the backend, it features real-time invoice tracking and supports multiple payment methods.",
-      "image": "/images/projects/bill-gen-main.webp",
+      "image": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746343280/screencapture-gunawardanamotors-pages-dev-2025-05-04-12_50_11_h9oh8m.png",
       "technologies": ["React", "Node.js", "MongoDB", "Redis", "JWT"],
       "features": [
         "Field-level encryption for sensitive customer data",

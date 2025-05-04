@@ -4,8 +4,8 @@
       "projectId": 1,
       "images": [
         {
-          "original": "/images/projects/bill-gen-main.webp",
-          "thumbnail": "/images/projects/bill-gen-thumb.webp",
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746343280/screencapture-gunawardanamotors-pages-dev-2025-05-04-12_50_11_h9oh8m.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/c_thumb,w_200,g_face/v1746343280/screencapture-gunawardanamotors-pages-dev-2025-05-04-12_50_11_h9oh8m.png",
           "description": "Bill Gen dashboard showing invoice management"
         },
         {

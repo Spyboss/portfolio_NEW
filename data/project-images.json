@@ -5,23 +5,23 @@
       "images": [
         {
           "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746343280/screencapture-gunawardanamotors-pages-dev-2025-05-04-12_50_11_h9oh8m.png",
-          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/c_thumb,w_200,g_face/v1746343280/screencapture-gunawardanamotors-pages-dev-2025-05-04-12_50_11_h9oh8m.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746343280/screencapture-gunawardanamotors-pages-dev-2025-05-04-12_50_11_h9oh8m.png",
           "description": "Bill Gen dashboard showing invoice management"
         },
         {
-          "original": "/images/projects/bill-gen-invoice.webp",
-          "thumbnail": "/images/projects/bill-gen-invoice-thumb.webp",
-          "description": "Invoice creation interface with encryption indicators"
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-inventory-report-2025-05-08-11_35_27_gx99ep.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-inventory-report-2025-05-08-11_35_27_gx99ep.png",
+          "description": "Bill Gen inventory report"
         },
         {
-          "original": "/images/projects/bill-gen-mobile.webp",
-          "thumbnail": "/images/projects/bill-gen-mobile-thumb.webp",
-          "description": "Mobile responsive view of the billing system"
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-bills-new-with-inventory-2025-05-08-11_36_12_yfygoc.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-bills-new-with-inventory-2025-05-08-11_36_12_yfygoc.png",
+          "description": "Bill Gen new bill with inventory"
         },
         {
-          "original": "/images/projects/bill-gen-settings.webp",
-          "thumbnail": "/images/projects/bill-gen-settings-thumb.webp",
-          "description": "GDPR compliance settings and data management"
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-bills-6818755608f9a9c6d8298d50-2025-05-08-11_38_12_tudg3t.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-bills-6818755608f9a9c6d8298d50-2025-05-08-11_38_12_tudg3t.png",
+          "description": "Bill Gen specific bill view"
         }
       ]
     },
@@ -69,19 +69,9 @@
       "projectId": 4,
       "images": [
         {
-          "original": "/images/projects/quotation-gen-main.webp",
-          "thumbnail": "/images/projects/quotation-gen-thumb.webp",
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684872/Screenshot_2025-05-08_114319_nvjep1.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684872/Screenshot_2025-05-08_114319_nvjep1.png",
           "description": "Quotation Generator interface"
-        },
-        {
-          "original": "/images/projects/quotation-gen-pdf.webp",
-          "thumbnail": "/images/projects/quotation-gen-pdf-thumb.webp",
-          "description": "Generated PDF quotation with branding"
-        },
-        {
-          "original": "/images/projects/quotation-gen-form.webp",
-          "thumbnail": "/images/projects/quotation-gen-form-thumb.webp",
-          "description": "Quotation form with dynamic pricing"
         }
       ]
     },
@@ -89,19 +79,9 @@
       "projectId": 5,
       "images": [
         {
-          "original": "/images/projects/portfolio-main.webp",
-          "thumbnail": "/images/projects/portfolio-thumb.webp",
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684872/Screenshot_2025-05-08_114319_nvjep1.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684872/Screenshot_2025-05-08_114319_nvjep1.png",
           "description": "Portfolio website hero section"
-        },
-        {
-          "original": "/images/projects/portfolio-projects.webp",
-          "thumbnail": "/images/projects/portfolio-projects-thumb.webp",
-          "description": "Projects showcase with interactive cards"
-        },
-        {
-          "original": "/images/projects/portfolio-mobile.webp",
-          "thumbnail": "/images/projects/portfolio-mobile-thumb.webp",
-          "description": "Mobile responsive view of the portfolio"
         }
       ]
     }

@@ -1,4 +1,4 @@
-# Uminda's Personal Portfolio
+# Uminda Aberathne's Personal Portfolio
 
 A professional, visually stunning, and interactive personal portfolio website showcasing my skills, work experience, and ambitions as a web developer, UI/UX designer, and entrepreneur.
 
@@ -30,8 +30,8 @@ A professional, visually stunning, and interactive personal portfolio website sh
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/personal-portfolio.git
-   cd personal-portfolio
+   git clone https://github.com/Spyboss/portfolio_NEW.git
+   cd portfolio_NEW
    ```
 
 2. **Install dependencies**
@@ -59,6 +59,7 @@ A professional, visually stunning, and interactive personal portfolio website sh
 ```
 personal-portfolio/
 ├── components/         # React components
+├── data/               # JSON data files (projects, gallery images)
 ├── pages/              # Next.js pages
 ├── public/             # Static assets
 │   └── images/         # Image files
@@ -70,8 +71,8 @@ personal-portfolio/
 ## 🎨 Customization
 
 - **Colors**: Edit the Tailwind configuration in `tailwind.config.js`
-- **Content**: Update personal information in the component files
-- **Images**: Replace images in the `public/images` directory
+- **Content**: Update personal information in the component files and project details in the `data/` directory.
+- **Images**: Replace images in the `public/images` directory or update URLs in `data/` files if using external hosting.
 
 ## 📱 Responsive Design
 
@@ -83,10 +84,9 @@ The portfolio is fully responsive and optimized for:
 
 ## 🚀 Deployment
 
-This project can be easily deployed to:
+This project is currently deployed on Cloudflare Pages. It can also be easily deployed to other platforms like:
 - Vercel
 - Netlify
-- GitHub Pages
 
 ## 📄 License
 
@@ -94,8 +94,8 @@ This project is licensed under the ISC License.
 
 ## 👨‍💻 Author
 
-**Uminda** - Web Developer, UI/UX Designer, and Entrepreneur
+**Uminda Aberathne** - Web Developer, UI/UX Designer, and Entrepreneur
 
 ---
 
-Made with ❤️ using Next.js & Tailwind CSS 
+Made with ❤️ using Next.js & Tailwind CSS

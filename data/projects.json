@@ -21,7 +21,7 @@
       "id": 2,
       "title": "P.U.L.S.E. – AI Agent Framework",
       "shortDescription": "An AI-powered personal workflow assistant with multi-model capabilities and GitHub integration.",
-      "description": "P.U.L.S.E. is a CLI-based AI orchestrator inspired by J.A.R.V.I.S., built to automate tasks like time queries and code debugging. Powered by Mistral-Small via OpenRouter, it uses MongoDB Atlas for chat persistence and pytz for accurate time zone handling (e.g., Sri Lanka's UTC+5:30). I overcame asynchronous API call failures by implementing SQLite caching, optimizing for my 8GB RAM setup. Key features include intent routing and a scalable multi-model system.",
+      "description": "P.U.L.S.E. (Prime Uminda's Learning System Engine) is a CLI-based AI orchestrator inspired by J.A.R.V.I.S., built to automate tasks like time queries and code debugging. Powered by Mistral-Small via OpenRouter, it uses MongoDB Atlas for chat persistence and pytz for accurate time zone handling (e.g., Sri Lanka's UTC+5:30). I overcame asynchronous API call failures by implementing SQLite caching, optimizing for my 8GB RAM setup. Key features include intent routing and a scalable multi-model system.",
       "image": "/images/projects/general-pulse-main.webp",
       "technologies": ["Python", "Mistral-Small", "MongoDB Atlas", "SQLite", "OpenRouter"],
       "features": [
@@ -56,7 +56,7 @@
       "title": "Quotation Generator",
       "shortDescription": "A professional quotation system with PDF generation for Gunawardana Motors.",
       "description": "Developed a web application for generating professional quotations with PDF export functionality for Gunawardana Motors. The system allows the business to create, manage, and track quotations for potential customers, streamlining the sales process. Built with React and Node.js, it features dynamic pricing calculations and branded PDF exports.",
-      "image": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684872/Screenshot_2025-05-08_114319_nvjep1.png",
+      "image": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746685863/screencapture-quotation-gen-production-up-railway-app-2025-05-08-11_54_44_yaqlhe.png",
       "technologies": ["React", "Puppeteer", "Node.js", "MongoDB", "Docker"],
       "features": [
         "Generate branded, professional PDF quotations",

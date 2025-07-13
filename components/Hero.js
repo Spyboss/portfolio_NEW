@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaFacebook, FaInstagram, FaWhatsapp, FaTelegram } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaFacebook, FaInstagram, FaWhatsapp, FaTelegram, FaRocket, FaCode, FaBrain } from 'react-icons/fa';
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
@@ -48,8 +48,23 @@ const Hero = () => {
     return () => clearTimeout(timer);
   }, [displayText, isDeleting, currentIndex, skills, typingSpeed]);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const highlights = [
+    { icon: FaRocket, text: "15+ Production Apps", subtext: "Serving 1000+ users" },
+    { icon: FaCode, text: "4+ Years Experience", subtext: "Modern tech stacks" },
+    { icon: FaBrain, text: "AI Integration", subtext: "Smart automation" }
+  ];
+
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden">
+    <>
+      {/* Main Hero Section */}
+      <section id="home" className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-20 h-20 bg-neon-cyan/10 rounded-full blur-xl"></div>
@@ -92,6 +107,25 @@ const Hero = () => {
             >
               Uminda Aberathne
             </motion.p>
+
+            {/* Highlights */}
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 max-w-2xl mx-auto"
+            >
+              {highlights.map((highlight, index) => {
+                const IconComponent = highlight.icon;
+                return (
+                  <div key={index} className="glass-card p-3 text-center">
+                    <IconComponent className="text-neon-cyan text-xl mx-auto mb-1" />
+                    <h3 className="text-white font-bold text-sm">{highlight.text}</h3>
+                    <p className="text-gray-400 text-xs">{highlight.subtext}</p>
+                  </div>
+                );
+              })}
+            </motion.div>
 
             <motion.div
               initial={{ y: 20, opacity: 0 }}
@@ -138,18 +172,18 @@ const Hero = () => {
             transition={{ delay: 1.1, duration: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 mt-6"
           >
-            <a
-              href="#projects"
+            <button
+              onClick={() => scrollToSection('projects')}
               className="px-6 py-3 bg-neon-cyan/10 hover:bg-neon-cyan/20 text-white border border-neon-cyan rounded-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,238,255,0.5)]"
             >
               View My Work
-            </a>
-            <a
-              href="#contact"
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
               className="px-6 py-3 bg-transparent hover:bg-white/5 text-white border border-white/30 hover:border-white rounded-full transition-all duration-300"
             >
-              Hire Me
-            </a>
+              Start Your Project
+            </button>
           </motion.div>
 
           {/* Scroll Down Indicator */}
@@ -173,6 +207,81 @@ const Hero = () => {
         </div>
       </div>
     </section>
+
+    {/* Client-Focused Value Proposition Section */}
+    <section className="py-20 bg-gradient-to-br from-blue-900 via-gray-900 to-blue-900">
+      <div className="container mx-auto px-4 md:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            I help businesses leverage modern technology to increase efficiency, reduce costs, and drive growth. 
+            From concept to deployment, I deliver solutions that make a real impact.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {[
+            {
+              title: "Reduce Operational Costs",
+              description: "Automate repetitive tasks and streamline workflows to save time and money",
+              icon: "💰",
+              stat: "40% average cost reduction"
+            },
+            {
+              title: "Scale Your Business",
+              description: "Build robust systems that grow with your business needs",
+              icon: "📈",
+              stat: "1000+ users supported"
+            },
+            {
+              title: "Stay Competitive",
+              description: "Leverage AI and modern tech to stay ahead of the competition",
+              icon: "🚀",
+              stat: "15+ successful launches"
+            }
+          ].map((benefit, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="glass-card p-8 text-center hover:scale-105 transition-transform duration-300"
+            >
+              <div className="text-5xl mb-4">{benefit.icon}</div>
+              <h3 className="text-2xl font-bold text-white mb-4">{benefit.title}</h3>
+              <p className="text-gray-300 mb-4">{benefit.description}</p>
+              <div className="text-neon-cyan font-bold">{benefit.stat}</div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <button
+            onClick={() => scrollToSection('contact')}
+            className="px-12 py-4 bg-gradient-to-r from-neon-cyan to-neon-magenta text-white font-bold text-lg rounded-lg hover:shadow-[0_0_25px_rgba(0,238,255,0.5)] transition-all duration-300 transform hover:scale-105"
+          >
+            Let's Discuss Your Project
+          </button>
+          <p className="text-gray-400 mt-4">Free consultation • No commitment required</p>
+        </motion.div>
+      </div>
+    </section>
+  </>
   );
 };
 

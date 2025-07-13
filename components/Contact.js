@@ -1,254 +1,352 @@
-import { useRef, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { FaEnvelope, FaLinkedin, FaTelegram, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
-
-const ContactMethod = ({ icon, title, value, link, delay }) => {
-  return (
-    <motion.a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      initial={{ y: 20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, delay }}
-      className="flex items-center gap-4 p-4 glass-card hover:border-neon-cyan transition-all duration-300"
-    >
-      <div className="w-12 h-12 rounded-full bg-neon-cyan/10 flex items-center justify-center text-neon-cyan text-xl flex-shrink-0">
-        {icon}
-      </div>
-      <div>
-        <h3 className="text-lg font-medium text-white">{title}</h3>
-        <p className="text-gray-300">{value}</p>
-      </div>
-    </motion.a>
-  );
-};
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaWhatsapp, FaTelegram, FaRocket, FaClock, FaCheckCircle } from 'react-icons/fa';
 
 const Contact = () => {
-  const sectionRef = useRef(null);
-  const formRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px 0px" });
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    projectType: '',
+    budget: '',
+    timeline: '',
     message: ''
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
-
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-
-      // Reset status after 5 seconds
-      setTimeout(() => {
-        setSubmitStatus(null);
-      }, 5000);
-    }, 1500);
+    // Handle form submission here
+    console.log('Form submitted:', formData);
   };
 
-  const contactMethods = [
+  const projectTypes = [
+    'Web Application',
+    'Mobile App',
+    'E-commerce Platform',
+    'AI Integration',
+    'Custom Software',
+    'Consultation',
+    'Other'
+  ];
+
+  const budgetRanges = [
+    '$1,000 - $5,000',
+    '$5,000 - $10,000',
+    '$10,000 - $25,000',
+    '$25,000+',
+    'Let\'s discuss'
+  ];
+
+  const timelines = [
+    '1-2 weeks',
+    '1 month',
+    '2-3 months',
+    '3+ months',
+    'Flexible'
+  ];
+
+  const processSteps = [
     {
-      icon: <FaEnvelope />,
-      title: 'Email',
-      value: 'uminda.h.aberathne@gmail.com',
-      link: 'mailto:uminda.h.aberathne@gmail.com'
+      icon: FaEnvelope,
+      title: 'Initial Contact',
+      description: 'Share your project details and requirements'
     },
     {
-      icon: <FaWhatsapp />,
-      title: 'WhatsApp',
-      value: '+94 71 342 7470',
-      link: 'https://api.whatsapp.com/send/?phone=94713427470&text&type=phone_number&app_absent=0'
+      icon: FaClock,
+      title: 'Free Consultation',
+      description: 'We discuss your goals and create a roadmap'
     },
     {
-      icon: <FaTelegram />,
-      title: 'Telegram',
-      value: '@UHAAHM',
-      link: 'https://t.me/UHAAHM'
+      icon: FaRocket,
+      title: 'Project Launch',
+      description: 'Development begins with regular updates'
     },
     {
-      icon: <FaMapMarkerAlt />,
-      title: 'Location',
-      value: 'Sri Lanka',
-      link: 'https://www.google.com/maps/place/Sri+Lanka'
+      icon: FaCheckCircle,
+      title: 'Delivery & Support',
+      description: 'Launch your solution with ongoing support'
     }
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-b from-deep-blue to-darker-blue" ref={sectionRef}>
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="contact" className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
+      <div className="container mx-auto px-6">
         <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={isInView ? { y: 0, opacity: 1 } : {}}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="section-title">Let's Build Something Together</h2>
-          <p className="max-w-2xl mx-auto text-gray-300">
-            Have a project in mind or want to discuss potential opportunities? I'd love to hear from you. I'm available for freelance web & app development, collaboration on product ideas, and technical consultations.
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Start Your Project?
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-8"></div>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Let's transform your business idea into a powerful digital solution. 
+            Get a free consultation and project roadmap tailored to your needs.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Form */}
-          <motion.div
-            initial={{ x: -50, opacity: 0 }}
-            animate={isInView ? { x: 0, opacity: 1 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="glass-card p-8"
-            ref={formRef}
-          >
-            <h3 className="text-2xl font-bold text-white mb-6 relative inline-block">
-              Send Me a Message
-              <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-neon-cyan"></span>
-            </h3>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-gray-300 mb-2">Your Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-darker-blue border border-gray-700 rounded-lg focus:outline-none focus:border-neon-cyan text-white transition-colors"
-                    placeholder="John Doe"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-gray-300 mb-2">Your Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-darker-blue border border-gray-700 rounded-lg focus:outline-none focus:border-neon-cyan text-white transition-colors"
-                    placeholder="john@example.com"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="subject" className="block text-gray-300 mb-2">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 bg-darker-blue border border-gray-700 rounded-lg focus:outline-none focus:border-neon-cyan text-white transition-colors"
-                  placeholder="Project Inquiry"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-gray-300 mb-2">Your Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 bg-darker-blue border border-gray-700 rounded-lg focus:outline-none focus:border-neon-cyan text-white transition-colors resize-none"
-                  placeholder="Hello, I'd like to discuss a project..."
-                ></textarea>
-              </div>
-
-              <div>
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`px-6 py-3 rounded-lg text-white font-medium transition-all duration-300 relative overflow-hidden group ${
-                    isSubmitting ? 'bg-gray-600 cursor-not-allowed' : 'bg-neon-cyan/20 hover:bg-neon-cyan/30 border border-neon-cyan/50'
-                  }`}
+        {/* Process Steps */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <h3 className="text-2xl font-bold text-white text-center mb-8">How We Work Together</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {processSteps.map((step, index) => {
+              const IconComponent = step.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="glass-card p-6 text-center"
                 >
-                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-neon-cyan to-neon-magenta opacity-0 group-hover:opacity-20 transition-opacity"></span>
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
-                </button>
+                  <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <IconComponent className="text-cyan-400 text-2xl" />
+                  </div>
+                  <h4 className="text-white font-bold mb-2">{step.title}</h4>
+                  <p className="text-gray-300 text-sm">{step.description}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
 
-                {submitStatus === 'success' && (
-                  <motion.p
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="mt-4 text-green-400"
-                  >
-                    Your message has been sent successfully!
-                  </motion.p>
-                )}
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Contact Info */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="space-y-8"
+          >
+            <div className="glass-card p-8">
+              <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
+              
+              <div className="space-y-6">
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-cyan-500/20 rounded-full flex items-center justify-center">
+                    <FaEnvelope className="text-cyan-400 text-xl" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold">Email</h4>
+                    <p className="text-gray-300">umindajayasooriya@gmail.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-cyan-500/20 rounded-full flex items-center justify-center">
+                    <FaMapMarkerAlt className="text-cyan-400 text-xl" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold">Location</h4>
+                    <p className="text-gray-300">Sri Lanka (Remote Worldwide)</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-cyan-500/20 rounded-full flex items-center justify-center">
+                    <FaClock className="text-cyan-400 text-xl" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold">Response Time</h4>
+                    <p className="text-gray-300">Within 24 hours</p>
+                  </div>
+                </div>
               </div>
-            </form>
+
+              <div className="mt-8">
+                <h4 className="text-white font-semibold mb-4">Connect With Me</h4>
+                <div className="flex space-x-4">
+                  <a
+                    href="https://github.com/Spyboss"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/20 transition-all duration-300"
+                  >
+                    <FaGithub />
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/uminda-jayasooriya"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/20 transition-all duration-300"
+                  >
+                    <FaLinkedin />
+                  </a>
+                  <a
+                    href="https://wa.me/94701234567"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/20 transition-all duration-300"
+                  >
+                    <FaWhatsapp />
+                  </a>
+                  <a
+                    href="https://t.me/umindajayasooriya"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/20 transition-all duration-300"
+                  >
+                    <FaTelegram />
+                  </a>
+                </div>
+              </div>
+
+              <div className="mt-8 p-4 bg-cyan-500/10 rounded-lg border border-cyan-500/20">
+                <h4 className="text-cyan-400 font-semibold mb-2">Free Consultation Available</h4>
+                <p className="text-gray-300 text-sm">
+                  Get expert advice on your project requirements, technology stack, and implementation strategy at no cost.
+                </p>
+              </div>
+            </div>
           </motion.div>
 
-          {/* Contact Methods */}
-          <div className="space-y-6">
-            <motion.h3
-              initial={{ x: 50, opacity: 0 }}
-              animate={isInView ? { x: 0, opacity: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-2xl font-bold text-white mb-6 relative inline-block"
-            >
-              Contact Information
-              <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-neon-cyan"></span>
-            </motion.h3>
+          {/* Enhanced Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <div className="glass-card p-8">
+              <h3 className="text-2xl font-bold text-white mb-6">Tell Me About Your Project</h3>
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="name" className="block text-white font-medium mb-2">
+                      Name *
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                      placeholder="Your Name"
+                    />
+                  </div>
 
-            <div className="space-y-4">
-              {contactMethods.map((method, idx) => (
-                <ContactMethod
-                  key={idx}
-                  {...method}
-                  delay={0.3 + idx * 0.1}
-                />
-              ))}
+                  <div>
+                    <label htmlFor="email" className="block text-white font-medium mb-2">
+                      Email *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                      placeholder="your.email@example.com"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="projectType" className="block text-white font-medium mb-2">
+                    Project Type
+                  </label>
+                  <select
+                    id="projectType"
+                    name="projectType"
+                    value={formData.projectType}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                  >
+                    <option value="">Select project type</option>
+                    {projectTypes.map((type, index) => (
+                      <option key={index} value={type}>{type}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="budget" className="block text-white font-medium mb-2">
+                      Budget Range
+                    </label>
+                    <select
+                      id="budget"
+                      name="budget"
+                      value={formData.budget}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                    >
+                      <option value="">Select budget range</option>
+                      {budgetRanges.map((range, index) => (
+                        <option key={index} value={range}>{range}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="timeline" className="block text-white font-medium mb-2">
+                      Timeline
+                    </label>
+                    <select
+                      id="timeline"
+                      name="timeline"
+                      value={formData.timeline}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                    >
+                      <option value="">Select timeline</option>
+                      {timelines.map((time, index) => (
+                        <option key={index} value={time}>{time}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-white font-medium mb-2">
+                    Project Details *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={5}
+                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors resize-none"
+                    placeholder="Describe your project goals, requirements, and any specific features you need..."
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25"
+                >
+                  Send Project Details
+                </button>
+
+                <p className="text-gray-400 text-sm text-center">
+                  I'll respond within 24 hours with a detailed project proposal
+                </p>
+              </form>
             </div>
-
-            <motion.div
-              initial={{ x: 50, opacity: 0 }}
-              animate={isInView ? { x: 0, opacity: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.7 }}
-              className="glass-card p-6 mt-8"
-            >
-              <h4 className="text-xl font-bold text-white mb-3">Available For</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-neon-cyan rounded-full"></span>
-                  <span>Freelance Web & App Development</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-neon-cyan rounded-full"></span>
-                  <span>Technical Consultations</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-neon-cyan rounded-full"></span>
-                  <span>Product Development Collaborations</span>
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-neon-cyan rounded-full"></span>
-                  <span>Long-term Business Partnerships</span>
-                </li>
-              </ul>
-            </motion.div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

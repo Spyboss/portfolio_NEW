@@ -1,0 +1,89 @@
+{
+  "projectGalleries": [
+    {
+      "projectId": 1,
+      "images": [
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746343280/screencapture-gunawardanamotors-pages-dev-2025-05-04-12_50_11_h9oh8m.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746343280/screencapture-gunawardanamotors-pages-dev-2025-05-04-12_50_11_h9oh8m.png",
+          "description": "Bill Gen dashboard showing invoice management"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-inventory-report-2025-05-08-11_35_27_gx99ep.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-inventory-report-2025-05-08-11_35_27_gx99ep.png",
+          "description": "Bill Gen inventory report"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-bills-new-with-inventory-2025-05-08-11_36_12_yfygoc.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-bills-new-with-inventory-2025-05-08-11_36_12_yfygoc.png",
+          "description": "Bill Gen new bill with inventory"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-bills-6818755608f9a9c6d8298d50-2025-05-08-11_38_12_tudg3t.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-bills-6818755608f9a9c6d8298d50-2025-05-08-11_38_12_tudg3t.png",
+          "description": "Bill Gen specific bill view"
+        }
+      ]
+    },
+    {
+      "projectId": 2,
+      "images": [
+        {
+          "original": "/images/projects/general-pulse-main.webp",
+          "thumbnail": "/images/projects/general-pulse-thumb.webp",
+          "description": "General Pulse CLI interface showing command execution"
+        },
+        {
+          "original": "/images/projects/general-pulse-code.webp",
+          "thumbnail": "/images/projects/general-pulse-code-thumb.webp",
+          "description": "Code structure showing the multi-model architecture"
+        },
+        {
+          "original": "/images/projects/general-pulse-terminal.webp",
+          "thumbnail": "/images/projects/general-pulse-terminal-thumb.webp",
+          "description": "Terminal view of General Pulse handling a complex query"
+        }
+      ]
+    },
+    {
+      "projectId": 3,
+      "images": [
+        {
+          "original": "/images/projects/yt-contest-main.webp",
+          "thumbnail": "/images/projects/yt-contest-thumb.webp",
+          "description": "YouTube Contest Platform dashboard"
+        },
+        {
+          "original": "/images/projects/yt-contest-metrics.webp",
+          "thumbnail": "/images/projects/yt-contest-metrics-thumb.webp",
+          "description": "Contestant metrics tracking and analytics"
+        },
+        {
+          "original": "/images/projects/yt-contest-mobile.webp",
+          "thumbnail": "/images/projects/yt-contest-mobile-thumb.webp",
+          "description": "Mobile view of the contest submission process"
+        }
+      ]
+    },
+    {
+      "projectId": 4,
+      "images": [
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746685863/screencapture-quotation-gen-production-up-railway-app-2025-05-08-11_54_44_yaqlhe.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746685863/screencapture-quotation-gen-production-up-railway-app-2025-05-08-11_54_44_yaqlhe.png",
+          "description": "Quotation Generator interface"
+        }
+      ]
+    },
+    {
+      "projectId": 5,
+      "images": [
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684872/Screenshot_2025-05-08_114319_nvjep1.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684872/Screenshot_2025-05-08_114319_nvjep1.png",
+          "description": "Portfolio website hero section"
+        }
+      ]
+    }
+  ]
+}

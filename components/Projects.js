@@ -17,8 +17,9 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
           loading="lazy"
+          style={{ imageRendering: 'crisp-edges' }}
         />
         {hasGallery && (
           <div className="absolute top-3 right-3 z-20">
@@ -29,19 +30,19 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
         )}
       </div>
       <div className="p-5">
-        <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-        <p className="text-gray-300 line-clamp-2 text-sm mb-4">{project.shortDescription}</p>
+        <h3 className="text-heading-4 text-white mb-2">{project.title}</h3>
+        <p className="text-body-small text-gray-300 line-clamp-2 mb-4">{project.shortDescription}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.technologies && project.technologies.slice(0, 3).map((tech, idx) => (
             <span
               key={idx}
-              className="px-2 py-1 text-xs rounded-full bg-deep-blue text-neon-cyan border border-neon-cyan/30"
+              className="px-2 py-1 text-caption rounded-full bg-deep-blue text-neon-cyan border border-neon-cyan/30"
             >
               {tech}
             </span>
           ))}
           {project.technologies && project.technologies.length > 3 && (
-            <span className="px-2 py-1 text-xs rounded-full bg-deep-blue text-gray-400">
+            <span className="px-2 py-1 text-caption rounded-full bg-deep-blue text-gray-400">
               +{project.technologies.length - 3}
             </span>
           )}
@@ -115,9 +116,9 @@ const ProjectModal = ({ project, closeModal, projectGalleries }) => {
 
         <div className="p-6 md:p-8">
           <div className="flex flex-wrap items-center justify-between mb-3">
-            <h2 className="text-2xl md:text-3xl font-bold text-white">{project.title}</h2>
+            <h2 className="text-heading-2 text-white">{project.title}</h2>
             {project.status && (
-              <span className="px-3 py-1 text-sm rounded-full bg-neon-cyan/20 text-neon-cyan border border-neon-cyan/30">
+              <span className="px-3 py-1 text-body-small rounded-full bg-neon-cyan/20 text-neon-cyan border border-neon-cyan/30">
                 {project.status}
               </span>
             )}
@@ -127,20 +128,20 @@ const ProjectModal = ({ project, closeModal, projectGalleries }) => {
             {project.technologies && project.technologies.map((tech, idx) => (
               <span
                 key={idx}
-                className="px-3 py-1 text-sm rounded-full bg-darker-blue text-neon-cyan border border-neon-cyan/30"
+                className="px-3 py-1 text-body-small rounded-full bg-darker-blue text-neon-cyan border border-neon-cyan/30"
               >
                 {tech}
               </span>
             ))}
           </div>
 
-          <p className="text-gray-300 mb-6 leading-relaxed">
+          <p className="text-body text-gray-300 mb-6 leading-relaxed">
             {project.description}
           </p>
 
           <div className="mb-6">
-            <h3 className="text-lg font-bold text-white mb-3">Key Features</h3>
-            <ul className="list-disc pl-5 text-gray-300 space-y-2">
+            <h3 className="text-heading-4 text-white mb-3">Key Features</h3>
+            <ul className="list-disc pl-5 text-body text-gray-300 space-y-2">
               {project.features && project.features.map((feature, idx) => (
                 <li key={idx}>{feature}</li>
               ))}
@@ -257,7 +258,7 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h2 className="section-title">My Projects</h2>
-          <p className="max-w-2xl mx-auto text-gray-300">
+          <p className="max-w-2xl mx-auto text-body-large text-gray-300">
             Here are some of my recent projects showcasing my skills and expertise in different areas of development and design.
           </p>
         </motion.div>
@@ -289,8 +290,8 @@ const Projects = () => {
               <div className="w-16 h-16 bg-neon-cyan/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaGithub className="text-2xl text-neon-cyan" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">More Projects</h3>
-              <p className="text-gray-300 mb-4">Explore more of my work on GitHub</p>
+              <h3 className="text-heading-4 text-white mb-2">More Projects</h3>
+              <p className="text-body text-gray-300 mb-4">Explore more of my work on GitHub</p>
               <a
                 href="https://github.com/Spyboss"
                 target="_blank"

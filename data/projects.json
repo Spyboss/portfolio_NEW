@@ -5,7 +5,7 @@
       "title": "Kuvera Crypto Bot",
       "shortDescription": "Automated crypto trading bot with smart strategies, real-time market data, and both testnet/live profits.",
       "description": "Advanced automated cryptocurrency trading bot built with Node.js and TypeScript. Features intelligent trading strategies, real-time market data analysis, and secure API integration with Binance. The system operates on both testnet and live environments, delivering consistent monthly profits through algorithmic trading strategies. Optimized for security, reliability, and performance with comprehensive error handling and risk management.",
-      "image": "/images/project-crypto.svg",
+      "image": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483051/screencapture-kuvera-production-up-railway-app-2025-07-14-14_20_14_fpgg8c.png",
       "technologies": ["Node.js", "TypeScript", "MongoDB", "Binance API", "WebSocket"],
       "features": [
         "Automated trading strategies with risk management",
@@ -23,7 +23,7 @@
       "title": "Realtaste Restaurant Platform",
       "shortDescription": "Modern ordering, feedback, and analytics platform for restaurants with digital menus and table-side ordering.",
       "description": "Comprehensive restaurant management platform built with React and Next.js. Features digital menu management, table-side ordering system, customer feedback collection, and detailed analytics dashboards. The platform streamlines restaurant operations while enhancing customer experience through modern UI/UX design and real-time order processing.",
-      "image": "/images/project-ecommerce.svg",
+      "image": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483182/screencapture-realtaste-pages-dev-2025-07-14-14_22_05_ncximj.png",
       "technologies": ["React", "Next.js", "MongoDB", "Supabase", "Tailwind CSS"],
       "features": [
         "Digital menu management with real-time updates",
@@ -41,7 +41,7 @@
       "title": "Echo Journal AI Habit Tracker",
       "shortDescription": "AI-powered journal and habit-tracking app with personalized insights and automated reminders.",
       "description": "Intelligent habit tracking and journaling application powered by AI. Built with React Native for cross-platform compatibility, the app provides personalized insights, automated reminders, and behavior suggestions based on user patterns. Features advanced analytics to help users build better routines and track their progress over time.",
-      "image": "/images/project-mobile-app.svg",
+      "image": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483572/screencapture-echo-echo-journal-hnzep-asia-east1-hosted-app-2025-07-14-14_28_56_pnpnbn.png",
       "technologies": ["React Native", "Node.js", "AI APIs", "MongoDB", "TypeScript"],
       "features": [
         "AI-powered personalized insights and recommendations",
@@ -59,7 +59,7 @@
       "title": "BillGen ERP CRM",
       "shortDescription": "Secure dealership billing & CRM system with PDF generation, encrypted client info, and reporting dashboards.",
       "description": "Comprehensive ERP and CRM system designed for auto dealerships. Features secure billing with PDF generation, encrypted client information storage, and detailed reporting dashboards. Built with React and Node.js, the system streamlines dealership operations while maintaining high security standards for sensitive customer data.",
-      "image": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746343280/screencapture-gunawardanamotors-pages-dev-2025-05-04-12_50_11_h9oh8m.png",
+      "image": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483995/screencapture-gunawardanamotors-pages-dev-2025-07-14-14_34_04_uyno4t.png",
       "technologies": ["React", "Node.js", "Puppeteer", "MongoDB", "JWT"],
       "features": [
         "Secure billing system with PDF generation",
@@ -77,7 +77,7 @@
       "title": "P.U.L.S.E. – AI Agent Framework",
       "shortDescription": "An AI-powered personal workflow assistant with multi-model capabilities and GitHub integration.",
       "description": "P.U.L.S.E. (Prime Uminda's Learning System Engine) is a CLI-based AI orchestrator inspired by J.A.R.V.I.S., built to automate tasks like time queries and code debugging. Powered by Mistral-Small via OpenRouter, it uses MongoDB Atlas for chat persistence and pytz for accurate time zone handling (e.g., Sri Lanka's UTC+5:30). I overcame asynchronous API call failures by implementing SQLite caching, optimizing for my 8GB RAM setup. Key features include intent routing and a scalable multi-model system.",
-      "image": "/images/project-chat-bot.svg",
+      "image": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484625/screencapture-agents-playground-livekit-io-2025-07-14-14_46_43_vifptz.png",
       "technologies": ["Python", "Mistral-Small", "MongoDB Atlas", "SQLite", "OpenRouter"],
       "features": [
         "Multi-model AI system with specialized models for different tasks",
@@ -95,7 +95,7 @@
       "title": "YT Contest Platform",
       "shortDescription": "A YouTube contest platform with automated metrics tracking and contestant management.",
       "description": "Created a streamlined platform for managing YouTube talent contests with automated metrics tracking and contestant management. The system integrates with YouTube's API to verify submissions, track engagement metrics, and manage the contest lifecycle. Built with Next.js 14 and Supabase, it provides a seamless experience for both contestants and administrators.",
-      "image": "/images/project-social.svg",
+      "image": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484764/download_uiv82t.jpg",
       "technologies": ["Next.js 14", "Tailwind CSS", "Supabase", "Prisma", "Clerk"],
       "features": [
         "YouTube API integration for video metrics and playlist management",

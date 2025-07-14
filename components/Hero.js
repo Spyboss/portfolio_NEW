@@ -94,7 +94,7 @@ const Hero = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="text-4xl md:text-5xl font-bold text-white mb-2"
+              className="text-heading-1 text-white mb-2"
             >
               <span className="text-neon-cyan">@</span>UHADEV
             </motion.h1>
@@ -103,7 +103,7 @@ const Hero = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="text-xl text-gray-300 mb-4"
+              className="text-body-large text-gray-300 mb-4"
             >
               Uminda Aberathne
             </motion.p>
@@ -120,8 +120,8 @@ const Hero = () => {
                 return (
                   <div key={index} className="glass-card p-3 text-center">
                     <IconComponent className="text-neon-cyan text-xl mx-auto mb-1" />
-                    <h3 className="text-white font-bold text-sm">{highlight.text}</h3>
-                    <p className="text-gray-400 text-xs">{highlight.subtext}</p>
+                    <h3 className="text-white font-bold text-body-small">{highlight.text}</h3>
+                    <p className="text-gray-400 text-caption">{highlight.subtext}</p>
                   </div>
                 );
               })}
@@ -131,7 +131,7 @@ const Hero = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.7, duration: 0.5 }}
-              className="text-2xl font-bold text-neon-cyan h-8"
+              className="text-heading-4 text-neon-cyan h-8 min-h-[2rem]"
             >
               {displayText}
             </motion.div>
@@ -218,10 +218,10 @@ const Hero = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-heading-1 text-white mb-6">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-body-large text-gray-300 max-w-3xl mx-auto">
             I help businesses leverage modern technology to increase efficiency, reduce costs, and drive growth. 
             From concept to deployment, I deliver solutions that make a real impact.
           </p>
@@ -257,9 +257,9 @@ const Hero = () => {
               className="glass-card p-8 text-center hover:scale-105 transition-transform duration-300"
             >
               <div className="text-5xl mb-4">{benefit.icon}</div>
-              <h3 className="text-2xl font-bold text-white mb-4">{benefit.title}</h3>
-              <p className="text-gray-300 mb-4">{benefit.description}</p>
-              <div className="text-neon-cyan font-bold">{benefit.stat}</div>
+              <h3 className="text-heading-3 text-white mb-4">{benefit.title}</h3>
+              <p className="text-body text-gray-300 mb-4">{benefit.description}</p>
+              <div className="text-neon-cyan font-bold text-body-small">{benefit.stat}</div>
             </motion.div>
           ))}
         </div>
@@ -273,11 +273,11 @@ const Hero = () => {
         >
           <button
             onClick={() => scrollToSection('contact')}
-            className="px-12 py-4 bg-gradient-to-r from-neon-cyan to-neon-magenta text-white font-bold text-lg rounded-lg hover:shadow-[0_0_25px_rgba(0,238,255,0.5)] transition-all duration-300 transform hover:scale-105"
+            className="px-12 py-4 bg-gradient-to-r from-neon-cyan to-neon-magenta text-white font-bold text-body-large rounded-lg hover:shadow-[0_0_25px_rgba(0,238,255,0.5)] transition-all duration-300 transform hover:scale-105"
           >
             Let's Discuss Your Project
           </button>
-          <p className="text-gray-400 mt-4">Free consultation • No commitment required</p>
+          <p className="text-body-small text-gray-400 mt-4">Free consultation • No commitment required</p>
         </motion.div>
       </div>
     </section>

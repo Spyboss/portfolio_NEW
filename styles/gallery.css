@@ -43,12 +43,89 @@
 .image-gallery-icon {
   color: #00eeff;
   filter: drop-shadow(0 0 5px rgba(0, 238, 255, 0.5));
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
 }
 
-.image-gallery-fullscreen-button,
+/* Fix positioning to prevent overlap */
+.image-gallery-fullscreen-button {
+  position: absolute !important;
+  top: 16px !important;
+  right: 16px !important;
+  z-index: 15 !important;
+  width: 40px !important;
+  height: 40px !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background-color 0.3s ease !important;
+  color: white !important;
+  pointer-events: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.image-gallery-fullscreen-button:hover {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
 .image-gallery-play-button {
-  bottom: auto;
-  top: 0;
+  position: absolute !important;
+  top: 16px !important;
+  right: 70px !important;
+  z-index: 15 !important;
+  width: 40px !important;
+  height: 40px !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background-color 0.3s ease !important;
+  color: white !important;
+  pointer-events: auto !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.image-gallery-play-button:hover {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
+/* Navigation arrows positioning - center on sides, completely separate from top buttons */
+.image-gallery-left-nav {
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 12;
+  position: absolute !important;
+  pointer-events: auto;
+}
+
+.image-gallery-right-nav {
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 12;
+  position: absolute !important;
+  pointer-events: auto;
+}
+
+/* Ensure SVG elements don't interfere with each other */
+.image-gallery-fullscreen-button svg,
+.image-gallery-play-button svg {
+  pointer-events: none;
+  fill: currentColor !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.image-gallery-left-nav svg,
+.image-gallery-right-nav svg {
+  pointer-events: none;
 }
 
 /* Responsive adjustments */
@@ -64,5 +141,24 @@
   .image-gallery-description {
     font-size: 12px;
     padding: 8px;
+  }
+  
+  /* Adjust button spacing on mobile */
+  .image-gallery-fullscreen-button {
+    top: 5px;
+    right: 5px;
+  }
+  
+  .image-gallery-play-button {
+    top: 5px;
+    right: 50px;
+  }
+  
+  .image-gallery-left-nav {
+    left: 5px;
+  }
+  
+  .image-gallery-right-nav {
+    right: 5px;
   }
 }

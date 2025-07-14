@@ -5,7 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg-gradient: linear-gradient(to bottom, #0a101e, #121a2f);
+  /* Optimized background gradients */
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #334155 100%);
+  --bg-gradient-dark: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e293b 100%);
+  --bg-gradient-subtle: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
   --card-glass: rgba(15, 23, 42, 0.6);
   --neon-cyan: #00eeff;
   --neon-magenta: #ff00ff;
@@ -19,10 +22,14 @@ html {
 body {
   font-family: 'Inter', 'Poppins', system-ui, sans-serif;
   background: var(--bg-gradient);
-  color: white;
+  background-attachment: fixed;
+  color: #e2e8f0;
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
 body::before {
@@ -53,6 +60,9 @@ body::before {
   
   .section-title {
     @apply text-3xl md:text-4xl font-bold mb-6 text-white relative inline-block;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 700;
   }
   
   .section-title::after {
@@ -64,4 +74,72 @@ body::before {
     background: radial-gradient(circle, var(--neon-cyan) 0%, transparent 70%);
     transform: translate(-50%, -50%);
   }
-} 
+  
+  /* Typography System */
+  .text-heading-1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+  
+  .text-heading-2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  
+  .text-heading-3 {
+    font-size: 2rem;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+  
+  .text-heading-4 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+  
+  .text-body-large {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  
+  .text-body {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  
+  .text-body-small {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+  
+  .text-caption {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+  
+  /* Responsive Typography */
+  @media (max-width: 768px) {
+    .text-heading-1 {
+      font-size: 2.5rem;
+    }
+    
+    .text-heading-2 {
+      font-size: 2rem;
+    }
+    
+    .text-heading-3 {
+      font-size: 1.75rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+}

@@ -4,24 +4,9 @@
       "projectId": 1,
       "images": [
         {
-          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746343280/screencapture-gunawardanamotors-pages-dev-2025-05-04-12_50_11_h9oh8m.png",
-          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746343280/screencapture-gunawardanamotors-pages-dev-2025-05-04-12_50_11_h9oh8m.png",
-          "description": "Bill Gen dashboard showing invoice management"
-        },
-        {
-          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-inventory-report-2025-05-08-11_35_27_gx99ep.png",
-          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-inventory-report-2025-05-08-11_35_27_gx99ep.png",
-          "description": "Bill Gen inventory report"
-        },
-        {
-          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-bills-new-with-inventory-2025-05-08-11_36_12_yfygoc.png",
-          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-bills-new-with-inventory-2025-05-08-11_36_12_yfygoc.png",
-          "description": "Bill Gen new bill with inventory"
-        },
-        {
-          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-bills-6818755608f9a9c6d8298d50-2025-05-08-11_38_12_tudg3t.png",
-          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684565/screencapture-gunawardanamotors-pages-dev-bills-6818755608f9a9c6d8298d50-2025-05-08-11_38_12_tudg3t.png",
-          "description": "Bill Gen specific bill view"
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483051/screencapture-kuvera-production-up-railway-app-2025-07-14-14_20_14_fpgg8c.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483051/screencapture-kuvera-production-up-railway-app-2025-07-14-14_20_14_fpgg8c.png",
+          "description": "Kuvera Crypto Bot dashboard interface"
         }
       ]
     },
@@ -29,19 +14,34 @@
       "projectId": 2,
       "images": [
         {
-          "original": "/images/projects/general-pulse-main.webp",
-          "thumbnail": "/images/projects/general-pulse-thumb.webp",
-          "description": "General Pulse CLI interface showing command execution"
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483182/screencapture-realtaste-pages-dev-2025-07-14-14_22_05_ncximj.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483182/screencapture-realtaste-pages-dev-2025-07-14-14_22_05_ncximj.png",
+          "description": "Realtaste Restaurant Platform main page"
         },
         {
-          "original": "/images/projects/general-pulse-code.webp",
-          "thumbnail": "/images/projects/general-pulse-code-thumb.webp",
-          "description": "Code structure showing the multi-model architecture"
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483232/screencapture-realtaste-pages-dev-checkout-2025-07-14-14_23_37_qjvwn4.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483232/screencapture-realtaste-pages-dev-checkout-2025-07-14-14_23_37_qjvwn4.png",
+          "description": "Realtaste checkout process"
         },
         {
-          "original": "/images/projects/general-pulse-terminal.webp",
-          "thumbnail": "/images/projects/general-pulse-terminal-thumb.webp",
-          "description": "Terminal view of General Pulse handling a complex query"
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483286/screencapture-realtaste-pages-dev-checkout-2025-07-14-14_24_21_vuzvis.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483286/screencapture-realtaste-pages-dev-checkout-2025-07-14-14_24_21_vuzvis.png",
+          "description": "Realtaste order confirmation"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483332/screencapture-realtaste-pages-dev-payment-success-2025-07-14-14_25_19_vpslrn.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483332/screencapture-realtaste-pages-dev-payment-success-2025-07-14-14_25_19_vpslrn.png",
+          "description": "Realtaste payment success page"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483365/screencapture-realtaste-pages-dev-admin-2025-07-14-14_25_52_yywb4r.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483365/screencapture-realtaste-pages-dev-admin-2025-07-14-14_25_52_yywb4r.png",
+          "description": "Realtaste admin dashboard"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483387/screencapture-realtaste-pages-dev-admin-2025-07-14-14_26_17_epbztv.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483387/screencapture-realtaste-pages-dev-admin-2025-07-14-14_26_17_epbztv.png",
+          "description": "Realtaste admin management interface"
         }
       ]
     },
@@ -49,19 +49,14 @@
       "projectId": 3,
       "images": [
         {
-          "original": "/images/projects/yt-contest-main.webp",
-          "thumbnail": "/images/projects/yt-contest-thumb.webp",
-          "description": "YouTube Contest Platform dashboard"
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483572/screencapture-echo-echo-journal-hnzep-asia-east1-hosted-app-2025-07-14-14_28_56_pnpnbn.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483572/screencapture-echo-echo-journal-hnzep-asia-east1-hosted-app-2025-07-14-14_28_56_pnpnbn.png",
+          "description": "Echo Journal AI Habit Tracker main dashboard"
         },
         {
-          "original": "/images/projects/yt-contest-metrics.webp",
-          "thumbnail": "/images/projects/yt-contest-metrics-thumb.webp",
-          "description": "Contestant metrics tracking and analytics"
-        },
-        {
-          "original": "/images/projects/yt-contest-mobile.webp",
-          "thumbnail": "/images/projects/yt-contest-mobile-thumb.webp",
-          "description": "Mobile view of the contest submission process"
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483579/screencapture-echo-echo-journal-hnzep-asia-east1-hosted-app-weekly-reflection-2025-07-14-14_29_13_m86s5m.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483579/screencapture-echo-echo-journal-hnzep-asia-east1-hosted-app-weekly-reflection-2025-07-14-14_29_13_m86s5m.png",
+          "description": "Echo Journal weekly reflection interface"
         }
       ]
     },
@@ -69,9 +64,69 @@
       "projectId": 4,
       "images": [
         {
-          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746685863/screencapture-quotation-gen-production-up-railway-app-2025-05-08-11_54_44_yaqlhe.png",
-          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746685863/screencapture-quotation-gen-production-up-railway-app-2025-05-08-11_54_44_yaqlhe.png",
-          "description": "Quotation Generator interface"
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483989/screencapture-gunawardanamotors-pages-dev-login-2025-07-14-14_34_18_fydwr8.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483989/screencapture-gunawardanamotors-pages-dev-login-2025-07-14-14_34_18_fydwr8.png",
+          "description": "BillGen ERP CRM login interface"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483995/screencapture-gunawardanamotors-pages-dev-2025-07-14-14_34_04_uyno4t.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483995/screencapture-gunawardanamotors-pages-dev-2025-07-14-14_34_04_uyno4t.png",
+          "description": "BillGen ERP CRM main dashboard"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484010/screencapture-gunawardanamotors-pages-dev-bills-2025-07-14-14_34_35_kj8civ.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484010/screencapture-gunawardanamotors-pages-dev-bills-2025-07-14-14_34_35_kj8civ.png",
+          "description": "BillGen bills management interface"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484016/screencapture-gunawardanamotors-pages-dev-bills-686bc5897cf0f1e0b7b0f3f9-2025-07-14-14_34_47_pxlhkx.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484016/screencapture-gunawardanamotors-pages-dev-bills-686bc5897cf0f1e0b7b0f3f9-2025-07-14-14_34_47_pxlhkx.png",
+          "description": "BillGen specific bill view"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484022/screencapture-gunawardanamotors-pages-dev-bills-new-with-inventory-2025-07-14-14_35_00_aq14lf.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484022/screencapture-gunawardanamotors-pages-dev-bills-new-with-inventory-2025-07-14-14_35_00_aq14lf.png",
+          "description": "BillGen new bill with inventory"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484033/screencapture-gunawardanamotors-pages-dev-quotations-2025-07-14-14_35_08_qchgef.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484033/screencapture-gunawardanamotors-pages-dev-quotations-2025-07-14-14_35_08_qchgef.png",
+          "description": "BillGen quotations management"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484042/screencapture-gunawardanamotors-pages-dev-quotations-684d27b6156c550f3b1eaf25-2025-07-14-14_35_22_oe46ad.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484042/screencapture-gunawardanamotors-pages-dev-quotations-684d27b6156c550f3b1eaf25-2025-07-14-14_35_22_oe46ad.png",
+          "description": "BillGen quotation details view"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484050/screencapture-gunawardanamotors-pages-dev-inventory-2025-07-14-14_35_32_pgcwah.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484050/screencapture-gunawardanamotors-pages-dev-inventory-2025-07-14-14_35_32_pgcwah.png",
+          "description": "BillGen inventory management"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484055/screencapture-gunawardanamotors-pages-dev-admin-bike-models-2025-07-14-14_35_39_mz36pc.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484055/screencapture-gunawardanamotors-pages-dev-admin-bike-models-2025-07-14-14_35_39_mz36pc.png",
+          "description": "BillGen bike models administration"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484061/screencapture-gunawardanamotors-pages-dev-settings-2025-07-14-14_35_54_fkzmoi.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484061/screencapture-gunawardanamotors-pages-dev-settings-2025-07-14-14_35_54_fkzmoi.png",
+          "description": "BillGen settings configuration"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484072/screencapture-gunawardanamotors-pages-dev-inventory-report-2025-07-14-14_36_06_cn79hn.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484072/screencapture-gunawardanamotors-pages-dev-inventory-report-2025-07-14-14_36_06_cn79hn.png",
+          "description": "BillGen inventory report"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484171/screencapture-file-C-Users-umind-OneDrive-Desktop-bill-686b7f8f7cf0f1e0b7b0f3bd-pdf-2025-07-14-14_39_18_gsejij.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484171/screencapture-file-C-Users-umind-OneDrive-Desktop-bill-686b7f8f7cf0f1e0b7b0f3bd-pdf-2025-07-14-14_39_18_gsejij.png",
+          "description": "BillGen generated PDF bill"
+        },
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484138/screencapture-file-C-Users-umind-OneDrive-Desktop-GM-invoice-GM-INV-20250714-561-pdf-2025-07-14-14_38_44_aojgrp.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484138/screencapture-file-C-Users-umind-OneDrive-Desktop-GM-invoice-GM-INV-20250714-561-pdf-2025-07-14-14_38_44_aojgrp.png",
+          "description": "BillGen generated PDF invoice"
         }
       ]
     },
@@ -79,11 +134,22 @@
       "projectId": 5,
       "images": [
         {
-          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684872/Screenshot_2025-05-08_114319_nvjep1.png",
-          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1746684872/Screenshot_2025-05-08_114319_nvjep1.png",
-          "description": "Portfolio website hero section"
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484625/screencapture-agents-playground-livekit-io-2025-07-14-14_46_43_vifptz.png",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484625/screencapture-agents-playground-livekit-io-2025-07-14-14_46_43_vifptz.png",
+          "description": "P.U.L.S.E. AI Agent Framework interface"
+        }
+      ]
+    },
+    {
+      "projectId": 6,
+      "images": [
+        {
+          "original": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484764/download_uiv82t.jpg",
+          "thumbnail": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752484764/download_uiv82t.jpg",
+          "description": "YT Contest Platform interface"
         }
       ]
     }
+
   ]
 }

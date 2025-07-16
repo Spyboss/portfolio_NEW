@@ -111,8 +111,9 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
-      <div className="container mx-auto px-6">
+    <section id="about" className="section-spacing bg-gradient-to-br from-black via-dark-blue to-black relative overflow-hidden">
+      <div className="absolute inset-0 bg-noise-overlay opacity-[0.02] pointer-events-none"></div>
+      <div className="container-spacing">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -120,10 +121,9 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="section-title">
             Who I Am
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-8"></div>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
@@ -135,8 +135,8 @@ const About = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="glass-card p-8">
-              <h3 className="text-2xl font-bold text-white mb-4">About Me</h3>
+            <div className="glass-card">
+              <h3 className="text-heading-3 text-white">About Me</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
                 I'm a passionate full-stack developer with over 4 years of experience 
                 building modern web applications. My journey started with Python and has 
@@ -154,8 +154,8 @@ const About = () => {
             </div>
 
             {/* Recent Achievements */}
-            <div className="glass-card p-8">
-              <h3 className="text-2xl font-bold text-white mb-4">Recent Achievements</h3>
+            <div className="glass-card">
+              <h3 className="text-heading-3 text-white">Recent Achievements</h3>
               <ul className="space-y-3">
                 {achievements.map((achievement, index) => (
                   <motion.li
@@ -166,7 +166,7 @@ const About = () => {
                     viewport={{ once: true }}
                     className="flex items-start gap-3 text-gray-300"
                   >
-                    <span className="text-cyan-400 mt-1">✓</span>
+                    <span className="text-blue-300 mt-1 shadow-sm shadow-blue-400/50">✓</span>
                     <span>{achievement}</span>
                   </motion.li>
                 ))}
@@ -181,50 +181,27 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl font-bold text-white mb-12 text-center">My Journey</h3>
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent mb-12 text-center">My Journey</h3>
             <div className="relative">
-              {/* Timeline Line */}
-              <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-500 rounded-full"></div>
-              
               <div className="space-y-8">
                 {timelineData.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.15 }}
-                    viewport={{ once: true }}
-                    className="timeline-item group"
-                  >
-                    {/* Enhanced Timeline Dot with Icon */}
-                    <div className={`timeline-dot flex items-center justify-center text-white text-xl bg-gradient-to-r ${item.color} shadow-lg`}>
-                      {item.icon}
+                  <div key={index} className="timeline-item">
+                    <div className="timeline-dot">
+                      <span>{item.icon}</span>
                     </div>
-                    
-                    {/* Enhanced Timeline Content */}
-                    <div className="glass-card p-8 ml-4 group-hover:bg-white/8 transition-all duration-300">
-                      <div className="flex items-center gap-4 mb-4">
-                        <span className={`text-2xl font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
-                          {item.year}
-                        </span>
-                        <div className="h-px flex-1 bg-gradient-to-r from-cyan-400/50 to-transparent"></div>
-                      </div>
-                      
-                      <h4 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300">
-                        {item.title}
-                      </h4>
-                      
-                      <p className="text-gray-300 mb-4 leading-relaxed">
-                        {item.description}
-                      </p>
-                      
-                      {/* Achievement Badge */}
-                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full border border-cyan-400/30">
-                        <span className="text-cyan-400 text-sm">🏆</span>
-                        <span className="text-cyan-300 text-sm font-medium">{item.achievement}</span>
-                      </div>
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-2xl font-bold text-blue-400">{item.year}</span>
+                      <div className="h-px bg-gradient-to-r from-blue-400/50 to-purple-400/50 flex-1"></div>
                     </div>
-                  </motion.div>
+                    <h4 className="text-xl font-semibold text-white mb-2">{item.title}</h4>
+                    <p className="text-gray-300 mb-4">{item.description}</p>
+                    {item.achievement && (
+                      <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-full px-4 py-2 text-sm text-blue-300">
+                        <span className="text-yellow-400">🏆</span>
+                        {item.achievement}
+                      </div>
+                    )}
+                  </div>
                 ))}
               </div>
             </div>
@@ -239,8 +216,8 @@ const About = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h3 className="text-3xl font-bold text-white text-center mb-12">Core Skills</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent text-center mb-12">Core Skills</h3>
+          <div className="card-grid">
             {coreSkills.map((skillGroup, index) => (
               <motion.div
                 key={index}
@@ -250,12 +227,12 @@ const About = () => {
                 viewport={{ once: true }}
                 className="glass-card p-6 text-center"
               >
-                <h4 className="text-xl font-bold text-cyan-400 mb-4">{skillGroup.category}</h4>
+                <h4 className="text-xl font-bold text-blue-300 mb-4">{skillGroup.category}</h4>
                 <div className="space-y-2">
                   {skillGroup.skills.map((skill, skillIndex) => (
                     <span
                       key={skillIndex}
-                      className="inline-block bg-gray-800/50 text-gray-300 px-3 py-1 rounded-full text-sm mr-2 mb-2"
+                      className="inline-block bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-200 px-3 py-1 rounded-full text-sm mr-2 mb-2 border border-blue-400/30 backdrop-blur-sm hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-200"
                     >
                       {skill}
                     </span>
@@ -273,8 +250,8 @@ const About = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl font-bold text-white mb-12 text-center">What I Can Do For You</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent mb-12 text-center">What I Can Do For You</h3>
+          <div className="card-grid">
             {services.map((service, index) => (
               <motion.div
                 key={index}
@@ -284,14 +261,14 @@ const About = () => {
                 viewport={{ once: true }}
                 className="group relative"
               >
-                <div className={`glass-card p-8 h-full hover:bg-white/10 transition-all duration-300 border border-transparent hover:border-cyan-400/30 bg-gradient-to-br ${service.bgColor}`}>
-                  {/* Icon with gradient background */}
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <span className="text-2xl">{service.icon}</span>
+                <div className="glass-card p-8 h-full group-hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
+                  {/* Icon with subtle background */}
+                  <div className="w-16 h-16 rounded-xl bg-black/80 border-2 border-blue-500/60 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/30">
+                    <span className="text-3xl">{service.icon}</span>
                   </div>
                   
                   {/* Service Title */}
-                  <h4 className={`text-xl font-bold mb-4 bg-gradient-to-r ${service.color} bg-clip-text text-transparent group-hover:text-white transition-all duration-300`}>
+                  <h4 className="text-xl font-bold mb-4 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent group-hover:text-white transition-all duration-300">
                     {service.title}
                   </h4>
                   
@@ -302,10 +279,10 @@ const About = () => {
                   
                   {/* Process Overview */}
                   <div className="space-y-3">
-                    <h5 className="text-sm font-semibold text-cyan-300 mb-3">Process Overview:</h5>
+                    <h5 className="text-sm font-semibold text-blue-300 mb-3">Process Overview:</h5>
                     {service.process.map((step, stepIndex) => (
                       <div key={stepIndex} className="flex items-center gap-3">
-                        <div className={`w-6 h-6 rounded-full bg-gradient-to-r ${service.color} flex items-center justify-center text-xs font-bold text-white`}>
+                        <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-xs font-bold text-white shadow-sm shadow-blue-500/30">
                           {stepIndex + 1}
                         </div>
                         <span className="text-sm text-gray-300 group-hover:text-gray-200 transition-colors duration-300">
@@ -316,7 +293,7 @@ const About = () => {
                   </div>
                   
                   {/* Hover Effect Overlay */}
-                  <div className={`absolute inset-0 bg-gradient-to-r ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl`}></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none"></div>
                 </div>
               </motion.div>
             ))}

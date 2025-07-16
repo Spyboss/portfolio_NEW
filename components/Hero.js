@@ -64,7 +64,7 @@ const Hero = () => {
   return (
     <>
       {/* Main Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-center justify-center section-spacing overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-20 h-20 bg-neon-cyan/10 rounded-full blur-xl"></div>
@@ -72,14 +72,18 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-neon-green/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 z-10">
+      <div className="container-spacing z-10">
         <div className="flex flex-col items-center justify-center text-center">
           {/* Profile Card */}
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="glass-card p-8 mb-8 w-full max-w-md neon-glow"
+            className="glass-card w-full max-w-md transition-all duration-300"
+            whileHover={{ 
+              scale: 1.02,
+              boxShadow: "0 25px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(56, 189, 248, 0.4)"
+            }}
           >
             <div className="relative w-32 h-32 mx-auto mb-6">
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-neon-cyan to-neon-magenta animate-pulse-slow"></div>
@@ -94,7 +98,7 @@ const Hero = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="text-heading-1 text-white mb-2"
+              className="text-heading-1 text-white"
             >
               <span className="text-neon-cyan">@</span>UHADEV
             </motion.h1>
@@ -103,13 +107,13 @@ const Hero = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="text-body-large text-gray-300 mb-4"
+              className="text-body-large text-gray-300"
             >
               Uminda Aberathne
             </motion.p>
 
             {/* Enhanced Profile Stats */}
-            <div className="bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-sm rounded-xl p-6 mb-8 border border-cyan-400/20">
+            <div className="bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-sm rounded-xl p-6 mb-8 mt-6 border border-cyan-400/20">
               <div className="grid grid-cols-3 gap-6">
                 <div className="text-center group">
                   <div className="text-3xl md:text-4xl font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300">4+</div>
@@ -131,7 +135,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(6, 182, 212, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-              className="w-full bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg hover:from-cyan-300 hover:to-blue-400 transition-all duration-300 mb-6"
+              className="w-full btn-primary"
             >
               Get Started Now
             </motion.button>
@@ -141,16 +145,25 @@ const Hero = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.5 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 max-w-2xl mx-auto"
+              className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6 max-w-2xl mx-auto mt-8"
             >
               {highlights.map((highlight, index) => {
                 const IconComponent = highlight.icon;
                 return (
-                  <div key={index} className="glass-card p-3 text-center">
-                    <IconComponent className="text-neon-cyan text-xl mx-auto mb-1" />
-                    <h3 className="text-white font-bold text-body-small">{highlight.text}</h3>
-                    <p className="text-gray-400 text-caption">{highlight.subtext}</p>
-                  </div>
+                  <motion.div 
+                    key={index} 
+                    className="glass-card p-3 text-center group transition-all duration-300 hover:shadow-2xl"
+                    whileHover={{ 
+                      scale: 1.08,
+                      rotateY: 8,
+                      boxShadow: "0 30px 60px rgba(0, 0, 0, 0.8), 0 0 50px rgba(56, 189, 248, 0.5), 0 0 20px rgba(6, 182, 212, 0.3)"
+                    }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                  >
+                    <IconComponent className="text-neon-cyan text-xl mx-auto mb-1 group-hover:scale-125 group-hover:text-cyan-300 group-hover:drop-shadow-[0_0_10px_rgba(6,182,212,0.8)] transition-all duration-400" />
+                    <h3 className="text-white font-bold text-body-small group-hover:text-cyan-100 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all duration-300">{highlight.text}</h3>
+                    <p className="text-gray-400 text-caption group-hover:text-gray-200 transition-all duration-300">{highlight.subtext}</p>
+                  </motion.div>
                 );
               })}
             </motion.div>
@@ -172,13 +185,12 @@ const Hero = () => {
               className="flex justify-center space-x-4 mt-6"
             >
               {[
-                // Make GitHub and LinkedIn more prominent
-                { icon: <FaGithub />, href: 'https://github.com/Spyboss', color: 'hover:text-gray-300', className: 'text-2xl text-neon-cyan' },
-                { icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/uminda-hansana-a3b6021b3/', color: 'hover:text-blue-400', className: 'text-2xl text-neon-cyan' },
+                { icon: <FaGithub />, href: 'https://github.com/Spyboss', color: 'hover:text-white', className: 'text-2xl text-gray-400' },
+                { icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/uminda-hansana-a3b6021b3/', color: 'hover:text-blue-400', className: 'text-2xl text-gray-400' },
                 { icon: <FaFacebook />, href: 'https://web.facebook.com/uminda.aberathne', color: 'hover:text-blue-500', className: 'text-2xl text-gray-400' },
                 { icon: <FaInstagram />, href: 'https://www.instagram.com/uhadev007/', color: 'hover:text-pink-500', className: 'text-2xl text-gray-400' },
                 { icon: <FaWhatsapp />, href: 'https://api.whatsapp.com/send/?phone=94713427470&text&type=phone_number&app_absent=0', color: 'hover:text-green-500', className: 'text-2xl text-gray-400' },
-                { icon: <FaTelegram />, href: 'https://t.me/UHAAHM', color: 'hover:text-blue-300', className: 'text-2xl text-gray-400' }
+                { icon: <FaTelegram />, href: 'https://t.me/UHAAHM', color: 'hover:text-blue-400', className: 'text-2xl text-gray-400' }
               ].map((social, index) => (
                 <a
                   key={index}
@@ -200,18 +212,22 @@ const Hero = () => {
             transition={{ delay: 1.1, duration: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 mt-6"
           >
-            <button
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection('projects')}
-              className="px-6 py-3 bg-neon-cyan/10 hover:bg-neon-cyan/20 text-white border border-neon-cyan rounded-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(0,238,255,0.5)]"
+              className="btn-primary"
             >
               View My Work
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={() => scrollToSection('contact')}
-              className="px-6 py-3 bg-transparent hover:bg-white/5 text-white border border-white/30 hover:border-white rounded-full transition-all duration-300"
+              className="btn-secondary"
             >
               Start Your Project
-            </button>
+            </motion.button>
           </motion.div>
 
           {/* Scroll Down Indicator */}
@@ -237,8 +253,8 @@ const Hero = () => {
     </section>
 
     {/* Client-Focused Value Proposition Section */}
-    <section className="py-20 bg-gradient-to-br from-blue-900 via-gray-900 to-blue-900">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="section-spacing bg-gradient-to-br from-blue-900 via-gray-900 to-blue-900">
+      <div className="container-spacing">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -255,7 +271,7 @@ const Hero = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="card-grid mb-16">
           {[
             {
               title: "Reduce Operational Costs",
@@ -299,12 +315,14 @@ const Hero = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <button
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={() => scrollToSection('contact')}
-            className="px-12 py-4 bg-gradient-to-r from-neon-cyan to-neon-magenta text-white font-bold text-body-large rounded-lg hover:shadow-[0_0_25px_rgba(0,238,255,0.5)] transition-all duration-300 transform hover:scale-105"
+            className="btn-primary"
           >
             Let's Discuss Your Project
-          </button>
+          </motion.button>
           <p className="text-body-small text-gray-400 mt-4">Free consultation • No commitment required</p>
         </motion.div>
       </div>

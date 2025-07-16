@@ -21,9 +21,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-darker-blue border-t border-gray-800">
-      <div className="container mx-auto px-4 md:px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <footer className="bg-black border-t border-blue-400/30">
+      <div className="container-spacing">
+        <div className="card-grid">
           {/* Logo & Description */}
           <div className="md:col-span-1">
             <motion.div
@@ -32,11 +32,11 @@ const Footer = () => {
               transition={{ duration: 0.5 }}
               className="mb-4"
             >
-              <h2 className="text-2xl font-bold text-white">
-                <span className="text-neon-cyan">@</span>UHADEV
+              <h2 className="text-heading-2 text-white">
+                <span className="text-blue-300">@</span>UHADEV
               </h2>
             </motion.div>
-            <p className="text-gray-400 mb-4">
+            <p className="text-body text-gray-400">
               Uminda Aberathne - Full-Stack Developer, Freelancer, and Web & Mobile App Builder passionate about creating digital experiences and business solutions that deliver real value.
             </p>
             <div className="flex space-x-4">
@@ -50,7 +50,7 @@ const Footer = () => {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="text-gray-400 hover:text-neon-cyan transition-colors duration-300"
+                  className="text-gray-400 hover:text-blue-300 transition-all duration-300 p-2 rounded-lg hover:bg-blue-500/20 hover:shadow-lg hover:shadow-blue-500/20"
                 >
                   {social.icon}
                 </motion.a>
@@ -60,9 +60,9 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="md:col-span-1">
-            <h3 className="text-lg font-bold text-white mb-4 relative inline-block">
+            <h3 className="text-heading-4 bg-gradient-to-r from-blue-300 to-purple-400 bg-clip-text text-transparent relative inline-block">
               Quick Links
-              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-neon-cyan"></span>
+              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 shadow-sm shadow-blue-500/30"></span>
             </h3>
             <ul className="space-y-2">
               {footerLinks.map((link, index) => (
@@ -74,7 +74,7 @@ const Footer = () => {
                 >
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-neon-cyan transition-colors duration-300"
+                    className="text-body text-gray-400 hover:text-blue-300 transition-all duration-300 hover:pl-2"
                   >
                     {link.name}
                   </a>
@@ -85,30 +85,30 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div className="md:col-span-1">
-            <h3 className="text-lg font-bold text-white mb-4 relative inline-block">
+            <h3 className="text-heading-4 bg-gradient-to-r from-blue-300 to-purple-400 bg-clip-text text-transparent relative inline-block">
               Contact Me
-              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-neon-cyan"></span>
+              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 shadow-sm shadow-blue-500/30"></span>
             </h3>
-            <p className="text-gray-400 mb-4">
+            <p className="text-body text-gray-400">
               Have a project in mind? Get in touch and let's create something amazing together.
             </p>
-            <div className="space-y-2 text-gray-400">
-              <p>Email: uminda.h.aberathne@gmail.com</p>
-              <p>WhatsApp: +94 71 342 7470</p>
+            <div className="space-y-2">
+              <p className="text-body text-gray-400">Email: uminda.h.aberathne@gmail.com</p>
+              <p className="text-body text-gray-400">WhatsApp: +94 71 342 7470</p>
             </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-800 my-8"></div>
+        <div className="border-t border-blue-400/30 my-8"></div>
 
         {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
+          <p className="text-body-small text-gray-400 mb-4 md:mb-0">
             © {currentYear} Uminda Aberathne. All rights reserved.
           </p>
-          <p className="text-gray-400 text-sm flex items-center">
-            Made with <FaHeart className="text-neon-magenta mx-1" /> using Next.js & Tailwind CSS
+          <p className="text-body-small text-gray-400 flex items-center">
+            Made with <FaHeart className="text-purple-400 mx-1" /> using Next.js & Tailwind CSS
           </p>
         </div>
       </div>

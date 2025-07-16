@@ -10,8 +10,8 @@ const SkillCategory = ({ title, skills, delay }) => {
       className="glass-card p-6 overflow-hidden flex flex-col"
     >
       <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-        <span className="w-8 h-8 rounded-full bg-neon-cyan/20 flex items-center justify-center mr-2">
-          <span className="text-neon-cyan text-lg">
+        <span className="w-8 h-8 rounded-full bg-black/80 flex items-center justify-center mr-2 border border-blue-400/60">
+          <span className="text-xl">
             {title === "Web App Development" ? "🖥️" :
              title === "Mobile Development" ? "📱" :
              title === "Backend/API Development" ? "⚙️" :
@@ -25,11 +25,11 @@ const SkillCategory = ({ title, skills, delay }) => {
           <div key={idx} className="space-y-1">
             <div className="flex justify-between text-sm">
               <span className="text-white">{skill.name}</span>
-              <span className="text-neon-cyan">{skill.proficiency}%</span>
+              <span className="text-blue-300">{skill.proficiency}%</span>
             </div>
-            <div className="h-2 w-full bg-darker-blue rounded-full overflow-hidden">
+            <div className="h-2 w-full bg-black/50 rounded-full overflow-hidden border border-blue-400/20">
               <motion.div
-                className="h-full bg-gradient-to-r from-neon-purple to-neon-cyan"
+                className="h-full bg-gradient-to-r from-blue-500 to-purple-500 shadow-sm shadow-blue-500/30"
                 initial={{ width: 0 }}
                 animate={{ width: `${skill.proficiency}%` }}
                 transition={{ duration: 1, delay: 0.2 + idx * 0.1 }}
@@ -46,7 +46,7 @@ const SkillBubble = ({ skill, index }) => {
   const bubbleVariants = {
     hover: {
       scale: 1.1,
-      boxShadow: '0 0 15px rgba(0, 238, 255, 0.7)',
+      boxShadow: '0 0 15px rgba(59, 130, 246, 0.7)',
       transition: {
         type: 'spring',
         stiffness: 300,
@@ -56,10 +56,10 @@ const SkillBubble = ({ skill, index }) => {
 
   const getSkillColor = () => {
     const colors = [
-      'from-neon-cyan to-blue-500',
-      'from-neon-magenta to-purple-500',
-      'from-neon-green to-green-500',
-      'from-yellow-400 to-orange-500',
+      'from-blue-400 to-blue-600',
+      'from-purple-400 to-purple-600',
+      'from-blue-500 to-purple-500',
+      'from-purple-500 to-blue-500',
     ];
     return colors[index % colors.length];
   };
@@ -88,9 +88,9 @@ const SkillBar = ({ skill, percentage, delay }) => {
         <span className="text-white font-medium">{skill}</span>
         <span className="text-gray-400">{percentage}%</span>
       </div>
-      <div className="w-full h-2 bg-deep-blue rounded-full overflow-hidden">
+      <div className="w-full h-2 bg-black/50 rounded-full overflow-hidden border border-blue-400/20">
         <motion.div
-          className="h-full bg-gradient-to-r from-neon-cyan to-neon-magenta"
+          className="h-full bg-gradient-to-r from-blue-500 to-purple-500 shadow-sm shadow-blue-500/30"
           initial={{ width: 0 }}
           animate={isInView ? { width: `${percentage}%` } : { width: 0 }}
           transition={{ duration: 1, delay }}
@@ -156,7 +156,8 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-gradient-to-b from-deep-blue to-dark-purple" ref={sectionRef}>
+    <section id="skills" className="py-24 bg-black relative overflow-hidden" ref={sectionRef}>
+      <div className="absolute inset-0 bg-noise opacity-5"></div>
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
@@ -189,9 +190,9 @@ const Skills = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="glass-card p-8 max-w-3xl mx-auto"
         >
-          <h3 className="text-xl font-bold text-white mb-8 relative inline-block">
+          <h3 className="text-xl font-bold bg-gradient-to-r from-blue-300 to-purple-400 bg-clip-text text-transparent mb-8 relative inline-block">
             Technical Proficiency
-            <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-neon-cyan"></span>
+            <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 shadow-sm shadow-blue-500/30"></span>
           </h3>
 
           {technicalSkills.map((skill, idx) => (

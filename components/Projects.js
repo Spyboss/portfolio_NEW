@@ -8,13 +8,18 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
   return (
     <motion.div
       className="project-card overflow-hidden group cursor-pointer h-full flex flex-col"
-      whileHover={{ y: -8, scale: 1.02 }}
+      whileHover={{ 
+        y: -12, 
+        rotateX: 8, 
+        scale: 1.02,
+        boxShadow: "0 25px 50px rgba(0, 0, 0, 0.6), 0 0 40px rgba(56, 189, 248, 0.3), 0 0 80px rgba(172, 92, 255, 0.3)"
+      }}
       transition={{ duration: 0.3 }}
       onClick={() => openModal(project)}
     >
       {/* Enhanced Project Image */}
-      <div className="relative overflow-hidden h-52">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+      <div className="project-image relative overflow-hidden h-52">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-purple-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
         <img
           src={project.image}
           alt={project.title}
@@ -25,7 +30,7 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
         
         {/* Category Badge */}
         <div className="absolute top-3 left-3 z-20">
-          <span className="px-3 py-1 bg-neon-cyan/90 text-gray-900 text-xs font-semibold rounded-full backdrop-blur-sm">
+          <span className="px-3 py-1 bg-gradient-to-r from-blue-500/30 to-purple-500/30 text-blue-200 text-xs font-semibold rounded-full backdrop-blur-sm border border-blue-400/30">
             {project.technologies && project.technologies[0]}
           </span>
         </div>
@@ -43,7 +48,7 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="p-2 bg-neon-cyan/90 text-gray-900 rounded-full hover:bg-neon-cyan transition-colors duration-300"
+              className="p-2 bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-400 hover:to-cyan-300 text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
               title="View Live Demo"
             >
               <FaExternalLinkAlt className="text-sm" />
@@ -55,7 +60,7 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="p-2 bg-white/90 text-gray-900 rounded-full hover:bg-white transition-colors duration-300"
+              className="p-2 bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-600 hover:to-gray-500 text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-purple-500/30"
               title="View Source Code"
             >
               <FaGithub className="text-sm" />
@@ -65,9 +70,9 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
       </div>
       
       {/* Enhanced Project Info */}
-      <div className="p-6 flex-1 flex flex-col">
-        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-neon-cyan transition-colors duration-300 leading-tight">{project.title}</h3>
-        <p className="text-base text-gray-300 mb-6 flex-1 leading-relaxed">{project.shortDescription}</p>
+      <div className="project-content p-6 flex-1 flex flex-col">
+        <h3 className="text-heading-3 text-white group-hover:text-blue-300 transition-colors duration-300 leading-tight">{project.title}</h3>
+        <p className="text-body text-gray-300 flex-1 leading-relaxed">{project.shortDescription}</p>
         
         {/* Enhanced Technologies Display */}
         <div className="mb-6">
@@ -76,7 +81,7 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
             {project.technologies && project.technologies.map((tech, idx) => (
               <span
                 key={idx}
-                className="px-3 py-1.5 bg-gradient-to-r from-neon-cyan/20 to-deep-blue/20 text-neon-cyan text-sm rounded-lg border border-neon-cyan/30 hover:border-neon-cyan/60 transition-colors duration-300"
+                className="px-3 py-1.5 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-200 text-sm rounded-lg border border-blue-400/30 backdrop-blur-sm hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-200"
               >
                 {tech}
               </span>
@@ -91,7 +96,7 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
             <ul className="text-sm text-gray-300 space-y-2">
               {project.features.slice(0, 3).map((feature, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="text-neon-cyan mr-2 mt-1">✓</span>
+                  <span className="text-blue-300 mr-2 mt-1 shadow-sm shadow-blue-400/50">✓</span>
                   <span className="leading-relaxed">{feature}</span>
                 </li>
               ))}
@@ -139,24 +144,24 @@ const ProjectModal = ({ project, closeModal, projectGalleries }) => {
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       onClick={closeModal}
     >
       <motion.div
-        className="bg-deep-blue border border-neon-cyan/30 rounded-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto overflow-x-hidden"
-        initial={{ scale: 0.9, y: 20 }}
-        animate={{ scale: 1, y: 0 }}
-        exit={{ scale: 0.9, y: 20 }}
-        transition={{ type: 'spring', damping: 25 }}
+        className="bg-deep-blue border border-neon-cyan/30 rounded-xl w-full max-w-4xl max-h-[90vh] overflow-y-auto overflow-x-hidden neon-glow"
+        initial={{ scale: 0.9, y: 20, rotateX: -15 }}
+        animate={{ scale: 1, y: 0, rotateX: 0 }}
+        exit={{ scale: 0.9, y: 20, rotateX: 15 }}
+        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="relative">
           <button
             onClick={closeModal}
-            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/70 transition-colors z-20"
+            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-gradient-to-r from-gray-900/95 via-blue-900/20 to-gray-900/95 backdrop-blur-md text-white flex items-center justify-center hover:bg-gradient-to-r hover:from-blue-500/20 hover:to-purple-500/20 transition-all duration-200 z-20 border border-transparent hover:border-blue-400/30"
           >
             <FaTimes />
           </button>
@@ -187,9 +192,9 @@ const ProjectModal = ({ project, closeModal, projectGalleries }) => {
 
         <div className="p-6 md:p-8">
           <div className="flex flex-wrap items-center justify-between mb-3">
-            <h2 className="text-heading-2 text-white">{project.title}</h2>
+            <h2 className="text-heading-2 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">{project.title}</h2>
             {project.status && (
-              <span className="px-3 py-1 text-body-small rounded-full bg-neon-cyan/20 text-neon-cyan border border-neon-cyan/30">
+              <span className="px-3 py-1 text-body-small rounded-full bg-gradient-to-r from-blue-500/30 to-purple-500/30 text-blue-200 border border-blue-400/40 backdrop-blur-sm">
                 {project.status}
               </span>
             )}
@@ -199,7 +204,7 @@ const ProjectModal = ({ project, closeModal, projectGalleries }) => {
             {project.technologies && project.technologies.map((tech, idx) => (
               <span
                 key={idx}
-                className="px-3 py-1 text-body-small rounded-full bg-darker-blue text-neon-cyan border border-neon-cyan/30"
+                className="px-3 py-1 text-body-small rounded-full bg-gradient-to-r from-blue-500/30 to-purple-500/30 text-blue-200 border border-blue-400/40 backdrop-blur-sm hover:from-blue-500/40 hover:to-purple-500/40 transition-all duration-200"
               >
                 {tech}
               </span>
@@ -214,7 +219,7 @@ const ProjectModal = ({ project, closeModal, projectGalleries }) => {
             <h3 className="text-heading-4 text-white mb-3">Key Features</h3>
             <ul className="list-disc pl-5 text-body text-gray-300 space-y-2">
               {project.features && project.features.map((feature, idx) => (
-                <li key={idx}>{feature}</li>
+                <li key={idx} className="marker:text-blue-300 marker:shadow-sm marker:shadow-blue-400/50">{feature}</li>
               ))}
             </ul>
           </div>
@@ -225,7 +230,7 @@ const ProjectModal = ({ project, closeModal, projectGalleries }) => {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-darker-blue text-white rounded-lg flex items-center gap-2 hover:bg-black/50 transition-colors"
+                className="px-4 py-2 bg-gradient-to-r from-gray-700 to-gray-600 hover:from-gray-600 hover:to-gray-500 text-white rounded-lg flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-purple-500/30"
               >
                 <FaGithub /> View Code
               </a>
@@ -235,7 +240,7 @@ const ProjectModal = ({ project, closeModal, projectGalleries }) => {
                 href={project.liveDemo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-neon-cyan/20 text-white rounded-lg flex items-center gap-2 hover:bg-neon-cyan/30 transition-colors border border-neon-cyan/50"
+                className="px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-400 hover:to-cyan-300 text-white rounded-lg flex items-center gap-2 transition-all duration-300 shadow-lg hover:shadow-blue-500/50"
               >
                 <FaExternalLinkAlt /> Live Demo
               </a>
@@ -348,8 +353,8 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-24 bg-gradient-to-b from-dark-purple to-darker-blue" ref={sectionRef}>
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="projects" className="section-spacing bg-gradient-to-b from-dark-purple to-darker-blue" ref={sectionRef}>
+      <div className="container-spacing">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : {}}
@@ -379,7 +384,7 @@ const Projects = () => {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="card-grid">
           {filteredProjects.map((project, idx) => (
             <motion.div
               key={project.id}

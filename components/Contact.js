@@ -75,8 +75,12 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 relative overflow-hidden">
+      {/* Enhanced Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-blue-500/10 to-purple-500/5"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(6,182,212,0.1),transparent_50%)] bg-[radial-gradient(circle_at_70%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,12 +89,12 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Start Your Project?
+            Transform Your Vision into Reality
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-8"></div>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Let's transform your business idea into a powerful digital solution. 
-            Get a free consultation and project roadmap tailored to your needs.
+            Ready to build something amazing? Let's discuss your project and create a roadmap to success. 
+            Get expert guidance and a custom solution tailored to your business needs.
           </p>
         </motion.div>
 
@@ -135,8 +139,17 @@ const Contact = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="glass-card p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
+            <div className="glass-card p-8 bg-gradient-to-br from-white/5 to-white/10 border border-cyan-400/20">
+              {/* Enhanced Header with Avatar */}
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg">
+                  <span className="text-white text-2xl font-bold">UJ</span>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white">Let's Connect</h3>
+                  <p className="text-cyan-300 text-sm font-medium">Transform Your Vision into Reality</p>
+                </div>
+              </div>
               
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
@@ -224,7 +237,7 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <div className="glass-card p-8">
+            <div className="glass-card p-8 bg-gradient-to-br from-white/5 to-white/10 border border-cyan-400/20">
               <h3 className="text-2xl font-bold text-white mb-6">Tell Me About Your Project</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -240,7 +253,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                      className="w-full px-6 py-4 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 hover:border-gray-600"
                       placeholder="Your Name"
                     />
                   </div>
@@ -256,7 +269,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                      className="w-full px-6 py-4 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 hover:border-gray-600"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -271,7 +284,7 @@ const Contact = () => {
                     name="projectType"
                     value={formData.projectType}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                    className="w-full px-6 py-4 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 hover:border-gray-600"
                   >
                     <option value="">Select project type</option>
                     {projectTypes.map((type, index) => (
@@ -290,7 +303,7 @@ const Contact = () => {
                       name="budget"
                       value={formData.budget}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                      className="w-full px-6 py-4 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 hover:border-gray-600"
                     >
                       <option value="">Select budget range</option>
                       {budgetRanges.map((range, index) => (
@@ -308,7 +321,7 @@ const Contact = () => {
                       name="timeline"
                       value={formData.timeline}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors"
+                      className="w-full px-6 py-4 bg-gray-800/50 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 hover:border-gray-600"
                     >
                       <option value="">Select timeline</option>
                       {timelines.map((time, index) => (
@@ -328,8 +341,8 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={5}
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-colors resize-none"
+                    rows={6}
+                    className="w-full px-6 py-4 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300 hover:border-gray-600 resize-none"
                     placeholder="Describe your project goals, requirements, and any specific features you need..."
                   />
                 </div>
@@ -348,6 +361,96 @@ const Contact = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Social Proof / Testimonials Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-20"
+        >
+          <h3 className="text-2xl font-bold text-white text-center mb-12">What Clients Say</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="glass-card p-6 bg-gradient-to-br from-white/5 to-white/10 border border-cyan-400/20"
+            >
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-yellow-400 text-lg">★</span>
+                ))}
+              </div>
+              <p className="text-gray-300 mb-4 italic">
+                "Great work on our CRM system! The solution exceeded our expectations and improved our workflow significantly."
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm font-bold">JS</span>
+                </div>
+                <div>
+                  <p className="text-white font-semibold text-sm">John Smith</p>
+                  <p className="text-gray-400 text-xs">CEO, TechCorp</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="glass-card p-6 bg-gradient-to-br from-white/5 to-white/10 border border-cyan-400/20"
+            >
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-yellow-400 text-lg">★</span>
+                ))}
+              </div>
+              <p className="text-gray-300 mb-4 italic">
+                "Exceptional development skills and great communication throughout the project. Highly recommended!"
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm font-bold">MJ</span>
+                </div>
+                <div>
+                  <p className="text-white font-semibold text-sm">Maria Johnson</p>
+                  <p className="text-gray-400 text-xs">Founder, StartupXYZ</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="glass-card p-6 bg-gradient-to-br from-white/5 to-white/10 border border-cyan-400/20"
+            >
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-yellow-400 text-lg">★</span>
+                ))}
+              </div>
+              <p className="text-gray-300 mb-4 italic">
+                "Fast delivery and clean code. The web application works perfectly and our customers love the new features."
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gradient-to-r from-orange-400 to-red-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-sm font-bold">RK</span>
+                </div>
+                <div>
+                  <p className="text-white font-semibold text-sm">Robert Kim</p>
+                  <p className="text-gray-400 text-xs">CTO, InnovateLab</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

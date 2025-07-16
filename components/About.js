@@ -18,29 +18,52 @@ const About = () => {
 
   const services = [
     {
-      title: 'Full-Stack Development',
-      description: 'End-to-end web applications with modern tech stacks',
-      icon: '🚀'
+      title: 'Custom Web Development',
+      description: 'Full-stack web applications tailored to your business needs',
+      icon: '💻',
+      process: ['Requirements Analysis', 'Design & Architecture', 'Development & Testing'],
+      color: 'from-blue-400 to-cyan-400',
+      bgColor: 'from-blue-500/10 to-cyan-500/10'
     },
     {
-      title: 'AI Integration',
-      description: 'Smart automation and AI-powered features for your business',
-      icon: '🤖'
+      title: 'API Integration',
+      description: 'Seamless integration with third-party services and APIs',
+      icon: '🔗',
+      process: ['API Analysis', 'Integration Planning', 'Implementation & Testing'],
+      color: 'from-green-400 to-blue-400',
+      bgColor: 'from-green-500/10 to-blue-500/10'
     },
     {
-      title: 'UI/UX Design',
-      description: 'Beautiful, intuitive interfaces that users love',
-      icon: '🎨'
+      title: 'Database Design',
+      description: 'Efficient database architecture and optimization',
+      icon: '🗄️',
+      process: ['Schema Design', 'Optimization', 'Migration & Backup'],
+      color: 'from-purple-400 to-pink-400',
+      bgColor: 'from-purple-500/10 to-pink-500/10'
     },
     {
       title: 'Tech Consulting',
-      description: 'Strategic guidance for your technology decisions',
-      icon: '💡'
+      description: 'Strategic technology guidance for your projects',
+      icon: '🚀',
+      process: ['Technology Assessment', 'Strategy Planning', 'Implementation Roadmap'],
+      color: 'from-orange-400 to-red-400',
+      bgColor: 'from-orange-500/10 to-red-500/10'
+    },
+    {
+      title: 'Performance Optimization',
+      description: 'Speed and efficiency improvements for existing applications',
+      icon: '📈',
+      process: ['Performance Audit', 'Optimization Strategy', 'Implementation & Monitoring'],
+      color: 'from-yellow-400 to-orange-400',
+      bgColor: 'from-yellow-500/10 to-orange-500/10'
     },
     {
       title: 'Product Roadmapping',
-      description: 'From concept to launch - complete product strategy',
-      icon: '📋'
+      description: 'Strategic planning and feature prioritization',
+      icon: '💡',
+      process: ['Vision Definition', 'Feature Prioritization', 'Timeline Planning'],
+      color: 'from-cyan-400 to-purple-400',
+      bgColor: 'from-cyan-500/10 to-purple-500/10'
     }
   ];
 
@@ -48,27 +71,42 @@ const About = () => {
     {
       year: '2020',
       title: 'Started Programming Journey',
-      description: 'Began learning Python and discovered my passion for coding'
+      description: 'Began learning Python and discovered my passion for coding',
+      achievement: 'Built first Python scripts',
+      icon: '🚀',
+      color: 'from-purple-400 to-pink-400'
     },
     {
       year: '2021',
       title: 'Web Development Focus',
-      description: 'Transitioned to web development, learning HTML, CSS, and JavaScript'
+      description: 'Transitioned to web development, learning HTML, CSS, and JavaScript',
+      achievement: 'Created 5+ responsive websites',
+      icon: '🌐',
+      color: 'from-blue-400 to-cyan-400'
     },
     {
       year: '2022',
       title: 'Full-Stack Development',
-      description: 'Mastered React, Node.js, and database technologies'
+      description: 'Mastered React, Node.js, and database technologies',
+      achievement: 'Developed 10+ web applications',
+      icon: '⚡',
+      color: 'from-green-400 to-blue-400'
     },
     {
       year: '2023',
       title: 'Professional Projects',
-      description: 'Started building real-world applications and client projects'
+      description: 'Started building real-world applications and client projects',
+      achievement: 'Delivered 15+ client projects',
+      icon: '💼',
+      color: 'from-yellow-400 to-orange-400'
     },
     {
       year: '2024',
       title: 'AI & Advanced Systems',
-      description: 'Expanded into AI integration and complex system architecture'
+      description: 'Expanded into AI integration and complex system architecture',
+      achievement: 'Built AI-powered applications',
+      icon: '🤖',
+      color: 'from-cyan-400 to-purple-400'
     }
   ];
 
@@ -136,34 +174,59 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Timeline Section */}
+          {/* Enhanced Graphical Timeline Section */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-white mb-8">My Journey</h3>
-            <div className="space-y-6">
-              {timelineData.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="relative pl-8 border-l-2 border-cyan-400/30"
-                >
-                  <div className="absolute -left-2 top-0 w-4 h-4 bg-cyan-400 rounded-full"></div>
-                  <div className="glass-card p-6">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-cyan-400 font-bold text-lg">{item.year}</span>
-                      <h4 className="text-white font-semibold">{item.title}</h4>
+            <h3 className="text-3xl font-bold text-white mb-12 text-center">My Journey</h3>
+            <div className="relative">
+              {/* Timeline Line */}
+              <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 via-blue-500 to-purple-500 rounded-full"></div>
+              
+              <div className="space-y-8">
+                {timelineData.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.15 }}
+                    viewport={{ once: true }}
+                    className="timeline-item group"
+                  >
+                    {/* Enhanced Timeline Dot with Icon */}
+                    <div className={`timeline-dot flex items-center justify-center text-white text-xl bg-gradient-to-r ${item.color} shadow-lg`}>
+                      {item.icon}
                     </div>
-                    <p className="text-gray-300 text-sm">{item.description}</p>
-                  </div>
-                </motion.div>
-              ))}
+                    
+                    {/* Enhanced Timeline Content */}
+                    <div className="glass-card p-8 ml-4 group-hover:bg-white/8 transition-all duration-300">
+                      <div className="flex items-center gap-4 mb-4">
+                        <span className={`text-2xl font-bold bg-gradient-to-r ${item.color} bg-clip-text text-transparent`}>
+                          {item.year}
+                        </span>
+                        <div className="h-px flex-1 bg-gradient-to-r from-cyan-400/50 to-transparent"></div>
+                      </div>
+                      
+                      <h4 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300">
+                        {item.title}
+                      </h4>
+                      
+                      <p className="text-gray-300 mb-4 leading-relaxed">
+                        {item.description}
+                      </p>
+                      
+                      {/* Achievement Badge */}
+                      <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full border border-cyan-400/30">
+                        <span className="text-cyan-400 text-sm">🏆</span>
+                        <span className="text-cyan-300 text-sm font-medium">{item.achievement}</span>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
@@ -203,27 +266,58 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Services Section */}
+        {/* Enhanced Services Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl font-bold text-white text-center mb-12">What I Can Do For You</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h3 className="text-3xl font-bold text-white mb-12 text-center">What I Can Do For You</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="glass-card p-6 text-center hover:scale-105 transition-transform duration-300"
+                className="group relative"
               >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h4 className="text-xl font-bold text-white mb-3">{service.title}</h4>
-                <p className="text-gray-300 text-sm">{service.description}</p>
+                <div className={`glass-card p-8 h-full hover:bg-white/10 transition-all duration-300 border border-transparent hover:border-cyan-400/30 bg-gradient-to-br ${service.bgColor}`}>
+                  {/* Icon with gradient background */}
+                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <span className="text-2xl">{service.icon}</span>
+                  </div>
+                  
+                  {/* Service Title */}
+                  <h4 className={`text-xl font-bold mb-4 bg-gradient-to-r ${service.color} bg-clip-text text-transparent group-hover:text-white transition-all duration-300`}>
+                    {service.title}
+                  </h4>
+                  
+                  {/* Service Description */}
+                  <p className="text-gray-300 mb-6 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                    {service.description}
+                  </p>
+                  
+                  {/* Process Overview */}
+                  <div className="space-y-3">
+                    <h5 className="text-sm font-semibold text-cyan-300 mb-3">Process Overview:</h5>
+                    {service.process.map((step, stepIndex) => (
+                      <div key={stepIndex} className="flex items-center gap-3">
+                        <div className={`w-6 h-6 rounded-full bg-gradient-to-r ${service.color} flex items-center justify-center text-xs font-bold text-white`}>
+                          {stepIndex + 1}
+                        </div>
+                        <span className="text-sm text-gray-300 group-hover:text-gray-200 transition-colors duration-300">
+                          {step}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Hover Effect Overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-r ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl`}></div>
+                </div>
               </motion.div>
             ))}
           </div>

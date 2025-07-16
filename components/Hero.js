@@ -108,6 +108,34 @@ const Hero = () => {
               Uminda Aberathne
             </motion.p>
 
+            {/* Enhanced Profile Stats */}
+            <div className="bg-gradient-to-r from-gray-800/50 to-gray-700/50 backdrop-blur-sm rounded-xl p-6 mb-8 border border-cyan-400/20">
+              <div className="grid grid-cols-3 gap-6">
+                <div className="text-center group">
+                  <div className="text-3xl md:text-4xl font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300">4+</div>
+                  <div className="text-base font-medium text-gray-300 group-hover:text-white transition-colors duration-300">Years Experience</div>
+                </div>
+                <div className="text-center group">
+                  <div className="text-3xl md:text-4xl font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300">50+</div>
+                  <div className="text-base font-medium text-gray-300 group-hover:text-white transition-colors duration-300">Projects Completed</div>
+                </div>
+                <div className="text-center group">
+                  <div className="text-3xl md:text-4xl font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300">100%</div>
+                  <div className="text-base font-medium text-gray-300 group-hover:text-white transition-colors duration-300">Client Satisfaction</div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Strong CTA Button */}
+            <motion.button
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(6, 182, 212, 0.4)" }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+              className="w-full bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg hover:from-cyan-300 hover:to-blue-400 transition-all duration-300 mb-6"
+            >
+              Get Started Now
+            </motion.button>
+
             {/* Highlights */}
             <motion.div
               initial={{ y: 20, opacity: 0 }}

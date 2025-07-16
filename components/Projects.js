@@ -7,13 +7,14 @@ import "react-image-gallery/styles/css/image-gallery.css";
 const ProjectCard = ({ project, openModal, hasGallery }) => {
   return (
     <motion.div
-      className="glass-card overflow-hidden group cursor-pointer"
-      whileHover={{ y: -10 }}
+      className="project-card overflow-hidden group cursor-pointer h-full flex flex-col"
+      whileHover={{ y: -8, scale: 1.02 }}
       transition={{ duration: 0.3 }}
       onClick={() => openModal(project)}
     >
-      <div className="relative overflow-hidden h-48">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-darker-blue z-10"></div>
+      {/* Enhanced Project Image */}
+      <div className="relative overflow-hidden h-52">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
         <img
           src={project.image}
           alt={project.title}
@@ -21,39 +22,109 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
           loading="lazy"
           style={{ imageRendering: 'crisp-edges' }}
         />
-        {hasGallery && (
-          <div className="absolute top-3 right-3 z-20">
-            <div className="bg-black/50 rounded-full p-2 backdrop-blur-sm">
+        
+        {/* Category Badge */}
+        <div className="absolute top-3 left-3 z-20">
+          <span className="px-3 py-1 bg-neon-cyan/90 text-gray-900 text-xs font-semibold rounded-full backdrop-blur-sm">
+            {project.technologies && project.technologies[0]}
+          </span>
+        </div>
+        
+        {/* Quick Action Buttons */}
+        <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+          {hasGallery && (
+            <div className="p-2 bg-black/50 rounded-full backdrop-blur-sm">
               <FaImages className="text-neon-cyan text-sm" />
             </div>
-          </div>
-        )}
-      </div>
-      <div className="p-5">
-        <h3 className="text-heading-4 text-white mb-2">{project.title}</h3>
-        <p className="text-body-small text-gray-300 line-clamp-2 mb-4">{project.shortDescription}</p>
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.technologies && project.technologies.slice(0, 3).map((tech, idx) => (
-            <span
-              key={idx}
-              className="px-2 py-1 text-caption rounded-full bg-deep-blue text-neon-cyan border border-neon-cyan/30"
+          )}
+          {project.liveDemo && (
+            <a
+              href={project.liveDemo}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="p-2 bg-neon-cyan/90 text-gray-900 rounded-full hover:bg-neon-cyan transition-colors duration-300"
+              title="View Live Demo"
             >
-              {tech}
-            </span>
-          ))}
-          {project.technologies && project.technologies.length > 3 && (
-            <span className="px-2 py-1 text-caption rounded-full bg-deep-blue text-gray-400">
-              +{project.technologies.length - 3}
-            </span>
+              <FaExternalLinkAlt className="text-sm" />
+            </a>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="p-2 bg-white/90 text-gray-900 rounded-full hover:bg-white transition-colors duration-300"
+              title="View Source Code"
+            >
+              <FaGithub className="text-sm" />
+            </a>
           )}
         </div>
-        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <motion.div
-            className="w-10 h-10 rounded-full bg-neon-cyan/20 flex items-center justify-center text-neon-cyan"
-            whileHover={{ scale: 1.1 }}
-          >
-            <FaExternalLinkAlt />
-          </motion.div>
+      </div>
+      
+      {/* Enhanced Project Info */}
+      <div className="p-6 flex-1 flex flex-col">
+        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-neon-cyan transition-colors duration-300 leading-tight">{project.title}</h3>
+        <p className="text-base text-gray-300 mb-6 flex-1 leading-relaxed">{project.shortDescription}</p>
+        
+        {/* Enhanced Technologies Display */}
+        <div className="mb-6">
+          <h4 className="text-sm font-semibold text-neon-cyan mb-3">Technologies Used:</h4>
+          <div className="flex flex-wrap gap-2">
+            {project.technologies && project.technologies.map((tech, idx) => (
+              <span
+                key={idx}
+                className="px-3 py-1.5 bg-gradient-to-r from-neon-cyan/20 to-deep-blue/20 text-neon-cyan text-sm rounded-lg border border-neon-cyan/30 hover:border-neon-cyan/60 transition-colors duration-300"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+        
+        {/* Enhanced Key Features */}
+        {project.features && (
+          <div className="mb-6">
+            <h4 className="text-sm font-semibold text-neon-cyan mb-3">Key Features:</h4>
+            <ul className="text-sm text-gray-300 space-y-2">
+              {project.features.slice(0, 3).map((feature, index) => (
+                <li key={index} className="flex items-start">
+                  <span className="text-neon-cyan mr-2 mt-1">✓</span>
+                  <span className="leading-relaxed">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        
+        {/* Enhanced Action Links */}
+        <div className="flex gap-4 mt-auto pt-4 border-t border-white/10">
+          {project.liveDemo && (
+            <a
+              href={project.liveDemo}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-neon-cyan to-deep-blue text-white font-semibold rounded-lg hover:from-neon-cyan/80 hover:to-deep-blue/80 transition-all duration-300 transform hover:scale-105"
+            >
+              <FaExternalLinkAlt className="text-sm" />
+              Live Demo
+            </a>
+          )}
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="flex items-center gap-2 px-4 py-2 bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 hover:border-white/40 transition-all duration-300 transform hover:scale-105"
+            >
+              <FaGithub className="text-sm" />
+              Source Code
+            </a>
+          )}
         </div>
       </div>
     </motion.div>
@@ -182,6 +253,34 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [projects, setProjects] = useState([]);
   const [projectGalleries, setProjectGalleries] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  // Project categories for filtering
+  const categories = [
+    'All',
+    'Web Development',
+    'AI/ML',
+    'Mobile Apps',
+    'ERP/CRM',
+    'Trading Bots'
+  ];
+
+  // Enhanced project categorization
+  const categorizeProject = (project) => {
+    const title = project.title.toLowerCase();
+    const tech = project.technologies.join(' ').toLowerCase();
+    
+    if (title.includes('bot') || title.includes('trading')) return 'Trading Bots';
+    if (title.includes('erp') || title.includes('crm') || title.includes('billgen')) return 'ERP/CRM';
+    if (title.includes('ai') || title.includes('pulse') || title.includes('echo')) return 'AI/ML';
+    if (tech.includes('react native') || title.includes('mobile')) return 'Mobile Apps';
+    return 'Web Development';
+  };
+
+  // Filter projects based on selected category
+  const filteredProjects = selectedCategory === 'All' 
+    ? projects 
+    : projects.filter(project => categorizeProject(project) === selectedCategory);
 
   // Load project data from JSON files
   useEffect(() => {
@@ -258,13 +357,30 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <h2 className="section-title">My Projects</h2>
-          <p className="max-w-2xl mx-auto text-body-large text-gray-300">
+          <p className="max-w-2xl mx-auto text-body-large text-gray-300 mb-8">
             Here are some of my recent projects showcasing my skills and expertise in different areas of development and design.
           </p>
+          
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full text-sm transition-all duration-300 ${
+                  selectedCategory === category
+                    ? 'bg-neon-cyan text-dark-purple font-medium'
+                    : 'bg-deep-blue/50 text-gray-300 hover:bg-neon-cyan/20 hover:text-white border border-neon-cyan/30'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, idx) => (
+          {filteredProjects.map((project, idx) => (
             <motion.div
               key={project.id}
               initial={{ y: 50, opacity: 0 }}

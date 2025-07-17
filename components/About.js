@@ -2,12 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const About = () => {
-  const coreSkills = [
-    { category: 'Frontend', skills: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'] },
-    { category: 'Backend', skills: ['Node.js', 'Express', 'Python', 'MongoDB', 'PostgreSQL'] },
-    { category: 'AI/ML', skills: ['OpenAI API', 'Mistral', 'Vector Databases', 'RAG Systems'] },
-    { category: 'DevOps', skills: ['Docker', 'Railway', 'Cloudflare', 'GitHub Actions'] }
-  ];
 
   const achievements = [
     'Built 15+ production applications serving 1000+ users',
@@ -208,40 +202,7 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* Core Skills Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent text-center mb-12">Core Skills</h3>
-          <div className="card-grid">
-            {coreSkills.map((skillGroup, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="glass-card p-6 text-center"
-              >
-                <h4 className="text-xl font-bold text-blue-300 mb-4">{skillGroup.category}</h4>
-                <div className="space-y-2">
-                  {skillGroup.skills.map((skill, skillIndex) => (
-                    <span
-                      key={skillIndex}
-                      className="inline-block bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-200 px-3 py-1 rounded-full text-sm mr-2 mb-2 border border-blue-400/30 backdrop-blur-sm hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-200"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+
 
         {/* Enhanced Services Section */}
         <motion.div

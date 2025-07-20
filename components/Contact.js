@@ -106,7 +106,7 @@ const Contact = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h3 className="text-heading-2 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent text-center">How We Work Together</h3>
+          <h3 className="text-heading-2 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent text-center mb-12">How We Work Together</h3>
           <div className="card-grid">
             {processSteps.map((step, index) => {
               const IconComponent = step.icon;
@@ -187,18 +187,44 @@ const Contact = () => {
                 <h4 className="text-heading-5 text-white">Connect With Me</h4>
                 <div className="flex space-x-4">
                   <a
-                    href="https://github.com/Spyboss"
+                    href="https://github.com/UHAAHM"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-800/50 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700/50 transition-all duration-300 hover:shadow-lg hover:shadow-white/20"
+                    aria-label="Visit GitHub profile"
+                    className="w-10 h-10 bg-gray-800/50 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-900 transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/20 hover:scale-110"
+                    style={{
+                      '--github-color': '#181717',
+                      '--github-bg': 'rgba(24, 23, 23, 0.2)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#181717';
+                      e.currentTarget.style.boxShadow = '0 8px 25px rgba(24, 23, 23, 0.3)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '';
+                      e.currentTarget.style.boxShadow = '';
+                    }}
                   >
                     <FaGithub />
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/uminda-hansana-a3b6021b3/"
+                    href="https://linkedin.com/in/UHAAHM"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-800/50 rounded-full flex items-center justify-center text-gray-400 hover:text-blue-400 hover:bg-blue-500/20 transition-all duration-300 hover:shadow-lg hover:shadow-blue-400/20"
+                    aria-label="Connect on LinkedIn"
+                    className="w-10 h-10 bg-gray-800/50 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:scale-110"
+                    style={{
+                      '--linkedin-color': '#0A66C2',
+                      '--linkedin-bg': 'rgba(10, 102, 194, 0.2)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#0A66C2';
+                      e.currentTarget.style.boxShadow = '0 8px 25px rgba(10, 102, 194, 0.3)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '';
+                      e.currentTarget.style.boxShadow = '';
+                    }}
                   >
                     <FaLinkedin />
                   </a>
@@ -206,7 +232,20 @@ const Contact = () => {
                     href="https://wa.me/94701234567"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-800/50 rounded-full flex items-center justify-center text-gray-400 hover:text-green-400 hover:bg-green-500/20 transition-all duration-300 hover:shadow-lg hover:shadow-green-400/20"
+                    aria-label="Message on WhatsApp"
+                    className="w-10 h-10 bg-gray-800/50 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-green-500 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/30 hover:scale-110"
+                    style={{
+                      '--whatsapp-color': '#25D366',
+                      '--whatsapp-bg': 'rgba(37, 211, 102, 0.2)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#25D366';
+                      e.currentTarget.style.boxShadow = '0 8px 25px rgba(37, 211, 102, 0.3)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '';
+                      e.currentTarget.style.boxShadow = '';
+                    }}
                   >
                     <FaWhatsapp />
                   </a>
@@ -214,7 +253,20 @@ const Contact = () => {
                     href="https://t.me/UHAAHM"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-800/50 rounded-full flex items-center justify-center text-gray-400 hover:text-blue-400 hover:bg-blue-500/20 transition-all duration-300 hover:shadow-lg hover:shadow-blue-400/20"
+                    aria-label="Contact via Telegram"
+                    className="w-10 h-10 bg-gray-800/50 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-500 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:scale-110"
+                    style={{
+                      '--telegram-color': '#0088CC',
+                      '--telegram-bg': 'rgba(0, 136, 204, 0.2)'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#0088CC';
+                      e.currentTarget.style.boxShadow = '0 8px 25px rgba(0, 136, 204, 0.3)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '';
+                      e.currentTarget.style.boxShadow = '';
+                    }}
                   >
                     <FaTelegram />
                   </a>
@@ -370,7 +422,7 @@ const Contact = () => {
           viewport={{ once: true }}
           className="mt-20"
         >
-          <h3 className="text-heading-2 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent text-center">What Clients Say</h3>
+          <h3 className="text-heading-2 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent text-center mb-8">What Clients Say</h3>
           <div className="card-grid">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

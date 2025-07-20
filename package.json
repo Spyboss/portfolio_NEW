@@ -18,6 +18,9 @@
   "author": "Uminda",
   "license": "ISC",
   "dependencies": {
+    "@icons-pack/react-simple-icons": "^13.6.0",
+    "@tabler/icons-react": "^3.34.0",
+    "antd": "^5.26.5",
     "framer-motion": "^10.17.9",
     "next": "^14.0.4",
     "react": "^18.2.0",

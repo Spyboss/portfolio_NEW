@@ -8,7 +8,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -45,7 +45,7 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             className="relative flex items-center space-x-2 group"
           >
-            <Link href="#home" className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-blue-300 hover:via-purple-300 hover:to-cyan-300 transition-all duration-500 tracking-wide">
+            <Link href="#home" className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-blue-300 hover:via-purple-300 hover:to-cyan-300 transition-all duration-500 tracking-wide focus:outline-none focus:ring-0">
               UHADEV
             </Link>
           </motion.div>
@@ -69,7 +69,7 @@ const Navbar = () => {
                 
                 <Link
                   href={link.href}
-                  className="relative z-10 px-4 py-2 text-gray-300 hover:text-white font-medium transition-all duration-500 tracking-wide group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:via-purple-400 group-hover:to-cyan-400 group-hover:bg-clip-text"
+                  className="relative z-10 px-4 py-2 text-gray-300 hover:text-white font-medium transition-all duration-500 tracking-wide group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:via-purple-400 group-hover:to-cyan-400 group-hover:bg-clip-text focus:outline-none focus:ring-0"
                 >
                   {link.name}
                   
@@ -134,7 +134,7 @@ const Navbar = () => {
                 <Link
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="relative block px-6 py-4 text-gray-300 hover:text-white font-medium transition-all duration-300 rounded-xl group overflow-hidden"
+                  className="relative block px-6 py-4 text-gray-300 hover:text-white font-medium transition-all duration-300 rounded-xl group overflow-hidden focus:outline-none focus:ring-0"
                 >
                   {/* Background */}
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm"></div>

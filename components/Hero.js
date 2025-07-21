@@ -210,7 +210,7 @@ const Hero = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1.1, duration: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 mt-6"
+            className="flex flex-col sm:flex-row gap-4 mt-6 mb-8 sm:mb-0"
           >
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -254,7 +254,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.3, duration: 0.5 }}
-            className="flex flex-col items-center mt-12 sm:hidden"
+            className="flex flex-col items-center mt-24 sm:hidden"
           >
             <span className="text-gray-400 mb-2 text-sm">Scroll Down</span>
             <div className="w-5 h-8 rounded-full border-2 border-gray-400 flex justify-center">

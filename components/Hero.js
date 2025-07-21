@@ -64,7 +64,7 @@ const Hero = () => {
   return (
     <>
       {/* Main Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center section-spacing overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-center justify-center section-spacing overflow-hidden pb-20 sm:pb-10">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-20 h-20 bg-neon-cyan/10 rounded-full blur-xl"></div>
@@ -235,7 +235,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.3, duration: 0.5 }}
-            className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+            className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hidden sm:block"
           >
             <div className="flex flex-col items-center">
               <span className="text-gray-400 mb-2">Scroll Down</span>
@@ -246,6 +246,23 @@ const Hero = () => {
                   className="w-1.5 h-1.5 rounded-full bg-neon-cyan mt-2"
                 />
               </div>
+            </div>
+          </motion.div>
+
+          {/* Mobile Scroll Down Indicator */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.3, duration: 0.5 }}
+            className="flex flex-col items-center mt-8 sm:hidden"
+          >
+            <span className="text-gray-400 mb-2 text-sm">Scroll Down</span>
+            <div className="w-5 h-8 rounded-full border-2 border-gray-400 flex justify-center">
+              <motion.div
+                animate={{ y: [0, 6, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5 }}
+                className="w-1 h-1 rounded-full bg-neon-cyan mt-1.5"
+              />
             </div>
           </motion.div>
         </div>

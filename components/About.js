@@ -6,8 +6,8 @@ const About = () => {
   const achievements = [
     'Built 5+ production applications with modern tech stacks',
     'Developed 3+ full-stack web applications currently in production',
-    'Reduced client operational costs by 40% through automation',
-    'Led development of AI-powered workflow systems'
+    'Implemented automation solutions for improved efficiency',
+    'Integrated AI-powered features in modern applications'
   ];
 
   const services = [
@@ -74,7 +74,7 @@ const About = () => {
       year: '2021',
       title: 'Web Development Focus',
       description: 'Transitioned to web development, learning HTML, CSS, and JavaScript',
-      achievement: 'Created 5+ responsive websites',
+      achievement: 'Built first responsive websites',
       icon: '🌐',
       color: 'from-blue-400 to-cyan-400'
     },
@@ -82,15 +82,15 @@ const About = () => {
       year: '2022',
       title: 'Full-Stack Development',
       description: 'Mastered React, Node.js, and database technologies',
-      achievement: 'Developed 10+ web applications',
+      achievement: 'Created full-stack applications',
       icon: '⚡',
       color: 'from-green-400 to-blue-400'
     },
     {
       year: '2023',
       title: 'Professional Projects',
-      description: 'Started building real-world applications and client projects',
-      achievement: 'Delivered 15+ client projects',
+      description: 'Started building real-world applications and production systems',
+      achievement: 'Launched production applications',
       icon: '💼',
       color: 'from-yellow-400 to-orange-400'
     },
@@ -104,9 +104,9 @@ const About = () => {
     },
     {
       year: '2025',
-      title: 'Portfolio Launch & Professional Growth',
-      description: 'Launching professional portfolio and expanding client base with quality-focused approach',
-      achievement: 'Portfolio launch & market entry',
+      title: 'Portfolio Launch & Market Entry',
+      description: 'Launching professional portfolio to showcase expertise and connect with clients',
+      achievement: 'Professional portfolio & market presence',
       icon: '🌟',
       color: 'from-emerald-400 to-blue-400'
     }

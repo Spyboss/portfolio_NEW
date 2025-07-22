@@ -56,7 +56,7 @@ const Hero = () => {
   };
 
   const highlights = [
-    { icon: FaRocket, text: "15+ Production Apps", subtext: "Serving 1000+ users" },
+    { icon: FaRocket, text: "5+ Production Apps", subtext: "Serving 100+ users" },
     { icon: FaCode, text: "4+ Years Experience", subtext: "Modern tech stacks" },
     { icon: FaBrain, text: "AI Integration", subtext: "Smart automation" }
   ];
@@ -120,7 +120,7 @@ const Hero = () => {
                   <div className="text-base font-medium text-gray-300 group-hover:text-white transition-colors duration-300">Years Experience</div>
                 </div>
                 <div className="text-center group">
-                  <div className="text-3xl md:text-4xl font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300">50+</div>
+                  <div className="text-3xl md:text-4xl font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300">5+</div>
                   <div className="text-base font-medium text-gray-300 group-hover:text-white transition-colors duration-300">Projects Completed</div>
                 </div>
                 <div className="text-center group">
@@ -306,7 +306,7 @@ const Hero = () => {
               title: "Stay Competitive",
               description: "Leverage AI and modern tech to stay ahead of the competition",
               icon: "🚀",
-              stat: "15+ successful launches"
+              stat: "5+ successful launches"
             }
           ].map((benefit, index) => (
             <motion.div

@@ -72,7 +72,7 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-neon-green/5 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container-spacing z-10">
+      <div className="container-full z-10">
         <div className="flex flex-col items-center justify-center text-center">
           {/* Profile Card */}
           <motion.div
@@ -271,7 +271,7 @@ const Hero = () => {
 
     {/* Client-Focused Value Proposition Section */}
     <section className="section-spacing bg-gradient-to-br from-blue-900 via-gray-900 to-blue-900">
-      <div className="container-spacing">
+      <div className="container-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

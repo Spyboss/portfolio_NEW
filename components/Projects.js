@@ -354,7 +354,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="section-spacing bg-gradient-to-b from-dark-purple to-darker-blue" ref={sectionRef}>
-      <div className="container-spacing">
+      <div className="container-full">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : {}}

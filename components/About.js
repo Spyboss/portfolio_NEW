@@ -115,7 +115,7 @@ const About = () => {
   return (
     <section id="about" className="section-spacing bg-gradient-to-br from-black via-dark-blue to-black relative overflow-hidden">
       <div className="absolute inset-0 bg-noise-overlay opacity-[0.02] pointer-events-none"></div>
-      <div className="container-spacing">
+      <div className="container-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

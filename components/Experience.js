@@ -91,7 +91,7 @@ const Experience = () => {
   return (
     <section id="experience" className="section-spacing bg-black relative overflow-hidden" ref={sectionRef}>
       <div className="absolute inset-0 bg-noise opacity-5"></div>
-      <div className="container-spacing">
+      <div className="container-full">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : {}}

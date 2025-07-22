@@ -38,7 +38,7 @@ const Navbar = () => {
           : 'linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(15,23,42,0.2) 50%, rgba(0,0,0,0.1) 100%)'
       }}
     >
-      <div className="container mx-auto px-6">
+      <div className="container-full">
         <div className="flex items-center justify-between h-18">
           {/* Logo */}
           <motion.div

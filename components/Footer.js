@@ -22,7 +22,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-black border-t border-blue-400/30">
-      <div className="container-spacing">
+      <div className="container-full">
         <div className="card-grid">
           {/* Logo & Description */}
           <div className="md:col-span-1">

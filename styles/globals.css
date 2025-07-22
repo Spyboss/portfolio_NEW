@@ -778,6 +778,55 @@ body::before {
     max-width: 1200px;
     margin: 0 auto;
   }
+
+  /* Full-width container for modern responsive design */
+  .container-full {
+    padding: 0 2rem;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* Large screens and monitors - More aggressive width utilization */
+  @media (min-width: 1440px) {
+    .container-spacing {
+      max-width: 1600px;
+      padding: 0 3rem;
+    }
+    .container-full {
+      padding: 0 4rem;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .container-spacing {
+      max-width: 1800px;
+      padding: 0 4rem;
+    }
+    .container-full {
+      padding: 0 6rem;
+    }
+  }
+
+  @media (min-width: 2560px) {
+    .container-spacing {
+      max-width: 2200px;
+      padding: 0 6rem;
+    }
+    .container-full {
+      padding: 0 8rem;
+    }
+  }
+
+  /* Ultra-wide monitors */
+  @media (min-width: 3440px) {
+    .container-spacing {
+      max-width: 2800px;
+      padding: 0 8rem;
+    }
+    .container-full {
+      padding: 0 10rem;
+    }
+  }
   
   .card-grid {
     display: grid;

@@ -429,7 +429,7 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="glass-card p-6 hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20"
+              className="glass-card p-6 bg-gradient-to-br from-white/5 to-white/10 border border-cyan-400/20 hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20"
             >
               <div className="flex items-center gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (

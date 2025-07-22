@@ -128,14 +128,14 @@ const About = () => {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch mb-16">
           {/* Bio Section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-6 h-full flex flex-col"
           >
             <div className="glass-card">
               <h3 className="text-heading-3 text-white">About Me</h3>
@@ -155,6 +155,40 @@ const About = () => {
               </p>
             </div>
 
+            {/* Technical Approach */}
+            <div className="glass-card">
+              <h3 className="text-heading-3 text-white">Technical Approach</h3>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mt-1">
+                    <span className="text-blue-300 text-xs">🔧</span>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-medium mb-1">Problem-First Development</h4>
+                    <p className="text-gray-400 text-sm">I start by understanding the core problem before choosing technologies</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center mt-1">
+                    <span className="text-green-300 text-xs">⚡</span>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-medium mb-1">Performance Optimization</h4>
+                    <p className="text-gray-400 text-sm">Every application is built with speed and efficiency in mind</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center mt-1">
+                    <span className="text-purple-300 text-xs">🔒</span>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-medium mb-1">Security Best Practices</h4>
+                    <p className="text-gray-400 text-sm">Security is integrated from the ground up, not added as an afterthought</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
             {/* Recent Achievements */}
             <div className="glass-card">
               <h3 className="text-heading-3 text-white">Recent Achievements</h3>
@@ -173,6 +207,62 @@ const About = () => {
                   </motion.li>
                 ))}
               </ul>
+            </div>
+            
+            {/* Animated Skills Visualization */}
+            <div className="glass-card">
+              <h3 className="text-heading-3 text-white mb-6">Skills at a Glance</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { name: 'Frontend', level: 90, color: 'from-blue-400 to-cyan-400' },
+                  { name: 'Backend', level: 85, color: 'from-green-400 to-emerald-400' },
+                  { name: 'Database', level: 80, color: 'from-purple-400 to-pink-400' },
+                  { name: 'DevOps', level: 75, color: 'from-orange-400 to-red-400' }
+                ].map((skill, index) => (
+                  <motion.div
+                    key={skill.name}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="relative"
+                  >
+                    <div className="text-center mb-2">
+                      <span className="text-sm text-gray-300">{skill.name}</span>
+                    </div>
+                    <div className="relative w-16 h-16 mx-auto">
+                      <svg className="w-16 h-16 transform -rotate-90" viewBox="0 0 36 36">
+                        <path
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                          fill="none"
+                          stroke="rgba(255,255,255,0.1)"
+                          strokeWidth="2"
+                        />
+                        <motion.path
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                          fill="none"
+                          stroke={`url(#gradient-${index})`}
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          initial={{ strokeDasharray: '0 100' }}
+                          whileInView={{ strokeDasharray: `${skill.level} 100` }}
+                          transition={{ duration: 1.5, delay: index * 0.2 }}
+                          viewport={{ once: true }}
+                        />
+                        <defs>
+                          <linearGradient id={`gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor={skill.color.split(' ')[1]} />
+                            <stop offset="100%" stopColor={skill.color.split(' ')[3]} />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-xs font-bold text-white">{skill.level}%</span>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
 

@@ -73,7 +73,7 @@ const About = () => {
     {
       year: '2021',
       title: 'Web Development Focus',
-      description: 'Transitioned to web development, learning HTML, CSS, and JavaScript',
+      description: 'Transitioned to web development, learning HTML, CSS, JavaScript, and Java fundamentals',
       achievement: 'Built first responsive websites',
       icon: '🌐',
       color: 'from-blue-400 to-cyan-400'

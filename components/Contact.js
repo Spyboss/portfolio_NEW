@@ -437,15 +437,15 @@ const Contact = () => {
                 ))}
               </div>
               <p className="text-body text-gray-300 italic">
-                "Great work on our CRM system! The solution exceeded our expectations and improved our workflow significantly."
+                "Uminda delivered an exceptional ERP system that transformed our dealership operations. The automated billing and CRM features reduced our admin time by 60%. Professional, reliable, and highly skilled!"
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-sm shadow-blue-500/30">
-                  <span className="text-white text-sm font-bold">JS</span>
+                  <span className="text-white text-sm font-bold">GM</span>
                 </div>
                 <div>
-                  <p className="text-body-small text-white font-semibold">John Smith</p>
-                  <p className="text-body-small text-gray-400">CEO, TechCorp</p>
+                  <p className="text-body-small text-white font-semibold">Gunawardana Motors</p>
+                  <p className="text-body-small text-gray-400">Auto Dealership Owner</p>
                 </div>
               </div>
             </motion.div>
@@ -463,15 +463,15 @@ const Contact = () => {
                 ))}
               </div>
               <p className="text-body text-gray-300 italic">
-                "Exceptional development skills and great communication throughout the project. Highly recommended!"
+                "The restaurant platform Uminda built revolutionized our operations! The digital menu system and table-side ordering improved customer experience dramatically. Modern design and flawless functionality!"
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-sm shadow-blue-500/30">
-                  <span className="text-white text-sm font-bold">MJ</span>
+                  <span className="text-white text-sm font-bold">RT</span>
                 </div>
                 <div>
-                  <p className="text-body-small text-white font-semibold">Maria Johnson</p>
-                  <p className="text-body-small text-gray-400">Founder, StartupXYZ</p>
+                  <p className="text-body-small text-white font-semibold">Realtaste Restaurant</p>
+                  <p className="text-body-small text-gray-400">Co-Founder</p>
                 </div>
               </div>
             </motion.div>
@@ -489,15 +489,15 @@ const Contact = () => {
                 ))}
               </div>
               <p className="text-body text-gray-300 italic">
-                "Fast delivery and clean code. The web application works perfectly and our customers love the new features."
+                "Uminda's automated trading bot has been generating consistent monthly profits for our crypto portfolio. The risk management and real-time analysis features are impressive. Excellent technical execution!"
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-sm shadow-blue-500/30">
-                  <span className="text-white text-sm font-bold">RK</span>
+                  <span className="text-white text-sm font-bold">CI</span>
                 </div>
                 <div>
-                  <p className="text-body-small text-white font-semibold">Robert Kim</p>
-                  <p className="text-body-small text-gray-400">CTO, InnovateLab</p>
+                  <p className="text-body-small text-white font-semibold">Crypto Investor</p>
+                  <p className="text-body-small text-gray-400">Portfolio Manager</p>
                 </div>
               </div>
             </motion.div>

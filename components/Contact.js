@@ -489,15 +489,15 @@ const Contact = () => {
                 ))}
               </div>
               <p className="text-body text-gray-300 italic">
-                "Uminda's automated trading bot has been generating consistent monthly profits for our crypto portfolio. The risk management and real-time analysis features are impressive. Excellent technical execution!"
+                "Echo Journal has completely transformed my daily routine! The AI-powered insights help me understand my habits better, and the automated reminders keep me on track. The cross-platform sync is seamless!"
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-sm shadow-blue-500/30">
-                  <span className="text-white text-sm font-bold">CI</span>
+                  <span className="text-white text-sm font-bold">EJ</span>
                 </div>
                 <div>
-                  <p className="text-body-small text-white font-semibold">Crypto Investor</p>
-                  <p className="text-body-small text-gray-400">Portfolio Manager</p>
+                  <p className="text-body-small text-white font-semibold">Echo Journal User</p>
+                  <p className="text-body-small text-gray-400">Productivity Enthusiast</p>
                 </div>
               </div>
             </motion.div>

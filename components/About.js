@@ -65,15 +65,15 @@ const About = () => {
     {
       year: '2020',
       title: 'Started Programming Journey',
-      description: 'Began learning Python and discovered my passion for coding',
-      achievement: 'Built first Python scripts',
+      description: 'Began learning Python and Java, discovering my passion for programming fundamentals',
+      achievement: 'Built first Python and Java applications',
       icon: '🚀',
       color: 'from-purple-400 to-pink-400'
     },
     {
       year: '2021',
       title: 'Web Development Focus',
-      description: 'Transitioned to web development, learning HTML, CSS, JavaScript, and Java fundamentals',
+      description: 'Transitioned to web development, learning HTML, CSS, and JavaScript',
       achievement: 'Built first responsive websites',
       icon: '🌐',
       color: 'from-blue-400 to-cyan-400'

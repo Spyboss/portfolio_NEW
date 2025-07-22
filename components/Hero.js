@@ -64,7 +64,7 @@ const Hero = () => {
   return (
     <>
       {/* Main Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center section-spacing overflow-hidden pb-32 sm:pb-24">
+      <section id="home" className="relative min-h-screen flex items-center justify-center section-spacing overflow-hidden pb-40 sm:pb-32">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-20 h-20 bg-neon-cyan/10 rounded-full blur-xl"></div>
@@ -210,7 +210,7 @@ const Hero = () => {
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1.1, duration: 0.5 }}
-            className="flex flex-col sm:flex-row gap-4 mt-6 mb-8 sm:mb-0"
+            className="flex flex-col sm:flex-row gap-4 mt-6 mb-12 sm:mb-8"
           >
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -235,7 +235,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.3, duration: 0.5 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden sm:block"
+            className="absolute bottom-16 left-1/2 transform -translate-x-1/2 hidden sm:block"
           >
             <div className="flex flex-col items-center">
               <span className="text-gray-400 mb-2">Scroll Down</span>
@@ -254,7 +254,7 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.3, duration: 0.5 }}
-            className="flex flex-col items-center mt-24 sm:hidden"
+            className="flex flex-col items-center mt-32 sm:hidden"
           >
             <span className="text-gray-400 mb-2 text-sm">Scroll Down</span>
             <div className="w-5 h-8 rounded-full border-2 border-gray-400 flex justify-center">

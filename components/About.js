@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 const About = () => {
 
   const achievements = [
-    'Built 15+ production applications serving 1000+ users',
+    'Built 5+ production applications with modern tech stacks',
+    'Developed 3+ full-stack web applications currently in production',
     'Reduced client operational costs by 40% through automation',
-    'Led development of AI-powered workflow systems',
-    'Mentored 5+ junior developers in modern web technologies'
+    'Led development of AI-powered workflow systems'
   ];
 
   const services = [
@@ -101,6 +101,14 @@ const About = () => {
       achievement: 'Built AI-powered applications',
       icon: '🤖',
       color: 'from-cyan-400 to-purple-400'
+    },
+    {
+      year: '2025',
+      title: 'Portfolio Launch & Professional Growth',
+      description: 'Launching professional portfolio and expanding client base with quality-focused approach',
+      achievement: 'Portfolio launch & market entry',
+      icon: '🌟',
+      color: 'from-emerald-400 to-blue-400'
     }
   ];
 

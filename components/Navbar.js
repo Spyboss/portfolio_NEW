@@ -63,7 +63,7 @@ const Navbar = () => {
             <Link 
               href="#home"
               onClick={(e) => handleSmoothScroll(e, '#home')}
-              className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-blue-300 hover:via-purple-300 hover:to-cyan-300 transition-all duration-500 tracking-wide focus:outline-none"
+              className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-blue-300 hover:via-purple-300 hover:to-cyan-300 transition-all duration-500 tracking-wide focus:outline-none focus:ring-0 focus:border-none active:outline-none select-none"
             >
               UHADEV
             </Link>
@@ -89,7 +89,7 @@ const Navbar = () => {
                 <Link
                   href={link.href}
                   onClick={(e) => handleSmoothScroll(e, link.href)}
-                  className="relative z-10 px-4 py-2 text-gray-300 hover:text-white font-medium transition-all duration-500 tracking-wide group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:via-purple-400 group-hover:to-cyan-400 group-hover:bg-clip-text focus:outline-none"
+                  className="relative z-10 px-4 py-2 text-gray-300 hover:text-white font-medium transition-all duration-500 tracking-wide group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:via-purple-400 group-hover:to-cyan-400 group-hover:bg-clip-text focus:outline-none focus:ring-0 focus:border-none active:outline-none select-none"
                 >
                   {link.name}
                   
@@ -109,7 +109,7 @@ const Navbar = () => {
               whileHover={{ scale: 1.1, rotateZ: 5 }}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="relative p-3 text-white hover:text-blue-300 transition-all duration-300 rounded-xl group"
+              className="relative p-3 text-white hover:text-blue-300 transition-all duration-300 rounded-xl group focus:outline-none focus:ring-0 focus:border-none active:outline-none select-none"
             >
               {/* Background */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm border border-white/5 group-hover:border-white/20"></div>
@@ -154,7 +154,7 @@ const Navbar = () => {
                 <Link
                   href={link.href}
                   onClick={(e) => handleSmoothScroll(e, link.href)}
-                  className="relative block w-full text-left px-6 py-4 text-gray-300 hover:text-white font-medium transition-all duration-300 rounded-xl group overflow-hidden focus:outline-none"
+                  className="relative block w-full text-left px-6 py-4 text-gray-300 hover:text-white font-medium transition-all duration-300 rounded-xl group overflow-hidden focus:outline-none focus:ring-0 focus:border-none active:outline-none select-none"
                 >
                   {/* Background */}
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm"></div>

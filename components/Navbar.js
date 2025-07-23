@@ -16,7 +16,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Debounced navigation handler to prevent rapid clicking
+  // Optimized navigation handler with shorter debounce
   const handleNavigation = useCallback((href) => {
     if (isNavigating) return;
     
@@ -34,10 +34,10 @@ const Navbar = () => {
       }
     }
     
-    // Reset navigation state after a short delay
+    // Reset navigation state after a much shorter delay
     setTimeout(() => {
       setIsNavigating(false);
-    }, 500);
+    }, 100);
   }, [isNavigating]);
 
   const navLinks = [

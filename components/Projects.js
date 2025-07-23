@@ -142,6 +142,31 @@ const ProjectModal = ({ project, closeModal, projectGalleries }) => {
   // Find the gallery for this project
   const projectGallery = projectGalleries.find(gallery => gallery.projectId === project.id);
 
+  // Handle escape key for fullscreen mode
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        // Check if we're in fullscreen mode
+        const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement;
+        if (fullscreenElement) {
+          // Exit fullscreen
+          if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          }
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
     <motion.div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
@@ -176,6 +201,12 @@ const ProjectModal = ({ project, closeModal, projectGalleries }) => {
                 showThumbnails={true}
                 lazyLoad={true}
                 thumbnailPosition="bottom"
+                useBrowserFullscreen={true}
+                showNav={true}
+                showBullets={false}
+                infinite={true}
+                slideOnThumbnailOver={false}
+                additionalClass="project-gallery"
               />
             </div>
           ) : (

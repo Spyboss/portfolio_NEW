@@ -68,6 +68,115 @@
   visibility: visible !important;
 }
 
+/* Ensure fullscreen mode appears above modal */
+.image-gallery.fullscreen {
+  z-index: 9999 !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.95) !important;
+}
+
+.image-gallery.fullscreen .image-gallery-content {
+  height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.image-gallery.fullscreen .image-gallery-slide img {
+  max-height: 90vh !important;
+  max-width: 90vw !important;
+  object-fit: contain !important;
+}
+
+.image-gallery.fullscreen .image-gallery-fullscreen-button {
+  z-index: 10000 !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.image-gallery.fullscreen .image-gallery-fullscreen-button:hover {
+  background: rgba(0, 0, 0, 0.9) !important;
+  border-color: rgba(0, 238, 255, 0.5) !important;
+}
+
+/* Fullscreen navigation styling */
+.image-gallery.fullscreen .image-gallery-left-nav,
+.image-gallery.fullscreen .image-gallery-right-nav {
+  z-index: 10000 !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  border-radius: 50% !important;
+  width: 50px !important;
+  height: 50px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+}
+
+.image-gallery.fullscreen .image-gallery-left-nav:hover,
+.image-gallery.fullscreen .image-gallery-right-nav:hover {
+  background: rgba(0, 0, 0, 0.8) !important;
+  transform: translateY(-50%) scale(1.1) !important;
+}
+
+/* Fullscreen thumbnails styling */
+.image-gallery.fullscreen .image-gallery-thumbnails {
+  background: rgba(0, 0, 0, 0.8) !important;
+  padding: 10px !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.image-gallery.fullscreen .image-gallery-thumbnail {
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+.image-gallery.fullscreen .image-gallery-thumbnail.active,
+.image-gallery.fullscreen .image-gallery-thumbnail:hover {
+  border-color: #00eeff !important;
+  box-shadow: 0 0 15px rgba(0, 238, 255, 0.5) !important;
+}
+
+/* Enhanced fullscreen button visibility */
+.project-gallery .image-gallery-fullscreen-button {
+  background: rgba(0, 0, 0, 0.7) !important;
+  border: 1px solid rgba(0, 238, 255, 0.3) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+.project-gallery .image-gallery-fullscreen-button:hover {
+  background: rgba(0, 0, 0, 0.9) !important;
+  border-color: rgba(0, 238, 255, 0.6) !important;
+  box-shadow: 0 0 15px rgba(0, 238, 255, 0.3) !important;
+  transform: scale(1.05) !important;
+}
+
+/* Ensure fullscreen works properly on all browsers */
+.image-gallery:-webkit-full-screen {
+  z-index: 9999 !important;
+  background: rgba(0, 0, 0, 0.95) !important;
+}
+
+.image-gallery:-moz-full-screen {
+  z-index: 9999 !important;
+  background: rgba(0, 0, 0, 0.95) !important;
+}
+
+.image-gallery:-ms-fullscreen {
+  z-index: 9999 !important;
+  background: rgba(0, 0, 0, 0.95) !important;
+}
+
+.image-gallery:fullscreen {
+  z-index: 9999 !important;
+  background: rgba(0, 0, 0, 0.95) !important;
+}
+
 .image-gallery-fullscreen-button:hover {
   background: rgba(0, 0, 0, 0.7) !important;
 }

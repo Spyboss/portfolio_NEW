@@ -1,11 +1,10 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isNavigating, setIsNavigating] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,15 +15,10 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Optimized navigation handler with shorter debounce
-  const handleNavigation = useCallback((href) => {
-    if (isNavigating) return;
-    
-    setIsNavigating(true);
-    setIsMobileMenuOpen(false);
-    
-    // Handle hash navigation with smooth scrolling
+  // Simple smooth scroll handler for hash links
+  const handleSmoothScroll = (e, href) => {
     if (href.startsWith('#')) {
+      e.preventDefault();
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ 
@@ -33,12 +27,8 @@ const Navbar = () => {
         });
       }
     }
-    
-    // Reset navigation state after a much shorter delay
-    setTimeout(() => {
-      setIsNavigating(false);
-    }, 100);
-  }, [isNavigating]);
+    setIsMobileMenuOpen(false);
+  };
 
   const navLinks = [
     { name: 'Home', href: '#home' },
@@ -70,13 +60,13 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             className="relative flex items-center space-x-2 group"
           >
-            <button 
-              onClick={() => handleNavigation('#home')}
-              disabled={isNavigating}
-              className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-blue-300 hover:via-purple-300 hover:to-cyan-300 transition-all duration-500 tracking-wide focus:outline-none focus:ring-0 disabled:opacity-50"
+            <Link 
+              href="#home"
+              onClick={(e) => handleSmoothScroll(e, '#home')}
+              className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-blue-300 hover:via-purple-300 hover:to-cyan-300 transition-all duration-500 tracking-wide"
             >
               UHADEV
-            </button>
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -96,10 +86,10 @@ const Navbar = () => {
                 {/* Glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-purple-400/20 to-cyan-400/20 rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-md"></div>
                 
-                <button
-                  onClick={() => handleNavigation(link.href)}
-                  disabled={isNavigating}
-                  className="relative z-10 px-4 py-2 text-gray-300 hover:text-white font-medium transition-all duration-500 tracking-wide group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:via-purple-400 group-hover:to-cyan-400 group-hover:bg-clip-text focus:outline-none focus:ring-0 disabled:opacity-50"
+                <Link
+                  href={link.href}
+                  onClick={(e) => handleSmoothScroll(e, link.href)}
+                  className="relative z-10 px-4 py-2 text-gray-300 hover:text-white font-medium transition-all duration-500 tracking-wide group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:via-purple-400 group-hover:to-cyan-400 group-hover:bg-clip-text"
                 >
                   {link.name}
                   
@@ -108,7 +98,7 @@ const Navbar = () => {
                   
                   {/* Top accent dot */}
                   <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                </button>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -161,10 +151,10 @@ const Navbar = () => {
                 whileHover={{ scale: 1.02, x: 5 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <button
-                  onClick={() => handleNavigation(link.href)}
-                  disabled={isNavigating}
-                  className="relative block w-full text-left px-6 py-4 text-gray-300 hover:text-white font-medium transition-all duration-300 rounded-xl group overflow-hidden focus:outline-none focus:ring-0 disabled:opacity-50"
+                <Link
+                  href={link.href}
+                  onClick={(e) => handleSmoothScroll(e, link.href)}
+                  className="relative block w-full text-left px-6 py-4 text-gray-300 hover:text-white font-medium transition-all duration-300 rounded-xl group overflow-hidden"
                 >
                   {/* Background */}
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm"></div>
@@ -184,7 +174,7 @@ const Navbar = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
-                </button>
+                </Link>
               </motion.div>
             ))}
           </div>

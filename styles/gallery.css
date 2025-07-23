@@ -52,16 +52,18 @@
 .image-gallery-fullscreen-button {
   position: absolute !important;
   top: 16px !important;
-  right: 16px !important;
+  left: 16px !important;
   z-index: 15 !important;
   width: 40px !important;
   height: 40px !important;
-  background: rgba(0, 0, 0, 0.5) !important;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1)) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 50% !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  transition: background-color 0.3s ease !important;
+  transition: all 0.2s ease !important;
   color: white !important;
   pointer-events: auto !important;
   opacity: 1 !important;
@@ -144,15 +146,16 @@
 
 /* Enhanced fullscreen button visibility */
 .project-gallery .image-gallery-fullscreen-button {
-  background: rgba(0, 0, 0, 0.7) !important;
-  border: 1px solid rgba(0, 238, 255, 0.3) !important;
+  background: linear-gradient(to right, rgba(17, 24, 39, 0.95), rgba(30, 58, 138, 0.2), rgba(17, 24, 39, 0.95)) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
 }
 
 .project-gallery .image-gallery-fullscreen-button:hover {
-  background: rgba(0, 0, 0, 0.9) !important;
-  border-color: rgba(0, 238, 255, 0.6) !important;
-  box-shadow: 0 0 15px rgba(0, 238, 255, 0.3) !important;
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2)) !important;
+  border-color: rgba(59, 130, 246, 0.3) !important;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3) !important;
   transform: scale(1.05) !important;
 }
 
@@ -178,22 +181,25 @@
 }
 
 .image-gallery-fullscreen-button:hover {
-  background: rgba(0, 0, 0, 0.7) !important;
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2)) !important;
+  border-color: rgba(59, 130, 246, 0.3) !important;
 }
 
 .image-gallery-play-button {
   position: absolute !important;
   top: 16px !important;
-  right: 70px !important;
+  left: 70px !important;
   z-index: 15 !important;
   width: 40px !important;
   height: 40px !important;
-  background: rgba(0, 0, 0, 0.5) !important;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1)) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 50% !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  transition: background-color 0.3s ease !important;
+  transition: all 0.2s ease !important;
   color: white !important;
   pointer-events: auto !important;
   opacity: 1 !important;
@@ -201,7 +207,8 @@
 }
 
 .image-gallery-play-button:hover {
-  background: rgba(0, 0, 0, 0.7) !important;
+  background: linear-gradient(to right, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2)) !important;
+  border-color: rgba(59, 130, 246, 0.3) !important;
 }
 
 /* Navigation arrows positioning - center on sides, completely separate from top buttons */
@@ -228,8 +235,15 @@
 .image-gallery-play-button svg {
   pointer-events: none;
   fill: currentColor !important;
-  width: 16px !important;
-  height: 16px !important;
+  stroke: currentColor !important;
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px !important;
+  min-height: 18px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  flex-shrink: 0 !important;
 }
 
 .image-gallery-left-nav svg,
@@ -255,12 +269,12 @@
   /* Adjust button spacing on mobile */
   .image-gallery-fullscreen-button {
     top: 5px;
-    right: 5px;
+    left: 5px;
   }
   
   .image-gallery-play-button {
     top: 5px;
-    right: 50px;
+    left: 50px;
   }
   
   .image-gallery-left-nav {

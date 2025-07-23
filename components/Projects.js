@@ -30,7 +30,7 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
         
         {/* Category Badge */}
         <div className="absolute top-3 left-3 z-20">
-          <span className="px-3 py-1 bg-gradient-to-r from-blue-500/30 to-purple-500/30 text-blue-200 text-xs font-semibold rounded-full backdrop-blur-sm border border-blue-400/30">
+          <span className="px-3 py-1 bg-black/80 text-white text-xs font-semibold rounded-full backdrop-blur-sm border border-white/20 shadow-lg">
             {project.technologies && project.technologies[0]}
           </span>
         </div>

@@ -142,8 +142,12 @@ const Contact = () => {
             <div className="glass-card p-8 neon-glow">
               {/* Enhanced Header with Avatar */}
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
-                  <span className="text-white text-2xl font-bold">UA</span>
+                <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg shadow-blue-500/30 border-2 border-blue-400/30">
+                  <img 
+                    src="/images/profile/uminda-profile.jpg" 
+                    alt="Uminda Aberathne" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <h3 className="text-heading-2 text-white">Let's Connect</h3>
@@ -429,17 +433,19 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="glass-card p-6 bg-gradient-to-br from-white/5 to-white/10 border border-cyan-400/20 hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20"
+              className="glass-card p-6 bg-gradient-to-br from-white/5 to-white/10 border border-cyan-400/20 hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 flex flex-col justify-between"
             >
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-yellow-400 text-lg">★</span>
-                ))}
+              <div>
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">★</span>
+                  ))}
+                </div>
+                <p className="text-body text-gray-300 italic mb-4">
+                  "Uminda delivered an exceptional ERP system that transformed our dealership operations. The automated billing and CRM features reduced our admin time by 60%. Professional, reliable, and highly skilled!"
+                </p>
               </div>
-              <p className="text-body text-gray-300 italic">
-                "Uminda delivered an exceptional ERP system that transformed our dealership operations. The automated billing and CRM features reduced our admin time by 60%. Professional, reliable, and highly skilled!"
-              </p>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 mt-auto">
                 <div className="w-10 h-10 rounded-full overflow-hidden shadow-sm shadow-blue-500/30 border-2 border-blue-400/30">
                   <img 
                     src="https://res.cloudinary.com/dthx4fxte/image/upload/v1753382510/unnamed_kwwvx7.jpg" 
@@ -459,17 +465,19 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="glass-card p-6 bg-gradient-to-br from-white/5 to-white/10 border border-cyan-400/20"
+              className="glass-card p-6 bg-gradient-to-br from-white/5 to-white/10 border border-cyan-400/20 hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 flex flex-col justify-between"
             >
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-yellow-400 text-lg">★</span>
-                ))}
+              <div>
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">★</span>
+                  ))}
+                </div>
+                <p className="text-body text-gray-300 italic mb-4">
+                  "The restaurant platform Uminda built revolutionized our operations! The digital menu system and table-side ordering improved customer experience dramatically. Modern design and flawless functionality!"
+                </p>
               </div>
-              <p className="text-body text-gray-300 italic">
-                "The restaurant platform Uminda built revolutionized our operations! The digital menu system and table-side ordering improved customer experience dramatically. Modern design and flawless functionality!"
-              </p>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 mt-auto">
                 <div className="w-10 h-10 rounded-full overflow-hidden shadow-sm shadow-blue-500/30 border-2 border-blue-400/30">
                   <img 
                     src="https://res.cloudinary.com/dthx4fxte/image/upload/v1753382676/FB_IMG_1729942362525_ipfaeu.jpg" 
@@ -489,17 +497,19 @@ const Contact = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true }}
-              className="glass-card p-6 bg-gradient-to-br from-white/5 to-white/10 border border-cyan-400/20"
+              className="glass-card p-6 bg-gradient-to-br from-white/5 to-white/10 border border-cyan-400/20 hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 flex flex-col justify-between"
             >
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-yellow-400 text-lg">★</span>
-                ))}
+              <div>
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">★</span>
+                  ))}
+                </div>
+                <p className="text-body text-gray-300 italic mb-4">
+                  "Echo Journal has completely transformed my daily routine! The AI-powered insights help me understand my habits better, and the automated reminders keep me on track. The cross-platform sync is seamless!"
+                </p>
               </div>
-              <p className="text-body text-gray-300 italic">
-                "Echo Journal has completely transformed my daily routine! The AI-powered insights help me understand my habits better, and the automated reminders keep me on track. The cross-platform sync is seamless!"
-              </p>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 mt-auto">
                 <div className="w-10 h-10 rounded-full overflow-hidden shadow-sm shadow-blue-500/30 border-2 border-blue-400/30">
                   <img 
                     src="https://res.cloudinary.com/dthx4fxte/image/upload/v1753382813/5951752_i7hk7v.png" 

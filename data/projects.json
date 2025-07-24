@@ -24,7 +24,7 @@
       "shortDescription": "Modern ordering, feedback, and analytics platform for restaurants with digital menus and table-side ordering.",
       "description": "Comprehensive restaurant management platform built with React and Next.js. Features digital menu management, table-side ordering system, customer feedback collection, and detailed analytics dashboards. The platform streamlines restaurant operations while enhancing customer experience through modern UI/UX design and real-time order processing.",
       "image": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483182/screencapture-realtaste-pages-dev-2025-07-14-14_22_05_ncximj.png",
-      "technologies": ["React", "Next.js", "MongoDB", "Supabase", "Tailwind CSS"],
+      "technologies": ["React", "Next.js", "Supabase", "Tailwind CSS"],
       "features": [
         "Digital menu management with real-time updates",
         "Table-side ordering system for customers",

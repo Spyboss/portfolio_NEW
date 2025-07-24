@@ -72,26 +72,61 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
       {/* Enhanced Project Info */}
       <div className="project-content p-6 flex-1 flex flex-col">
         <h3 className="text-heading-3 text-white group-hover:text-blue-300 transition-colors duration-300 leading-tight">{project.title}</h3>
-        <p className="text-body text-gray-300 flex-1 leading-relaxed">{project.shortDescription}</p>
+        <p className="text-body text-gray-300 mb-4 leading-relaxed">{project.shortDescription}</p>
         
-        {/* Enhanced Technologies Display */}
-        <div className="mb-6">
+        {/* Enhanced Technologies Display with Shields.io Badges */}
+        <div className="mb-4">
           <h4 className="text-sm font-semibold text-neon-cyan mb-3">Technologies Used:</h4>
           <div className="flex flex-wrap gap-2">
-            {project.technologies && project.technologies.map((tech, idx) => (
-              <span
-                key={idx}
-                className="px-3 py-1.5 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-200 text-sm rounded-lg border border-blue-400/30 backdrop-blur-sm hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-200"
-              >
-                {tech}
-              </span>
-            ))}
+            {project.technologies && project.technologies.map((tech, idx) => {
+              // Generate shields.io badge URL with proper logo and colors
+              const getTechBadge = (technology) => {
+                const techMap = {
+                  'React': { logo: 'react', color: '61DAFB', logoColor: 'black' },
+                  'Node.js': { logo: 'nodedotjs', color: '339933', logoColor: 'white' },
+                  'MongoDB': { logo: 'mongodb', color: '47A248', logoColor: 'white' },
+                  'TypeScript': { logo: 'typescript', color: '3178C6', logoColor: 'white' },
+                  'Python': { logo: 'python', color: '3776AB', logoColor: 'white' },
+                  'JavaScript': { logo: 'javascript', color: 'F7DF1E', logoColor: 'black' },
+                  'Next.js': { logo: 'nextdotjs', color: '000000', logoColor: 'white' },
+                  'Next.js 14': { logo: 'nextdotjs', color: '000000', logoColor: 'white' },
+                  'Tailwind CSS': { logo: 'tailwindcss', color: '06B6D4', logoColor: 'white' },
+                  'Supabase': { logo: 'supabase', color: '3ECF8E', logoColor: 'white' },
+                  'Binance API': { logo: 'binance', color: 'F3BA2F', logoColor: 'black' },
+                  'WebSocket': { logo: 'socketdotio', color: '010101', logoColor: 'white' },
+                  'React Native': { logo: 'react', color: '61DAFB', logoColor: 'black' },
+                  'AI APIs': { logo: 'openai', color: '412991', logoColor: 'white' },
+                  'Puppeteer': { logo: 'puppeteer', color: '40B5A4', logoColor: 'white' },
+                  'JWT': { logo: 'jsonwebtokens', color: '000000', logoColor: 'white' },
+                  'Mistral-Small': { logo: 'ai', color: 'FF6B35', logoColor: 'white' },
+                  'MongoDB Atlas': { logo: 'mongodb', color: '47A248', logoColor: 'white' },
+                  'SQLite': { logo: 'sqlite', color: '003B57', logoColor: 'white' },
+                  'OpenRouter': { logo: 'router', color: '0066CC', logoColor: 'white' },
+                  'Prisma': { logo: 'prisma', color: '2D3748', logoColor: 'white' },
+                  'Clerk': { logo: 'clerk', color: '6C47FF', logoColor: 'white' },
+                  'Redis': { logo: 'redis', color: 'DC382D', logoColor: 'white' }
+                };
+                
+                const config = techMap[technology] || { logo: 'code', color: '4A90E2', logoColor: 'white' };
+                return `https://img.shields.io/badge/${encodeURIComponent(technology)}-${config.color}?style=for-the-badge&logo=${config.logo}&logoColor=${config.logoColor}`;
+              };
+              
+              return (
+                <img
+                  key={idx}
+                  src={getTechBadge(tech)}
+                  alt={`${tech} technology badge`}
+                  className="h-6 transition-all duration-200 hover:scale-110 hover:shadow-lg"
+                  loading="lazy"
+                />
+              );
+            })}
           </div>
         </div>
         
         {/* Enhanced Key Features */}
         {project.features && (
-          <div className="mb-6">
+          <div className="mb-4">
             <h4 className="text-sm font-semibold text-neon-cyan mb-3">Key Features:</h4>
             <ul className="text-sm text-gray-300 space-y-2">
               {project.features.slice(0, 3).map((feature, index) => (
@@ -104,8 +139,11 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
           </div>
         )}
         
+        {/* Spacer to push action links to bottom */}
+        <div className="flex-1"></div>
+        
         {/* Enhanced Action Links */}
-        <div className="flex gap-4 mt-auto pt-4 border-t border-white/10">
+        <div className="flex gap-4 pt-4 border-t border-white/10">
           {project.liveDemo && (
             <a
               href={project.liveDemo}
@@ -231,18 +269,53 @@ const ProjectModal = ({ project, closeModal, projectGalleries }) => {
             )}
           </div>
 
-          <div className="flex flex-wrap gap-2 mb-6">
-            {project.technologies && project.technologies.map((tech, idx) => (
-              <span
-                key={idx}
-                className="px-3 py-1 text-body-small rounded-full bg-gradient-to-r from-blue-500/30 to-purple-500/30 text-blue-200 border border-blue-400/40 backdrop-blur-sm hover:from-blue-500/40 hover:to-purple-500/40 transition-all duration-200"
-              >
-                {tech}
-              </span>
-            ))}
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.technologies && project.technologies.map((tech, idx) => {
+              // Generate shields.io badge URL with proper logo and colors
+              const getTechBadge = (technology) => {
+                const techMap = {
+                  'React': { logo: 'react', color: '61DAFB', logoColor: 'black' },
+                  'Node.js': { logo: 'nodedotjs', color: '339933', logoColor: 'white' },
+                  'MongoDB': { logo: 'mongodb', color: '47A248', logoColor: 'white' },
+                  'TypeScript': { logo: 'typescript', color: '3178C6', logoColor: 'white' },
+                  'Python': { logo: 'python', color: '3776AB', logoColor: 'white' },
+                  'JavaScript': { logo: 'javascript', color: 'F7DF1E', logoColor: 'black' },
+                  'Next.js': { logo: 'nextdotjs', color: '000000', logoColor: 'white' },
+                  'Next.js 14': { logo: 'nextdotjs', color: '000000', logoColor: 'white' },
+                  'Tailwind CSS': { logo: 'tailwindcss', color: '06B6D4', logoColor: 'white' },
+                  'Supabase': { logo: 'supabase', color: '3ECF8E', logoColor: 'white' },
+                  'Binance API': { logo: 'binance', color: 'F3BA2F', logoColor: 'black' },
+                  'WebSocket': { logo: 'socketdotio', color: '010101', logoColor: 'white' },
+                  'React Native': { logo: 'react', color: '61DAFB', logoColor: 'black' },
+                  'AI APIs': { logo: 'openai', color: '412991', logoColor: 'white' },
+                  'Puppeteer': { logo: 'puppeteer', color: '40B5A4', logoColor: 'white' },
+                  'JWT': { logo: 'jsonwebtokens', color: '000000', logoColor: 'white' },
+                  'Mistral-Small': { logo: 'ai', color: 'FF6B35', logoColor: 'white' },
+                  'MongoDB Atlas': { logo: 'mongodb', color: '47A248', logoColor: 'white' },
+                  'SQLite': { logo: 'sqlite', color: '003B57', logoColor: 'white' },
+                  'OpenRouter': { logo: 'router', color: '0066CC', logoColor: 'white' },
+                  'Prisma': { logo: 'prisma', color: '2D3748', logoColor: 'white' },
+                  'Clerk': { logo: 'clerk', color: '6C47FF', logoColor: 'white' },
+                  'Redis': { logo: 'redis', color: 'DC382D', logoColor: 'white' }
+                };
+                
+                const config = techMap[technology] || { logo: 'code', color: '4A90E2', logoColor: 'white' };
+                return `https://img.shields.io/badge/${encodeURIComponent(technology)}-${config.color}?style=for-the-badge&logo=${config.logo}&logoColor=${config.logoColor}`;
+              };
+              
+              return (
+                <img
+                  key={idx}
+                  src={getTechBadge(tech)}
+                  alt={`${tech} technology badge`}
+                  className="h-7 transition-all duration-200 hover:scale-110 hover:shadow-lg"
+                  loading="lazy"
+                />
+              );
+            })}
           </div>
 
-          <p className="text-body text-gray-300 mb-6 leading-relaxed">
+          <p className="text-body text-gray-300 mb-3 leading-relaxed">
             {project.description}
           </p>
 

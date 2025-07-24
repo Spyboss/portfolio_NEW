@@ -38,7 +38,7 @@ class ErrorBoundary extends React.Component {
         <div className="min-h-screen bg-darker-blue flex items-center justify-center text-white">
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-4">Something went wrong</h2>
-            <p className="text-gray-300 mb-6">We're sorry, but something unexpected happened.</p>
+            <p className="text-gray-300 mb-6">We&apos;re sorry, but something unexpected happened.</p>
             <button
               onClick={() => this.setState({ hasError: false, error: null })}
               className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"

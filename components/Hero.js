@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { FaGithub, FaLinkedin, FaFacebook, FaInstagram, FaWhatsapp, FaTelegram, FaRocket, FaCode, FaBrain } from 'react-icons/fa';
+
+const skills = [
+  'Full-Stack Developer',
+  'Freelancer',
+  'Web & Mobile App Builder',
+  'Tech Problem Solver'
+];
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
-
-  const skills = [
-    'Full-Stack Developer',
-    'Freelancer',
-    'Web & Mobile App Builder',
-    'Tech Problem Solver'
-  ];
 
   useEffect(() => {
     const currentSkill = skills[currentIndex];
@@ -46,7 +47,7 @@ const Hero = () => {
     }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [displayText, isDeleting, currentIndex, skills, typingSpeed]);
+  }, [displayText, isDeleting, currentIndex, typingSpeed]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -87,9 +88,11 @@ const Hero = () => {
           >
             <div className="relative w-32 h-32 mx-auto mb-6">
               <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-neon-cyan to-neon-magenta animate-pulse-slow"></div>
-              <img
+              <Image
                 src="/images/profile/uminda-profile.jpg"
                 alt="Uminda Aberathne"
+                width={128}
+                height={128}
                 className="relative w-full h-full object-cover rounded-full border-4 border-darker-blue"
               />
             </div>
@@ -338,7 +341,7 @@ const Hero = () => {
             onClick={() => scrollToSection('contact')}
             className="btn-primary"
           >
-            Let's Discuss Your Project
+Let&apos;s Discuss Your Project
           </motion.button>
           <p className="text-body-small text-gray-400 mt-4">Free consultation • No commitment required</p>
         </motion.div>

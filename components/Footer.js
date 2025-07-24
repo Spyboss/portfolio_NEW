@@ -90,7 +90,7 @@ const Footer = () => {
               <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 shadow-sm shadow-blue-500/30"></span>
             </h3>
             <p className="text-body text-gray-400">
-              Have a project in mind? Get in touch and let's create something amazing together.
+              Have a project in mind? Get in touch and let&apos;s create something amazing together.
             </p>
             <div className="space-y-2">
               <p className="text-body text-gray-400">Email: uminda.h.aberathne@gmail.com</p>

@@ -440,8 +440,12 @@ const Contact = () => {
                 "Uminda delivered an exceptional ERP system that transformed our dealership operations. The automated billing and CRM features reduced our admin time by 60%. Professional, reliable, and highly skilled!"
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-sm shadow-blue-500/30">
-                  <span className="text-white text-sm font-bold">GM</span>
+                <div className="w-10 h-10 rounded-full overflow-hidden shadow-sm shadow-blue-500/30 border-2 border-blue-400/30">
+                  <img 
+                    src="https://res.cloudinary.com/dthx4fxte/image/upload/v1753382510/unnamed_kwwvx7.jpg" 
+                    alt="Gunawardana Motors" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <p className="text-body-small text-white font-semibold">Gunawardana Motors</p>
@@ -466,8 +470,12 @@ const Contact = () => {
                 "The restaurant platform Uminda built revolutionized our operations! The digital menu system and table-side ordering improved customer experience dramatically. Modern design and flawless functionality!"
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-sm shadow-blue-500/30">
-                  <span className="text-white text-sm font-bold">RT</span>
+                <div className="w-10 h-10 rounded-full overflow-hidden shadow-sm shadow-blue-500/30 border-2 border-blue-400/30">
+                  <img 
+                    src="https://res.cloudinary.com/dthx4fxte/image/upload/v1753382676/FB_IMG_1729942362525_ipfaeu.jpg" 
+                    alt="Realtaste Restaurant" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <p className="text-body-small text-white font-semibold">Realtaste Restaurant</p>
@@ -492,8 +500,12 @@ const Contact = () => {
                 "Echo Journal has completely transformed my daily routine! The AI-powered insights help me understand my habits better, and the automated reminders keep me on track. The cross-platform sync is seamless!"
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-sm shadow-blue-500/30">
-                  <span className="text-white text-sm font-bold">EJ</span>
+                <div className="w-10 h-10 rounded-full overflow-hidden shadow-sm shadow-blue-500/30 border-2 border-blue-400/30">
+                  <img 
+                    src="https://res.cloudinary.com/dthx4fxte/image/upload/v1753382813/5951752_i7hk7v.png" 
+                    alt="Echo Journal User" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <p className="text-body-small text-white font-semibold">Echo Journal User</p>

@@ -146,7 +146,7 @@ const About = () => {
             <div className="glass-card">
               <h3 className="text-heading-3 text-white">About Me</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
-                I'm a passionate full-stack developer with over 4 years of experience 
+                I&apos;m a passionate full-stack developer with over 4 years of experience 
                 building modern web applications. My journey started with Python and has 
                 evolved into creating comprehensive solutions using cutting-edge technologies.
               </p>
@@ -156,7 +156,7 @@ const About = () => {
                 My experience spans from small business solutions to complex enterprise systems.
               </p>
               <p className="text-gray-300 leading-relaxed">
-                When I'm not coding, I enjoy exploring new technologies, contributing to 
+                When I&apos;m not coding, I enjoy exploring new technologies, contributing to 
                 open-source projects, and sharing knowledge with the developer community.
               </p>
             </div>

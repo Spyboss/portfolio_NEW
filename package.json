@@ -20,7 +20,6 @@
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.6.0",
     "@tabler/icons-react": "^3.34.0",
-    "antd": "^5.26.5",
     "framer-motion": "^10.17.9",
     "next": "^14.2.24",
     "react": "^18.2.0",
@@ -30,8 +29,10 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
+    "eslint": "8.57.1",
+    "eslint-config-next": "15.4.3",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.4.0",
-    "wrangler": "^3.111.0"
+    "wrangler": "^4.26.0"
   }
 }

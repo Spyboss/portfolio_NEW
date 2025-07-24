@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
+import Image from 'next/image';
 import { FaGithub, FaExternalLinkAlt, FaTimes, FaImages } from 'react-icons/fa';
 import ImageGallery from 'react-image-gallery';
 import "react-image-gallery/styles/css/image-gallery.css";
@@ -20,9 +21,11 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
       {/* Enhanced Project Image */}
       <div className="project-image relative overflow-hidden h-52">
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-purple-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
-        <img
+        <Image
           src={project.image}
           alt={project.title}
+          width={400}
+          height={208}
           className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
           loading="lazy"
           style={{ imageRendering: 'crisp-edges' }}
@@ -112,10 +115,12 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
               };
               
               return (
-                <img
+                <Image
                   key={idx}
                   src={getTechBadge(tech)}
                   alt={`${tech} technology badge`}
+                  width={100}
+                  height={24}
                   className="h-6 transition-all duration-200 hover:scale-110 hover:shadow-lg"
                   loading="lazy"
                 />
@@ -175,8 +180,6 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
 };
 
 const ProjectModal = ({ project, closeModal, projectGalleries }) => {
-  if (!project) return null;
-
   // Find the gallery for this project
   const projectGallery = projectGalleries.find(gallery => gallery.projectId === project.id);
 
@@ -204,6 +207,8 @@ const ProjectModal = ({ project, closeModal, projectGalleries }) => {
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, []);
+
+  if (!project) return null;
 
   return (
     <motion.div
@@ -249,9 +254,11 @@ const ProjectModal = ({ project, closeModal, projectGalleries }) => {
             </div>
           ) : (
             <div className="h-64 md:h-80 overflow-hidden">
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
+                width={600}
+                height={320}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-deep-blue"></div>
@@ -304,10 +311,12 @@ const ProjectModal = ({ project, closeModal, projectGalleries }) => {
               };
               
               return (
-                <img
+                <Image
                   key={idx}
                   src={getTechBadge(tech)}
                   alt={`${tech} technology badge`}
+                  width={120}
+                  height={28}
                   className="h-7 transition-all duration-200 hover:scale-110 hover:shadow-lg"
                   loading="lazy"
                 />

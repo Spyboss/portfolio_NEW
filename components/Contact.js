@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaWhatsapp, FaTelegram, FaRocket, FaClock, FaCheckCircle } from 'react-icons/fa';
 
 const Contact = () => {
@@ -40,7 +41,7 @@ const Contact = () => {
     '$300 - $800',
     '$800 - $2,000',
     '$2,000+',
-    'Let\'s discuss'
+    'Let&apos;s discuss'
   ];
 
   const timelines = [
@@ -93,7 +94,7 @@ const Contact = () => {
             Transform Your Vision into Reality
           </h2>
           <p className="text-large text-gray-300 max-w-3xl mx-auto">
-            Ready to build something amazing? Let's discuss your project and create a roadmap to success. 
+            Ready to build something amazing? Let&apos;s discuss your project and create a roadmap to success. 
             Get expert guidance and a custom solution tailored to your business needs.
           </p>
         </motion.div>
@@ -143,14 +144,16 @@ const Contact = () => {
               {/* Enhanced Header with Avatar */}
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg shadow-blue-500/30 border-2 border-blue-400/30">
-                  <img 
+                  <Image 
                     src="/images/profile/uminda-profile.jpg" 
                     alt="Uminda Aberathne" 
+                    width={64}
+                    height={64}
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div>
-                  <h3 className="text-heading-2 text-white">Let's Connect</h3>
+                  <h3 className="text-heading-2 text-white">Let&apos;s Connect</h3>
                   <p className="text-body text-blue-300 font-medium">Transform Your Vision into Reality</p>
                 </div>
               </div>
@@ -191,7 +194,7 @@ const Contact = () => {
                 <h4 className="text-heading-5 text-white">Connect With Me</h4>
                 <div className="flex space-x-4">
                   <a
-                    href="https://github.com/UHAAHM"
+                    href="https://github.com/Spyboss"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Visit GitHub profile"
@@ -411,7 +414,7 @@ const Contact = () => {
                 </button>
 
                 <p className="text-body text-gray-400 text-center">
-                  I'll respond within 24 hours with a detailed project proposal
+                  I&apos;ll respond within 24 hours with a detailed project proposal
                 </p>
               </form>
             </div>
@@ -442,14 +445,16 @@ const Contact = () => {
                   ))}
                 </div>
                 <p className="text-body text-gray-300 italic mb-4">
-                  "Uminda delivered an exceptional ERP system that transformed our dealership operations. The automated billing and CRM features reduced our admin time by 60%. Professional, reliable, and highly skilled!"
+                  &quot;Uminda delivered an exceptional ERP system that transformed our dealership operations. The automated billing and CRM features reduced our admin time by 60%. Professional, reliable, and highly skilled!&quot;
                 </p>
               </div>
               <div className="flex items-center gap-3 mt-auto">
                 <div className="w-10 h-10 rounded-full overflow-hidden shadow-sm shadow-blue-500/30 border-2 border-blue-400/30">
-                  <img 
+                  <Image 
                     src="https://res.cloudinary.com/dthx4fxte/image/upload/v1753382510/unnamed_kwwvx7.jpg" 
                     alt="Gunawardana Motors" 
+                    width={40}
+                    height={40}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -474,14 +479,16 @@ const Contact = () => {
                   ))}
                 </div>
                 <p className="text-body text-gray-300 italic mb-4">
-                  "The restaurant platform Uminda built revolutionized our operations! The digital menu system and table-side ordering improved customer experience dramatically. Modern design and flawless functionality!"
+                  &quot;The restaurant platform Uminda built revolutionized our operations! The digital menu system and table-side ordering improved customer experience dramatically. Modern design and flawless functionality!&quot;
                 </p>
               </div>
               <div className="flex items-center gap-3 mt-auto">
                 <div className="w-10 h-10 rounded-full overflow-hidden shadow-sm shadow-blue-500/30 border-2 border-blue-400/30">
-                  <img 
+                  <Image 
                     src="https://res.cloudinary.com/dthx4fxte/image/upload/v1753382676/FB_IMG_1729942362525_ipfaeu.jpg" 
                     alt="Realtaste Restaurant" 
+                    width={40}
+                    height={40}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -506,14 +513,16 @@ const Contact = () => {
                   ))}
                 </div>
                 <p className="text-body text-gray-300 italic mb-4">
-                  "Echo Journal has completely transformed my daily routine! The AI-powered insights help me understand my habits better, and the automated reminders keep me on track. The cross-platform sync is seamless!"
+                  &quot;Echo Journal has completely transformed my daily routine! The AI-powered insights help me understand my habits better, and the automated reminders keep me on track. The cross-platform sync is seamless!&quot;
                 </p>
               </div>
               <div className="flex items-center gap-3 mt-auto">
                 <div className="w-10 h-10 rounded-full overflow-hidden shadow-sm shadow-blue-500/30 border-2 border-blue-400/30">
-                  <img 
+                  <Image 
                     src="https://res.cloudinary.com/dthx4fxte/image/upload/v1753382813/5951752_i7hk7v.png" 
                     alt="Echo Journal User" 
+                    width={40}
+                    height={40}
                     className="w-full h-full object-cover"
                   />
                 </div>

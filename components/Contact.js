@@ -15,17 +15,50 @@ const Contact = () => {
   });
 
   const [isLoading, setIsLoading] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', or null
+  const [submitStatus, setSubmitStatus] = useState(null);
+  const [lastSubmit, setLastSubmit] = useState(0);
+
+  // Rate limiting configuration (lenient - 60 seconds)
+  const RATE_LIMIT = 60000; // 60 seconds
+  const MAX_INPUT_LENGTH = 5000; // Maximum characters for message field // 'success', 'error', or null
+
+  // Input sanitization function
+  const sanitizeInput = (input) => {
+    if (typeof input !== 'string') return input;
+    return input
+      .replace(/<script[^>]*>.*?<\/script>/gi, '') // Remove script tags
+      .replace(/<[^>]*>/g, '') // Remove HTML tags
+      .replace(/javascript:/gi, '') // Remove javascript: protocol
+      .replace(/on\w+\s*=/gi, '') // Remove event handlers
+      .trim();
+  };
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+    
+    // Apply length validation for message field
+    if (name === 'message' && value.length > MAX_INPUT_LENGTH) {
+      return; // Don't update if exceeds limit
+    }
+    
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: sanitizeInput(value)
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Rate limiting check (lenient - 60 seconds)
+    const now = Date.now();
+    if (now - lastSubmit < RATE_LIMIT) {
+      const remainingTime = Math.ceil((RATE_LIMIT - (now - lastSubmit)) / 1000);
+      setSubmitStatus('rate-limited');
+      setTimeout(() => setSubmitStatus(null), 3000);
+      return;
+    }
+    
     setIsLoading(true);
     setSubmitStatus(null);
 
@@ -35,11 +68,11 @@ const Contact = () => {
       const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'your_template_id';
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-      // Prepare template parameters to match your EmailJS template
+      // Prepare template parameters with sanitized data
       const templateParams = {
-        name: formData.name,
-        email: formData.email,
-        message: `Project Type: ${formData.projectType}\nBudget: ${formData.budget}\nTimeline: ${formData.timeline}\n\nProject Details:\n${formData.message}`,
+        name: sanitizeInput(formData.name),
+        email: sanitizeInput(formData.email),
+        message: `Project Type: ${sanitizeInput(formData.projectType)}\nBudget: ${sanitizeInput(formData.budget)}\nTimeline: ${sanitizeInput(formData.timeline)}\n\nProject Details:\n${sanitizeInput(formData.message)}`,
         time: new Date().toLocaleString()
       };
 
@@ -51,8 +84,13 @@ const Contact = () => {
         publicKey
       );
 
-      console.log('Email sent successfully:', response);
+      // Only log success in development
+      if (process.env.NODE_ENV === 'development') {
+        console.log('Email sent successfully:', response.status);
+      }
+      
       setSubmitStatus('success');
+      setLastSubmit(now); // Update last submit time
       
       // Reset form after successful submission
       setFormData({
@@ -65,7 +103,10 @@ const Contact = () => {
       });
 
     } catch (error) {
-      console.error('Error sending email:', error);
+      // Only log errors in development
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Error sending email:', error.message);
+      }
       setSubmitStatus('error');
     } finally {
       setIsLoading(false);
@@ -447,9 +488,13 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={6}
+                    maxLength={MAX_INPUT_LENGTH}
                     className="w-full px-6 py-4 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all duration-300 hover:border-gray-600 resize-none backdrop-blur-sm"
                     placeholder="Describe your project goals, requirements, and any specific features you need..."
                   />
+                  <div className="text-right text-sm text-gray-400 mt-1">
+                    {formData.message.length}/{MAX_INPUT_LENGTH} characters
+                  </div>
                 </div>
 
                 <button
@@ -491,6 +536,18 @@ const Contact = () => {
                   >
                     <p className="text-red-300 font-medium">Failed to send message</p>
                     <p className="text-red-200 text-sm">Please try again or contact me directly via email.</p>
+                  </motion.div>
+                )}
+
+                {/* Rate Limit Message */}
+                {submitStatus === 'rate-limited' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-4 bg-yellow-500/20 border border-yellow-400/30 rounded-lg text-center"
+                  >
+                    <p className="text-yellow-300 font-medium">Please wait before sending another message</p>
+                    <p className="text-yellow-200 text-sm">This helps prevent spam. You can send another message in a minute.</p>
                   </motion.div>
                 )}
 

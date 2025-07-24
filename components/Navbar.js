@@ -64,6 +64,7 @@ const Navbar = () => {
               href="#home"
               onClick={(e) => handleSmoothScroll(e, '#home')}
               className="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent hover:from-blue-300 hover:via-purple-300 hover:to-cyan-300 transition-all duration-500 tracking-wide focus:outline-none focus:ring-0 focus:border-none active:outline-none select-none"
+              style={{ WebkitTapHighlightColor: 'transparent', WebkitTouchCallout: 'none', WebkitUserSelect: 'none', touchAction: 'manipulation' }}
             >
               UHADEV
             </Link>
@@ -90,14 +91,15 @@ const Navbar = () => {
                   href={link.href}
                   onClick={(e) => handleSmoothScroll(e, link.href)}
                   className="relative z-10 px-4 py-2 text-gray-300 hover:text-white font-medium transition-all duration-500 tracking-wide group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:via-purple-400 group-hover:to-cyan-400 group-hover:bg-clip-text focus:outline-none focus:ring-0 focus:border-none active:outline-none select-none"
+                  style={{ WebkitTapHighlightColor: 'transparent', WebkitTouchCallout: 'none', WebkitUserSelect: 'none', touchAction: 'manipulation' }}
                 >
                   {link.name}
                   
                   {/* Bottom accent line */}
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 group-hover:w-full transition-all duration-500 rounded-full"></div>
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 group-hover:w-full transition-all duration-500 rounded-full group-active:opacity-0"></div>
                   
                   {/* Top accent dot */}
-                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full opacity-0 group-hover:opacity-100 group-active:opacity-0 transition-all duration-300"></div>
                 </Link>
               </motion.div>
             ))}
@@ -155,12 +157,13 @@ const Navbar = () => {
                   href={link.href}
                   onClick={(e) => handleSmoothScroll(e, link.href)}
                   className="relative block w-full text-left px-6 py-4 text-gray-300 hover:text-white font-medium transition-all duration-300 rounded-xl group overflow-hidden focus:outline-none focus:ring-0 focus:border-none active:outline-none select-none"
+                  style={{ WebkitTapHighlightColor: 'transparent', WebkitTouchCallout: 'none', WebkitUserSelect: 'none', touchAction: 'manipulation' }}
                 >
                   {/* Background */}
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm"></div>
                   
                   {/* Border */}
-                  <div className="absolute inset-0 border border-white/5 group-hover:border-white/20 rounded-xl transition-all duration-300"></div>
+                  <div className="absolute inset-0 border border-white/5 group-hover:border-white/20 group-active:border-white/5 rounded-xl transition-all duration-300"></div>
                   
                   {/* Left accent */}
                   <div className="absolute left-0 top-1/2 w-0 h-8 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 group-hover:w-1 transition-all duration-300 rounded-r-full transform -translate-y-1/2"></div>

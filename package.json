@@ -18,6 +18,7 @@
   "author": "Uminda",
   "license": "ISC",
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@icons-pack/react-simple-icons": "^13.6.0",
     "@tabler/icons-react": "^3.34.0",
     "framer-motion": "^10.17.9",

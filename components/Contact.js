@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaWhatsapp, FaTelegram, FaRocket, FaClock, FaCheckCircle } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaWhatsapp, FaTelegram, FaRocket, FaClock, FaCheckCircle, FaSpinner } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +14,9 @@ const Contact = () => {
     message: ''
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', or null
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -20,10 +24,52 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    setIsLoading(true);
+    setSubmitStatus(null);
+
+    try {
+      // EmailJS configuration
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'your_service_id';
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'your_template_id';
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      // Prepare template parameters to match your EmailJS template
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        message: `Project Type: ${formData.projectType}\nBudget: ${formData.budget}\nTimeline: ${formData.timeline}\n\nProject Details:\n${formData.message}`,
+        time: new Date().toLocaleString()
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+
+      console.log('Email sent successfully:', response);
+      setSubmitStatus('success');
+      
+      // Reset form after successful submission
+      setFormData({
+        name: '',
+        email: '',
+        projectType: '',
+        budget: '',
+        timeline: '',
+        message: ''
+      });
+
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const projectTypes = [
@@ -408,14 +454,51 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="btn-primary w-full"
+                  disabled={isLoading}
+                  className={`btn-primary w-full flex items-center justify-center gap-2 transition-all duration-300 ${
+                    isLoading ? 'opacity-70 cursor-not-allowed' : 'hover:scale-105'
+                  }`}
                 >
-                  Send Project Details
+                  {isLoading ? (
+                    <>
+                      <FaSpinner className="animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    'Send Project Details'
+                  )}
                 </button>
 
-                <p className="text-body text-gray-400 text-center">
-                  I&apos;ll respond within 24 hours with a detailed project proposal
-                </p>
+                {/* Success Message */}
+                {submitStatus === 'success' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-4 bg-green-500/20 border border-green-400/30 rounded-lg text-center"
+                  >
+                    <FaCheckCircle className="text-green-400 text-xl mx-auto mb-2" />
+                    <p className="text-green-300 font-medium">Message sent successfully!</p>
+                    <p className="text-green-200 text-sm">I&apos;ll respond within 24 hours with a detailed project proposal.</p>
+                  </motion.div>
+                )}
+
+                {/* Error Message */}
+                {submitStatus === 'error' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-4 bg-red-500/20 border border-red-400/30 rounded-lg text-center"
+                  >
+                    <p className="text-red-300 font-medium">Failed to send message</p>
+                    <p className="text-red-200 text-sm">Please try again or contact me directly via email.</p>
+                  </motion.div>
+                )}
+
+                {!submitStatus && (
+                  <p className="text-body text-gray-400 text-center">
+                    I&apos;ll respond within 24 hours with a detailed project proposal
+                  </p>
+                )}
               </form>
             </div>
           </motion.div>

@@ -41,9 +41,14 @@ const Contact = () => {
       return; // Don't update if exceeds limit
     }
     
+    // For message field, preserve spaces and only sanitize dangerous content
+    const sanitizedValue = name === 'message' ? 
+      value.replace(/<script[^>]*>.*?<\/script>/gi, '').replace(/javascript:/gi, '').replace(/on\w+\s*=/gi, '') :
+      sanitizeInput(value);
+    
     setFormData({
       ...formData,
-      [name]: sanitizeInput(value)
+      [name]: sanitizedValue
     });
   };
 
@@ -128,7 +133,7 @@ const Contact = () => {
     '$300 - $800',
     '$800 - $2,000',
     '$2,000+',
-    'Let&apos;s discuss'
+    "Let's discuss"
   ];
 
   const timelines = [

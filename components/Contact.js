@@ -328,7 +328,7 @@ const Contact = () => {
                     <FaLinkedin />
                   </a>
                   <a
-                    href="https://wa.me/94701234567"
+                    href="https://api.whatsapp.com/send/?phone=94713427470&text&type=phone_number&app_absent=0"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Message on WhatsApp"

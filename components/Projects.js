@@ -57,7 +57,7 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
               <FaExternalLinkAlt className="text-sm" />
             </a>
           )}
-          {project.github && (
+          {project.github && project.id !== 4 && (
             <a
               href={project.github}
               target="_blank"
@@ -338,7 +338,7 @@ const ProjectModal = ({ project, closeModal, projectGalleries }) => {
           </div>
 
           <div className="flex gap-4">
-            {project.github && (
+            {project.github && project.id !== 4 && (
               <a
                 href={project.github}
                 target="_blank"

@@ -161,7 +161,7 @@ const ProjectCard = ({ project, openModal, hasGallery }) => {
               Live Demo
             </a>
           )}
-          {project.github && (
+          {project.github && project.id !== 4 && (
             <a
               href={project.github}
               target="_blank"

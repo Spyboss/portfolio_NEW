@@ -1,16 +1,14 @@
 name = "umi"
 compatibility_date = "2023-12-01"
+pages_build_output_dir = ".vercel/output/static"
+functions = ".vercel/output/functions"
 
-# Pages configuration
 [build]
 command = "npm run build"
 
 [build.environment]
 NODE_VERSION = "18"
 
-# The directory with your static files
 [site]
-bucket = "out"
+bucket = ".vercel/output/static"
 
-# Required for Pages deployments
-pages_build_output_dir = "out" 

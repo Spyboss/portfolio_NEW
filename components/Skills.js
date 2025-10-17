@@ -12,13 +12,26 @@ import {
   IconTerminal, IconChartDots3, IconCpu,
   IconBrandOpenai, IconSparkles, IconMessageChatbot, IconBulb,
   IconBrandMysql, IconBrandRedux, IconBrandBootstrap, IconBrandPhp,
-  IconBrandLaravel, IconBrandWordpress, IconBrandApple, IconBrandLinux,
+  IconBrandLaravel, IconBrandWordpress, IconBrandApple,
   IconBrandWindows, IconBrandUbuntu, IconBrandVue, IconBrandAngular,
-  IconBrandSass, IconBrandGraphql, IconBrandPostgresql, IconBrandRedis,
-  IconBrandDigitalocean, IconBrandVercel, IconBrandNetlify, IconHeart,
+  IconBrandSass, IconBrandGraphql, IconBrandPostgresql,
+  IconBrandVercel, IconHeart,
   IconWind, IconNetwork
 } from '@tabler/icons-react';
-import { SiExpress, SiPostgresql, SiPrisma, SiKubernetes, SiJenkins, SiGithubactions, SiPostman, SiOpenai } from 'react-icons/si';
+import {
+  SiExpress,
+  SiPostgresql,
+  SiPrisma,
+  SiKubernetes,
+  SiJenkins,
+  SiGithubactions,
+  SiPostman,
+  SiOpenai,
+  SiRedis,
+  SiDigitalocean,
+  SiNetlify,
+  SiLinux
+} from 'react-icons/si';
 import { RiCopilotFill } from 'react-icons/ri';
 import { SiAnthropic, SiPerplexity } from '@icons-pack/react-simple-icons';
 
@@ -58,7 +71,7 @@ const getTechIcon = (techName) => {
     'MySQL': { icon: IconBrandMysql, color: '#4479A1', bgColor: 'rgba(68, 121, 161, 0.1)' },
     'PostgreSQL': { icon: SiPostgresql, color: '#336791', bgColor: 'rgba(51, 103, 145, 0.1)' },
     'Prisma': { icon: SiPrisma, color: '#5A67D8', bgColor: 'rgba(90, 103, 216, 0.1)' },
-    'Redis': { icon: IconBrandRedis, color: '#DC382D', bgColor: 'rgba(220, 56, 45, 0.1)' },
+    'Redis': { icon: SiRedis, color: '#DC382D', bgColor: 'rgba(220, 56, 45, 0.1)' },
     'Firebase': { icon: IconBrandFirebase, color: '#FFCA28', bgColor: 'rgba(255, 202, 40, 0.1)' },
     'Supabase': { icon: IconBrandSupabase, color: '#3ECF8E', bgColor: 'rgba(62, 207, 142, 0.1)' },
     'Vector Databases': { icon: IconChartDots3, color: '#F59E0B', bgColor: 'rgba(245, 158, 11, 0.1)' },
@@ -67,9 +80,9 @@ const getTechIcon = (techName) => {
     'Docker': { icon: IconBrandDocker, color: '#2496ED', bgColor: 'rgba(36, 150, 237, 0.1)' },
     'Kubernetes': { icon: SiKubernetes, color: '#326CE5', bgColor: 'rgba(50, 108, 229, 0.1)' },
     'AWS': { icon: IconBrandAws, color: '#FF9900', bgColor: 'rgba(255, 153, 0, 0.1)' },
-    'DigitalOcean': { icon: IconBrandDigitalocean, color: '#0080FF', bgColor: 'rgba(0, 128, 255, 0.1)' },
+    'DigitalOcean': { icon: SiDigitalocean, color: '#0080FF', bgColor: 'rgba(0, 128, 255, 0.1)' },
     'Vercel': { icon: IconBrandVercel, color: '#000000', bgColor: 'rgba(0, 0, 0, 0.1)' },
-    'Netlify': { icon: IconBrandNetlify, color: '#00C7B7', bgColor: 'rgba(0, 199, 183, 0.1)' },
+    'Netlify': { icon: SiNetlify, color: '#00C7B7', bgColor: 'rgba(0, 199, 183, 0.1)' },
     'Jenkins': { icon: SiJenkins, color: '#D33833', bgColor: 'rgba(211, 56, 51, 0.1)' },
     'GitHub Actions': { icon: SiGithubactions, color: '#2088FF', bgColor: 'rgba(32, 136, 255, 0.1)' },
     
@@ -89,7 +102,7 @@ const getTechIcon = (techName) => {
     'iOS': { icon: IconBrandApple, color: '#000000', bgColor: 'rgba(0, 0, 0, 0.1)' },
     
     // Operating Systems
-    'Linux': { icon: IconBrandLinux, color: '#FCC624', bgColor: 'rgba(252, 198, 36, 0.1)' },
+    'Linux': { icon: SiLinux, color: '#FCC624', bgColor: 'rgba(252, 198, 36, 0.1)' },
     'Ubuntu': { icon: IconBrandUbuntu, color: '#E95420', bgColor: 'rgba(233, 84, 32, 0.1)' },
     'Windows': { icon: IconBrandWindows, color: '#0078D4', bgColor: 'rgba(0, 120, 212, 0.1)' },
     
@@ -123,6 +136,18 @@ const getTechIcon = (techName) => {
 const SkillBadge = ({ skill, category, index }) => {
   const { icon: IconComponent, color, bgColor } = getTechIcon(skill);
   const specialization = getTechSpecialization(skill);
+
+  const iconProps = {
+    className: 'w-5 h-5 transition-colors duration-300',
+    color,
+    style: { color },
+    size: 20
+  };
+
+  if (IconComponent?.name?.startsWith('Icon')) {
+    iconProps.stroke = 1.5;
+    iconProps.strokeWidth = 1.5;
+  }
   
   return (
     <motion.div
@@ -150,11 +175,7 @@ const SkillBadge = ({ skill, category, index }) => {
         style={{ backgroundColor: bgColor }}
       >
         {IconComponent ? (
-          React.createElement(IconComponent, {
-            className: "w-5 h-5 transition-colors duration-300",
-            style: { color: color },
-            stroke: 1.5
-          })
+          React.createElement(IconComponent, iconProps)
         ) : (
           <div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
             {skill.charAt(0).toUpperCase()}

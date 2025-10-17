@@ -4,8 +4,8 @@
   "description": "Uminda's Personal Portfolio Website",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build && next-on-pages --skip-build && node copy-files.js",
+    "start": "next dev",
     "export": "next build && next export && node copy-files.js",
     "lint": "next lint"
   },
@@ -22,7 +22,7 @@
     "@icons-pack/react-simple-icons": "^13.6.0",
     "@tabler/icons-react": "^3.34.0",
     "framer-motion": "^10.17.9",
-    "next": "^14.2.24",
+    "next": "^15.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",
@@ -34,6 +34,7 @@
     "eslint-config-next": "15.4.3",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.4.0",
-    "wrangler": "^4.26.0"
+    "wrangler": "^4.26.0",
+    "@cloudflare/next-on-pages": "^1.13.4"
   }
 }

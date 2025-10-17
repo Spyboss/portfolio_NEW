@@ -41,7 +41,7 @@
       "title": "Echo Journal AI Habit Tracker",
       "shortDescription": "AI-powered journal and habit-tracking app with personalized insights and automated reminders.",
       "description": "Intelligent habit tracking and journaling application powered by AI. Built with React Native for cross-platform compatibility, the app provides personalized insights, automated reminders, and behavior suggestions based on user patterns. Features advanced analytics to help users build better routines and track their progress over time.",
-      "image": "https://res.cloudinary.com/dthx4fxte/image/upload/v1752483572/screencapture-echo-echo-journal-hnzep-asia-east1-hosted-app-2025-07-14-14_28_56_pnpnbn.png",
+      "image": "https://res.cloudinary.com/dthx4fxte/image/upload/v1760730868/screencapture-echojournal-pages-dev-weekly-reflection-2025-10-17-21_55_23_sbqy2e.png",
       "technologies": ["React Native", "Node.js", "AI APIs", "MongoDB", "TypeScript"],
       "features": [
         "AI-powered personalized insights and recommendations",
@@ -50,7 +50,7 @@
         "Cross-platform mobile application",
         "Secure data synchronization across devices"
       ],
-      "liveDemo": "https://echo--echo-journal-hnzep.asia-east1.hosted.app/",
+      "liveDemo": "https://echojournal.pages.dev/",
       "github": "https://github.com/Spyboss/EchoJournal",
       "impact": "Helped users build better routines and track progress effectively"
     },

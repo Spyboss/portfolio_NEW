@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export',
   images: {
     remotePatterns: [
       {
@@ -17,4 +16,4 @@ const nextConfig = {
   trailingSlash: true,
 };
 
-module.exports = nextConfig; 
+module.exports = nextConfig;

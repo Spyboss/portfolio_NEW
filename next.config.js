@@ -3,7 +3,16 @@ const nextConfig = {
   reactStrictMode: true,
   output: 'export',
   images: {
-    unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.shields.io',
+      },
+    ],
   },
   trailingSlash: true,
 };

@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build && next-on-pages --skip-build && node copy-files.js",
     "start": "next dev",
-    "export": "next build && next export && node copy-files.js",
+    "export": "cross-env NEXT_OUTPUT=export next build && node copy-files.js",
     "lint": "next lint"
   },
   "keywords": [
@@ -32,6 +32,7 @@
     "autoprefixer": "^10.4.16",
     "eslint": "8.57.1",
     "eslint-config-next": "15.4.3",
+    "cross-env": "^7.0.3",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.4.0",
     "wrangler": "^4.26.0",

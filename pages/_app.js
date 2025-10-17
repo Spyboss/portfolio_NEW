@@ -1,18 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import '../styles/globals.css';
 import '../styles/gallery.css';
 import Head from 'next/head';
-import CustomCursor from '../components/CustomCursor';
+import dynamic from 'next/dynamic';
 import ErrorBoundary from '../components/ErrorBoundary';
 
+const DynamicCustomCursor = dynamic(() => import('../components/CustomCursor'), {
+  ssr: false,
+});
+
 function MyApp({ Component, pageProps }) {
-  const [mounted, setMounted] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    setMounted(true);
-
     // Handle router errors to prevent "Cancel rendering route" errors
     const handleRouteChangeError = (err, url) => {
       if (err.cancelled) {
@@ -50,8 +51,6 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router]);
 
-  if (!mounted) return null;
-
   return (
     <ErrorBoundary>
       <Head>
@@ -73,7 +72,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:description" content="Self-taught full-stack developer with 4+ years experience building real-world web and mobile applications" />
         <meta name="twitter:image" content="/images/og-image.svg" />
       </Head>
-      <CustomCursor />
+      <DynamicCustomCursor />
       <Component {...pageProps} />
     </ErrorBoundary>
   );

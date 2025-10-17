@@ -4,9 +4,9 @@
   "description": "Uminda's Personal Portfolio Website",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node copy-files.js",
-    "start": "npx serve@latest out",
-    "export": "next build && next export",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && next export && node copy-files.js",
     "lint": "next lint"
   },
   "keywords": [
